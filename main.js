@@ -90,82 +90,7 @@ function displaySettings(eventTarget) {
   settingsCon.style.display = 'block';
   headingName.innerHTML = '<img src="settings.svg" alt="">Settings';
 }
-function displaySavedHouses(eventTarget) {
-  allEachCon.style.display = 'grid';
-  myProfileCon.style.display = 'none';
-  myTripsCon.style.display = 'none';
-  mywishlistCon.style.display = 'block';
-  hostCon.style.display = 'none';
-  getHelpCon.style.display = 'none';
-  settingsCon.style.display = 'none';
-  headingName.innerHTML =
-    '<img src="saved.png" style="width: 20%;  height: 80%;" alt="">My Wishlist';
-  let displayHouses = JSON.parse(localStorage.getItem('savedHouses'));
-  allEachCon.innerHTML = `<div class="loader">
-          <div class="loader-container"><img style="mix-blend-mode: multiply;" src="ringspinone.svg" alt=""></div>
-        </div>`;
-  setTimeout(() => {
-    allEachCon.innerHTML = displayHouses
-      .map(
-        (item, index) => `<div class="each-saved-house">
-        <div class="saved-img-Container">
-          <img src=${item.mainImage} alt="">
-        </div>
-        <div class="savedHouseInfo">
-          <p>${item.name}</p>
-          <p>${item.price} /Night</p>
-          <a href="house1.html"><button onclick="viewDetailsByIndex(${item.id})">Check More Details</button></a>
-        </div>
-      </div>`
-      )
-      .join(' ');
-  }, 500);
-}
 
-function handleSaveToStorage() {
-  const currentSelectedHouse = JSON.parse(
-    localStorage.getItem('selectedHouse')
-  );
-  if (localStorage.getItem('savedHouses') === null) {
-    let newSaved = [currentSelectedHouse];
-    localStorage.setItem('savedHouses', JSON.stringify(newSaved));
-  } else {
-    let currentContents = JSON.parse(localStorage.getItem('savedHouses'));
-    currentContents.push(currentSelectedHouse);
-    localStorage.setItem('savedHouses', JSON.stringify(currentContents));
-  }
-}
-
-function saveHelperFunc(preventDuplicate) {
-  let savedHousesIds = [];
-  preventDuplicate.forEach((savedItem) => {
-    const eachItemId = savedItem.id;
-    savedHousesIds.push(eachItemId);
-  });
-  let currentHouse = JSON.parse(localStorage.getItem('selectedHouse'));
-  if (savedHousesIds.includes(currentHouse.id)) {
-    save.src = 'saved.png';
-  } else {
-    handleSaveToStorage();
-  }
-}
-function savedColor() {
-  let preventDuplicate = JSON.parse(localStorage.getItem('savedHouses'));
-  if (preventDuplicate === null) {
-    handleSaveToStorage();
-    save.src = 'saved.png';
-    saveText.style.transform = 'scale(1)';
-    saveText.textContent = 'Saved';
-    setTimeout(() => {
-      saveText.textContent = 'Saved';
-      saveText.style.transform = 'scale(0.0005)';
-    }, 1500);
-  } else {
-    saveHelperFunc(preventDuplicate);
-  }
-}
-let preventDuplicate = JSON.parse(localStorage.getItem('savedHouses'));
-window.addEventListener('DOMContentLoaded', saveHelperFunc(preventDuplicate));
 const child = document.querySelector('.deleteCheck');
 const savedCon = document.querySelector('.allSaved');
 const savedConAll = document.querySelectorAll('.allSaved');
@@ -207,3 +132,73 @@ function handleScroll() {
     rightinfo.style.width = '34%';
   }
 }
+
+function addToWishlist(saveHeart) {
+  let selectedCurrentHouse = JSON.parse(localStorage.getItem('selectedHouse'));
+  let wishlistedHouses = JSON.parse(localStorage.getItem('wishlistedHouses'));
+  if (wishlistedHouses === null) {
+    if (selectedCurrentHouse === null) {
+      alert('Nothing To Show Here');
+    } else {
+      wislistToStorage();
+      alreadySavedHelper(save);
+    }
+  } else {
+    if (selectedCurrentHouse === null) {
+      alert('Nothing To Show Here, Go Back And Selected The House First');
+    } else {
+      let existingWishlistedHousesId = [];
+      wishlistedHouses.forEach((item) => {
+        existingWishlistedHousesId.push(item.id);
+      });
+
+      if (existingWishlistedHousesId.includes(selectedCurrentHouse.id)) {
+        alreadySavedHelper(saveHeart);
+      } else {
+        wislistToStorage();
+      }
+    }
+  }
+}
+function alreadySavedHelper(savedHeart) {
+  savedHeart.src = 'saved.png';
+}
+window.addEventListener('DOMContentLoaded', () => {
+  let selectedCurrentHouse = JSON.parse(localStorage.getItem('selectedHouse'));
+  let wishlistedHouses = JSON.parse(localStorage.getItem('wishlistedHouses'));
+  if (selectedCurrentHouse === null) {
+    alert('Nothing To Show Here, Go Back And Select The House First');
+  } else {
+    let existingWishlistedHousesId = [];
+    wishlistedHouses.forEach((item) => {
+      existingWishlistedHousesId.push(item.id);
+    });
+
+    if (existingWishlistedHousesId.includes(selectedCurrentHouse.id)) {
+      alreadySavedHelper(save);
+    } else {
+    }
+  }
+});
+
+function wislistToStorage() {
+  let selectedCurrentHouse = JSON.parse(localStorage.getItem('selectedHouse'));
+  let wishlistedHouses = JSON.parse(localStorage.getItem('wishlistedHouses'));
+  let newWishlist = [];
+  if (wishlistedHouses === null) {
+    newWishlist.push(selectedCurrentHouse);
+    localStorage.setItem('wishlistedHouses', JSON.stringify(newWishlist));
+  } else {
+    let existingWishlistedHouses = JSON.parse(
+      localStorage.getItem('wishlistedHouses')
+    );
+    existingWishlistedHouses.push(selectedCurrentHouse);
+    localStorage.setItem(
+      'wishlistedHouses',
+      JSON.stringify(existingWishlistedHouses)
+    );
+  }
+}
+
+// Account page
+function displaySavedHouses(eventTarget) {}

@@ -557,7 +557,7 @@ const houseData = [
     ratingDescription:
       'One of the most loved home to many travellers here on <br> Tranquil, According to Guests',
     hostName: 'Aubrey',
-    hostImage: 'iconmonet.PNG',
+    hostImage: 'icon/uifaces-human-image (1).jpg',
     hostReviewNumber: '50+',
     hostCharacter: 'Friendly, Funny,hospitable',
     hostYearOfExperience: '5+',
@@ -655,7 +655,7 @@ const houseData = [
     ratingDescription:
       'One of the most loved home to many travellers here on <br> Tranquil, According to Guests',
     hostName: 'Amanda',
-    hostImage: 'iconmonet.PNG',
+    hostImage: 'icon/uifaces-human-image (2).jpg',
     hostReviewNumber: '550+',
     hostCharacter: 'Friendly, Funny,hospitable',
     hostYearOfExperience: '6+',
@@ -704,7 +704,7 @@ const houseData = [
     ratingDescription:
       'One of the most loved home to many travellers here on <br> Tranquil, According to Guests',
     hostName: 'Adrian',
-    hostImage: 'iconmonet.PNG',
+    hostImage: 'icon/uifaces-human-image (44).jpg',
     hostReviewNumber: '350+',
     hostCharacter: 'Friendly, Funny,hospitable',
     hostYearOfExperience: '7+',
@@ -753,7 +753,7 @@ const houseData = [
     ratingDescription:
       'One of the most loved home to many travellers here on <br> Tranquil, According to Guests',
     hostName: 'Maya',
-    hostImage: 'iconmonet.PNG',
+    hostImage: 'icon/uifaces-human-image (3).jpg',
     hostReviewNumber: '150+',
     hostCharacter: 'Friendly, Funny,hospitable',
     hostYearOfExperience: '5+',
@@ -802,7 +802,7 @@ const houseData = [
     ratingDescription:
       'One of the most loved home to many travellers here on <br> Tranquil, According to Guests',
     hostName: 'Caleb',
-    hostImage: 'iconmonet.PNG',
+    hostImage: 'icon/uifaces-human-image (4).jpg',
     hostReviewNumber: '50+',
     hostCharacter: 'Friendly, Funny,hospitable',
     hostYearOfExperience: '2+',
@@ -851,7 +851,7 @@ const houseData = [
     ratingDescription:
       'One of the most loved home to many travellers here on <br> Tranquil, According to Guests',
     hostName: 'Nova',
-    hostImage: 'iconmonet.PNG',
+    hostImage: 'icon/uifaces-human-image (43).jpg',
     hostReviewNumber: '40+',
     hostCharacter: 'Friendly, Funny,hospitable',
     hostYearOfExperience: '3+',
@@ -900,7 +900,7 @@ const houseData = [
     ratingDescription:
       'One of the most loved home to many travellers here on <br> Tranquil, According to Guests',
     hostName: 'Parker',
-    hostImage: 'iconmonet.PNG',
+    hostImage: 'icon/uifaces-human-image (5).jpg',
     hostReviewNumber: '15+',
     hostCharacter: 'Friendly, Funny,hospitable',
     hostYearOfExperience: '1+',
@@ -949,7 +949,7 @@ const houseData = [
     ratingDescription:
       'One of the most loved home to many travellers here on <br> Tranquil, According to Guests',
     hostName: 'Flores',
-    hostImage: 'iconmonet.PNG',
+    hostImage: 'icon/uifaces-human-image (6).jpg',
     hostReviewNumber: '150+',
     hostCharacter: 'Friendly, Funny,hospitable',
     hostYearOfExperience: '3+',
@@ -998,7 +998,7 @@ const houseData = [
     ratingDescription:
       'One of the most loved home to many travellers here on <br> Tranquil, According to Guests',
     hostName: 'Scott',
-    hostImage: 'iconmonet.PNG',
+    hostImage: 'icon/uifaces-human-image (7).jpg',
     hostReviewNumber: '50+',
     hostCharacter: 'Friendly, Funny,hospitable',
     hostYearOfExperience: '1+',
@@ -1047,7 +1047,7 @@ const houseData = [
     ratingDescription:
       'One of the most loved home to many travellers here on <br> Tranquil, According to Guests',
     hostName: 'Guitierez',
-    hostImage: 'iconmonet.PNG',
+    hostImage: 'icon/uifaces-human-image (8).jpg',
     hostReviewNumber: '100+',
     hostCharacter: 'Friendly, Funny,hospitable',
     hostYearOfExperience: '5+',
@@ -1096,7 +1096,7 @@ const houseData = [
     ratingDescription:
       'One of the most loved home to many travellers here on <br> Tranquil, According to Guests',
     hostName: 'Brandon',
-    hostImage: 'iconmonet.PNG',
+    hostImage: 'icon/uifaces-human-image (9).jpg',
     hostReviewNumber: '150+',
     hostCharacter: 'Friendly, Funny,hospitable',
     hostYearOfExperience: '2+',
@@ -1145,7 +1145,7 @@ const houseData = [
     ratingDescription:
       'One of the most loved home to many travellers here on <br> Tranquil, According to Guests',
     hostName: 'Hazel',
-    hostImage: 'iconmonet.PNG',
+    hostImage: 'icon/uifaces-human-image (10).jpg',
     hostReviewNumber: '75+',
     hostCharacter: 'Friendly, Funny,hospitable',
     hostYearOfExperience: '2+',
@@ -1194,7 +1194,7 @@ const houseData = [
     ratingDescription:
       'One of the most loved home to many travellers here on <br> Tranquil, According to Guests',
     hostName: 'Aria',
-    hostImage: 'iconmonet.PNG',
+    hostImage: 'icon/uifaces-human-image (11).jpg',
     hostReviewNumber: '30+',
     hostCharacter: 'Friendly, Funny,hospitable',
     hostYearOfExperience: '4+',
@@ -1243,7 +1243,7 @@ const houseData = [
     ratingDescription:
       'One of the most loved home to many travellers here on <br> Tranquil, According to Guests',
     hostName: 'Nolan',
-    hostImage: 'iconmonet.PNG',
+    hostImage: 'icon/uifaces-human-image (12).jpg',
     hostReviewNumber: '70+',
     hostCharacter: 'Friendly, Funny,hospitable',
     hostYearOfExperience: '2+',
@@ -1292,7 +1292,7 @@ const houseData = [
     ratingDescription:
       'One of the most loved home to many travellers here on <br> Tranquil, According to Guests',
     hostName: 'Natalie',
-    hostImage: 'iconmonet.PNG',
+    hostImage: 'icon/uifaces-human-image (13).jpg',
     hostReviewNumber: '90+',
     hostCharacter: 'Friendly, Funny,hospitable',
     hostYearOfExperience: '7+',
@@ -1341,7 +1341,7 @@ const houseData = [
     ratingDescription:
       'One of the most loved home to many travellers here on <br> Tranquil, According to Guests',
     hostName: 'Amanda',
-    hostImage: 'iconmonet.PNG',
+    hostImage: 'icon/uifaces-human-image (14).jpg',
     hostReviewNumber: '20+',
     hostCharacter: 'Friendly, Funny,hospitable',
     hostYearOfExperience: '5+',
@@ -1390,7 +1390,7 @@ const houseData = [
     ratingDescription:
       'One of the most loved home to many travellers here on <br> Tranquil, According to Guests',
     hostName: 'Cameron',
-    hostImage: 'iconmonet.PNG',
+    hostImage: 'icon/uifaces-human-image (15).jpg',
     hostReviewNumber: '50+',
     hostCharacter: 'Friendly, Funny,hospitable',
     hostYearOfExperience: '7+',
@@ -1439,7 +1439,7 @@ const houseData = [
     ratingDescription:
       'One of the most loved home to many travellers here on <br> Tranquil, According to Guests',
     hostName: 'Henry',
-    hostImage: 'iconmonet.PNG',
+    hostImage: 'icon/uifaces-human-image (16).jpg',
     hostReviewNumber: '190+',
     hostCharacter: 'Friendly, Funny,hospitable',
     hostYearOfExperience: '6+',
@@ -1488,7 +1488,7 @@ const houseData = [
     ratingDescription:
       'One of the most loved home to many travellers here on <br> Tranquil, According to Guests',
     hostName: 'Ellie',
-    hostImage: 'iconmonet.PNG',
+    hostImage: 'iicon/uifaces-human-image (17).jpg',
     hostReviewNumber: '60+',
     hostCharacter: 'Friendly, Funny,hospitable',
     hostYearOfExperience: '8+',
@@ -1537,7 +1537,7 @@ const houseData = [
     ratingDescription:
       'One of the most loved home to many travellers here on <br> Tranquil, According to Guests',
     hostName: 'Parel',
-    hostImage: 'iconmonet.PNG',
+    hostImage: 'icon/uifaces-human-image (18).jpg',
     hostReviewNumber: '100+',
     hostCharacter: 'Friendly, Funny,hospitable',
     hostYearOfExperience: '1+',
@@ -1586,13 +1586,13 @@ const houseData = [
     ratingDescription:
       'One of the most loved home to many travellers here on <br> Tranquil, According to Guests',
     hostName: 'Cristine',
-    hostImage: 'iconmonet.PNG',
+    hostImage: 'icon/uifaces-human-image (19).jpg',
     hostReviewNumber: '50+',
     hostCharacter: 'Friendly, Funny,hospitable',
     hostYearOfExperience: '2.5+',
     amenitiesOne: 'Outdoor pool',
     bedOneImage: 'Beds/img37.jpeg',
-    bedTwoImage: 'Beds/img47.jpeg',
+    bedTwoImage: 'Beds/img47.jpg',
     personOneReview: {
       name: 'Nathan Dickson',
       image: 'icon/uifaces-human-image (22).jpg',
@@ -1635,7 +1635,7 @@ const houseData = [
     ratingDescription:
       'One of the most loved home to many travellers here on <br> Tranquil, According to Guests',
     hostName: 'Erick',
-    hostImage: 'iconmonet.PNG',
+    hostImage: 'icon/uifaces-human-image (20).jpg',
     hostReviewNumber: '100+',
     hostCharacter: 'Friendly, Funny,hospitable',
     hostYearOfExperience: '5+',
@@ -1684,7 +1684,7 @@ const houseData = [
     ratingDescription:
       'One of the most loved home to many travellers here on <br> Tranquil, According to Guests',
     hostName: 'Zoey',
-    hostImage: 'iconmonet.PNG',
+    hostImage: 'icon/uifaces-human-image (21).jpg',
     hostReviewNumber: '100+',
     hostCharacter: 'Friendly, Funny,hospitable',
     hostYearOfExperience: '5+',
@@ -1733,7 +1733,7 @@ const houseData = [
     ratingDescription:
       'One of the most loved home to many travellers here on <br> Tranquil, According to Guests',
     hostName: 'Evelyne',
-    hostImage: 'iconmonet.PNG',
+    hostImage: 'icon/uifaces-human-image (22).jpg',
     hostReviewNumber: '100+',
     hostCharacter: 'Friendly, Funny,hospitable',
     hostYearOfExperience: '2+',
@@ -1782,7 +1782,7 @@ const houseData = [
     ratingDescription:
       'One of the most loved home to many travellers here on <br> Tranquil, According to Guests',
     hostName: 'Bradley',
-    hostImage: 'iconmonet.PNG',
+    hostImage: 'icon/uifaces-human-image (42).jpg',
     hostReviewNumber: '15+',
     hostCharacter: 'Friendly, Funny,hospitable',
     hostYearOfExperience: '1+',
@@ -1831,7 +1831,7 @@ const houseData = [
     ratingDescription:
       'One of the most loved home to many travellers here on <br> Tranquil, According to Guests',
     hostName: 'Brian',
-    hostImage: 'iconmonet.PNG',
+    hostImage: 'icon/uifaces-human-image (23).jpg',
     hostReviewNumber: '150+',
     hostCharacter: 'Friendly, Funny,hospitable',
     hostYearOfExperience: '3+',
@@ -1880,7 +1880,7 @@ const houseData = [
     ratingDescription:
       'One of the most loved home to many travellers here on <br> Tranquil, According to Guests',
     hostName: 'Nelly',
-    hostImage: 'iconmonet.PNG',
+    hostImage: 'icon/uifaces-human-image (24).jpg',
     hostReviewNumber: '100+',
     hostCharacter: 'Friendly, Funny,hospitable',
     hostYearOfExperience: '3+',
@@ -1929,7 +1929,7 @@ const houseData = [
     ratingDescription:
       'One of the most loved home to many travellers here on <br> Tranquil, According to Guests',
     hostName: 'Kevin',
-    hostImage: 'iconmonet.PNG',
+    hostImage: 'icon/uifaces-human-image (25).jpg',
     hostReviewNumber: '200+',
     hostCharacter: 'Friendly, Funny,hospitable',
     hostYearOfExperience: '7+',
@@ -1978,7 +1978,7 @@ const houseData = [
     ratingDescription:
       'One of the most loved home to many travellers here on <br> Tranquil, According to Guests',
     hostName: 'Geoffrey',
-    hostImage: 'iconmonet.PNG',
+    hostImage: 'icon/uifaces-human-image (41).jpg',
     hostReviewNumber: '40+',
     hostCharacter: 'Friendly, Funny,hospitable',
     hostYearOfExperience: '6+',
@@ -2027,7 +2027,7 @@ const houseData = [
     ratingDescription:
       'One of the most loved home to many travellers here on <br> Tranquil, According to Guests',
     hostName: 'Steve',
-    hostImage: 'iconmonet.PNG',
+    hostImage: 'icon/uifaces-human-image (26).jpg',
     hostReviewNumber: '450+',
     hostCharacter: 'Friendly, Funny,hospitable',
     hostYearOfExperience: '8+',
@@ -2076,7 +2076,7 @@ const houseData = [
     ratingDescription:
       'One of the most loved home to many travellers here on <br> Tranquil, According to Guests',
     hostName: 'Nick',
-    hostImage: 'iconmonet.PNG',
+    hostImage: 'icon/uifaces-human-image (27).jpg',
     hostReviewNumber: '80+',
     hostCharacter: 'Friendly, Funny,hospitable',
     hostYearOfExperience: '6+',
@@ -2125,7 +2125,7 @@ const houseData = [
     ratingDescription:
       'One of the most loved home to many travellers here on <br> Tranquil, According to Guests',
     hostName: 'Collins',
-    hostImage: 'iconmonet.PNG',
+    hostImage: 'icon/uifaces-human-image (28).jpg',
     hostReviewNumber: '15+',
     hostCharacter: 'Friendly, Funny,hospitable',
     hostYearOfExperience: '1+',
@@ -2174,7 +2174,7 @@ const houseData = [
     ratingDescription:
       'One of the most loved home to many travellers here on <br> Tranquil, According to Guests',
     hostName: 'Bianka',
-    hostImage: 'iconmonet.PNG',
+    hostImage: 'icon/uifaces-human-image (29).jpg',
     hostReviewNumber: '72+',
     hostCharacter: 'Friendly, Funny,hospitable',
     hostYearOfExperience: '1+',
@@ -2223,7 +2223,7 @@ const houseData = [
     ratingDescription:
       'One of the most loved home to many travellers here on <br> Tranquil, According to Guests',
     hostName: 'Lavender',
-    hostImage: 'iconmonet.PNG',
+    hostImage: 'icon/uifaces-human-image (30).jpg',
     hostReviewNumber: '60+',
     hostCharacter: 'Friendly, Funny,hospitable',
     hostYearOfExperience: '3+',
@@ -2272,7 +2272,7 @@ const houseData = [
     ratingDescription:
       'One of the most loved home to many travellers here on <br> Tranquil, According to Guests',
     hostName: 'Dennis',
-    hostImage: 'iconmonet.PNG',
+    hostImage: 'icon/uifaces-human-image (31).jpg',
     hostReviewNumber: '45+',
     hostCharacter: 'Friendly, Funny,hospitable',
     hostYearOfExperience: '2+',
@@ -2321,7 +2321,7 @@ const houseData = [
     ratingDescription:
       'One of the most loved home to many travellers here on <br> Tranquil, According to Guests',
     hostName: 'Amanda',
-    hostImage: 'iconmonet.PNG',
+    hostImage: 'icon/uifaces-human-image (32).jpg',
     hostReviewNumber: '120+',
     hostCharacter: 'Friendly, Funny,hospitable',
     hostYearOfExperience: '3+',
@@ -2370,7 +2370,7 @@ const houseData = [
     ratingDescription:
       'One of the most loved home to many travellers here on <br> Tranquil, According to Guests',
     hostName: 'Natalie',
-    hostImage: 'iconmonet.PNG',
+    hostImage: 'icon/uifaces-human-image (33).jpg',
     hostReviewNumber: '150+',
     hostCharacter: 'Friendly, Funny,hospitable',
     hostYearOfExperience: '7+',
@@ -2419,7 +2419,7 @@ const houseData = [
     ratingDescription:
       'One of the most loved home to many travellers here on <br> Tranquil, According to Guests',
     hostName: 'Joy',
-    hostImage: 'iconmonet.PNG',
+    hostImage: 'icon/uifaces-human-image (34).jpg',
     hostReviewNumber: '170+',
     hostCharacter: 'Friendly, Funny,hospitable',
     hostYearOfExperience: '8+',
@@ -2468,7 +2468,7 @@ const houseData = [
     ratingDescription:
       'One of the most loved home to many travellers here on <br> Tranquil, According to Guests',
     hostName: 'Lily',
-    hostImage: 'iconmonet.PNG',
+    hostImage: 'icon/uifaces-human-image (35).jpg',
     hostReviewNumber: '10+',
     hostCharacter: 'Friendly, Funny,hospitable',
     hostYearOfExperience: '4+',
@@ -2517,7 +2517,7 @@ const houseData = [
     ratingDescription:
       'One of the most loved home to many travellers here on <br> Tranquil, According to Guests',
     hostName: 'Charlene',
-    hostImage: 'iconmonet.PNG',
+    hostImage: 'icon/uifaces-human-image (36).jpg',
     hostReviewNumber: '15+',
     hostCharacter: 'Friendly, Funny,hospitable',
     hostYearOfExperience: '1+',
@@ -2566,7 +2566,7 @@ const houseData = [
     ratingDescription:
       'One of the most loved home to many travellers here on <br> Tranquil, According to Guests',
     hostName: 'Loveline',
-    hostImage: 'iconmonet.PNG',
+    hostImage: 'icon/uifaces-human-image (37).jpg',
     hostReviewNumber: '110+',
     hostCharacter: 'Friendly, Funny,hospitable',
     hostYearOfExperience: '5+',
@@ -2615,7 +2615,7 @@ const houseData = [
     ratingDescription:
       'One of the most loved home to many travellers here on <br> Tranquil, According to Guests',
     hostName: 'Nicole',
-    hostImage: 'iconmonet.PNG',
+    hostImage: 'icon/uifaces-human-image (38).jpg',
     hostReviewNumber: '25+',
     hostCharacter: 'Friendly, Funny,hospitable',
     hostYearOfExperience: '2+',
@@ -2664,7 +2664,7 @@ const houseData = [
     ratingDescription:
       'One of the most loved home to many travellers here on <br> Tranquil, According to Guests',
     hostName: 'Blue',
-    hostImage: 'iconmonet.PNG',
+    hostImage: 'icon/uifaces-human-image (39).jpg',
     hostReviewNumber: '450+',
     hostCharacter: 'Friendly, Funny,hospitable',
     hostYearOfExperience: '9+',
@@ -2713,7 +2713,7 @@ const houseData = [
     ratingDescription:
       'One of the most loved home to many travellers here on <br> Tranquil, According to Guests',
     hostName: 'Daisy',
-    hostImage: 'iconmonet.PNG',
+    hostImage: 'icon/uifaces-human-image (40).jpg',
     hostReviewNumber: '110+',
     hostCharacter: 'Friendly, Funny,hospitable',
     hostYearOfExperience: '7+',
@@ -2762,7 +2762,7 @@ const houseData = [
     ratingDescription:
       'One of the most loved home to many travellers here on <br> Tranquil, According to Guests',
     hostName: 'Avril',
-    hostImage: 'iconmonet.PNG',
+    hostImage: 'icon/uifaces-human-image (48).jpg',
     hostReviewNumber: '45+',
     hostCharacter: 'Friendly, Funny,hospitable',
     hostYearOfExperience: '5+',
@@ -2811,7 +2811,7 @@ const houseData = [
     ratingDescription:
       'One of the most loved home to many travellers here on <br> Tranquil, According to Guests',
     hostName: 'Brenda',
-    hostImage: 'iconmonet.PNG',
+    hostImage: 'icon/uifaces-human-image (45).jpg',
     hostReviewNumber: '20+',
     hostCharacter: 'Friendly, Funny,hospitable',
     hostYearOfExperience: '1+',
@@ -2860,7 +2860,7 @@ const houseData = [
     ratingDescription:
       'One of the most loved home to many travellers here on <br> Tranquil, According to Guests',
     hostName: 'Jace',
-    hostImage: 'iconmonet.PNG',
+    hostImage: 'icon/uifaces-human-image (46).jpg',
     hostReviewNumber: '100+',
     hostCharacter: 'Friendly, Funny,hospitable',
     hostYearOfExperience: '7+',
@@ -2909,7 +2909,7 @@ const houseData = [
     ratingDescription:
       'One of the most loved home to many travellers here on <br> Tranquil, According to Guests',
     hostName: 'John',
-    hostImage: 'iconmonet.PNG',
+    hostImage: 'icon/uifaces-human-image (47).jpg',
     hostReviewNumber: '100+',
     hostCharacter: 'Friendly, Funny,hospitable',
     hostYearOfExperience: '5+',

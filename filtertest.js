@@ -10,7 +10,6 @@ function handleScroll() {
     document.documentElement.scrollHeight -
     document.documentElement.clientHeight;
   const scrolledPercentage = (getScrollFromTop / heigth) * 100;
-  // console.log(scrolledPercentage);
 
   if (scrolledPercentage >= 96.5) {
     floatingCon.style.marginTop = '-35%';

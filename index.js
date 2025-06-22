@@ -6,7 +6,6 @@ const checkOutInput = document.querySelector('.check-out-input');
 const loadingState = document.querySelector('.loading-state');
 
 checkAvailabilityBtn.addEventListener('click', () => {
-  // console.log(locationInput.value);
   if (locationInput.value.length === 0) {
     locationInput.style.border = '1px solid red';
   } else {
@@ -57,7 +56,6 @@ const subscribeBtn = document.querySelector('.subscribe-btn');
 
 subscribeBtn.addEventListener('click', () => {
   if (emailInput.value.length === 0) {
-    console.log(emailInput.classList);
     emailInput.setAttribute('placeholder', '*email required');
     emailInput.style.border = '1px solid red';
   } else {
