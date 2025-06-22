@@ -1,0 +1,205 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.account-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+
+
+}
+
+
+.account-left-col {
+  width: 15%;
+  height: 90%;
+  background-color: #f2f8fc;
+  border-radius: 1em;
+  box-shadow: 0 0 0.5em #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1%;
+  cursor: pointer;
+
+
+}
+
+.all-con {
+  width: 90%;
+  height: 7vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.all-con p {
+  width: 100%;
+  height: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  /* background-color: rgb(0, 255, 0); */
+  font-weight: bold;
+  border-radius: 1em;
+}
+
+.all-con p img {
+  width: 20%;
+  height: 80%;
+}
+
+
+.account-right-col {
+  width: 80%;
+  height: 90%;
+  cursor: pointer;
+  gap: 2%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+}
+
+.heading {
+  width: 15%;
+  height: 5%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border: 0.11em solid rgb(56, 235, 33);
+  border-radius: 1em;
+}
+
+.heading h4 {
+  width: 70%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.all-each-containers {
+  width: 100%;
+  height: 95%;
+  background-color: rgba(231, 235, 238, 0.158);
+  overflow: auto;
+  gap: 2%;
+  padding: 2%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+}
+
+.my-profile-container,
+.my-trips-container,
+.become-host-container,
+.get-help-container,
+.my-settings-container {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+
+}
+
+
+.my-wishlist-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100vh;
+  height: 150vh;
+  background-color: rgb(51, 146, 230);
+  overflow: auto;
+}
+
+.each-saved-house {
+  width: 100%;
+  height: 50vh;
+  background-color: #fff;
+  box-shadow: 0 0 0.2em #000;
+  border-radius: 0.5em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2%;
+  padding-bottom: 0.2%;
+}
+
+.saved-img-Container {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  background-color: transparent;
+}
+
+.saved-img-Container img {
+  width: 95%;
+  height: 42vh;
+  border-radius: 0.5em;
+}
+
+.savedHouseInfo {
+  width: 100%;
+  height: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border-top-left-radius: 1em;
+  border-top-right-radius: 1em;
+  border-bottom-left-radius: 0.5em;
+  border-bottom-right-radius: 0.5em;
+  background-color: rgb(207, 230, 250);
+}
+
+.savedHouseInfo a {
+  width: 100%;
+  /* background-color: red; */
+  height: 35%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.savedHouseInfo p {
+  width: 90%;
+  height: 3vh;
+  /* background-color: red; */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: medium;
+  font-weight: bold;
+  overflow-x: hidden;
+}
+
+.savedHouseInfo button {
+  height: 100%;
+  border-radius: 0.3em;
+  width: 95%;
+  border: none;
+  background-color: #302b5e;
+  color: #fff;
+  font-size: large;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}

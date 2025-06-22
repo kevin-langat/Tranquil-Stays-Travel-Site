@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Account Page</title>
+  <link rel="stylesheet" href="acountpage.css">
+</head>
+
+<body>
+  <div class="account-container">
+
+    <div class="account-left-col">
+      <div class="all-con" onclick="displayProfile(event.target)">
+        <p><img src="accountUser.svg" alt="">My Profile</p>
+      </div>
+      <div class="all-con" onclick="displayTrips(event.target)">
+        <p><img src="trip.svg" alt="">My Trips</p>
+      </div>
+      <div class="all-con" onclick="displaySavedHouses(event.target)">
+        <p><img src="wishlist.svg" alt="">My Wishlist</p>
+      </div>
+      <div class="all-con" onclick="displayHost(event.target)">
+        <p><img src="home.svg" alt="">Become Host</p>
+      </div>
+      <div class="all-con" onclick="displayHelp(event.target)">
+        <p><img src="help.svg" alt="">Get Help</p>
+      </div>
+      <div class="all-con" onclick="displaySettings(event.target)">
+        <p><img src="settings.svg" alt="">Settings</p>
+      </div>
+    </div>
+
+    <div class="account-right-col">
+      <div class="heading">
+        <h4 class="heading-name"><img src="accountUser.svg" alt="">My Profile</h4>
+      </div>
+      <div class="all-each-containers">
+        <div class="my-profile-container">
+          <h1>My Profile</h1>
+          <div class="loader-container"><img src="ringspinone.svg" alt=""></div>
+
+        </div>
+        <div class="my-trips-container">
+          <h1>My Trips</h1>
+          <div class="loader-container"><img src="ringspinone.svg" alt=""></div>
+
+        </div>
+
+        <div class="my-wishlist-loader">
+          <h1>My Wishlist</h1>
+          <div class="loader-container"><img src="ringspinone.svg" alt=""></div>
+
+        </div>
+
+        <div class="become-host-container">
+          <h1>Become a Host</h1>
+          <div class="loader-container"><img src="ringspinone.svg" alt=""></div>
+
+        </div>
+
+        <div class="get-help-container">
+          <h1>Get Help</h1>
+          <div class="loader-container"><img src="ringspinone.svg" alt=""></div>
+
+        </div>
+
+        <div class="my-settings-container">
+          <h1>Settings</h1>
+          <div class="loader-container"><img src="ringspinone.svg" alt=""></div>
+
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+  <script src="main.js"></script>
+  <script src="housedataswitcher.js"></script>
+</body>
+
+</html>

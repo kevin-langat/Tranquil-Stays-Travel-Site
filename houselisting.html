@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Houselisting</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styleforhousedetails.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+
+<body>
+    <div class="house">
+
+        <div style="width: 70%; margin-left: 15%; " class="navbar">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li class="otherC" id="morelist"><a href="#">More Listings</a></li>
+                    <li><a href="index.html#trend">Trending Places</a></li>
+                    <li><a href="index.html#about">About Tranquil</a></li>
+                    <li><a href="#footer">Contact Us</a></li>
+                </ul>
+
+
+            </nav>
+            <div class="user-listing">
+                <a href="accountpage.html"><img src="user.png" class="user-listing-Img" alt="user"></a>
+            </div>
+        </div>
+        <!-- houses page -->
+        <div class="listcont">
+            <div id="left-column" class="left-col">
+
+                <div id="othercities">
+                    <h4
+                        style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; margin-left: 5px;">
+                        Select Listings By City :
+
+                    </h4>
+                    <div class="btns">
+                        <button id="phuket" onclick="phuFunc()">Phuket</button>
+                        <button id="london" onclick="lonFunc()">London</button>
+                        <button id="paris" onclick="parFunc()">Paris</button>
+                        <button id="dubai" onclick="dubFunc()">Dubai</button>
+                        <button id="nairobi" onclick="naiFunc()">Nairobi</button>
+                        <button id="shanghai" onclick="shaFunc()">Shanghai</button>
+                    </div>
+                    <hr>
+                </div>
+                <h2 id="headingTitle"
+                    style="margin-top: 5px; transition: ease-in-out; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;  margin-left: 5px;">
+                    Listings in Phuket</h2>
+                <p style="margin-left: 5px; color: blue;">50+ Options Available</p>
+
+                <!-- HOUSE DETAILS AND INFO -->
+                <!-- Phuket info -->
+                <div id="info">
+                    <div class="house-list1">
+                        <div class="hovertext">
+                            <h2>Available Now In Phuket</h2>
+                            <button>Reserve</button>
+                        </div>
+                        <div class="imgam">
+                            <img class="house-image-One" src="img/img20.jpg">
+                            <div class="description">
+                                <h4>Ammenities</h4>
+                                <div class="ptags">
+                                    <p class="amenityOne"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="icon icon-tabler icons-tabler-outline icon-tabler-coffee">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                            <path
+                                                d="M3 14c.83 .642 2.077 1.017 3.5 1c1.423 .017 2.67 -.358 3.5 -1c.83 -.642 2.077 -1.017 3.5 -1c1.423 -.017 2.67 .358 3.5 1" />
+                                            <path d="M8 3a2.4 2.4 0 0 0 -1 2a2.4 2.4 0 0 0 1 2" />
+                                            <path d="M12 3a2.4 2.4 0 0 0 -1 2a2.4 2.4 0 0 0 1 2" />
+                                            <path d="M3 10h14v5a6 6 0 0 1 -6 6h-2a6 6 0 0 1 -6 -6v-5z" />
+                                            <path d="M16.746 16.726a3 3 0 1 0 .252 -5.555" />
+                                        </svg>Coffee Maker</p>
+                                    <p class="amenityTwo"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="icon icon-tabler icons-tabler-outline icon-tabler-sofa">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                            <path
+                                                d="M4 11a2 2 0 0 1 2 2v1h12v-1a2 2 0 1 1 4 0v5a1 1 0 0 1 -1 1h-18a1 1 0 0 1 -1 -1v-5a2 2 0 0 1 2 -2z" />
+                                            <path d="M4 11v-3a3 3 0 0 1 3 -3h10a3 3 0 0 1 3 3v3" />
+                                            <path d="M12 5v9" />
+                                        </svg>Furniture</p>
+                                    <p class="amenityFive"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                            height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                            class="lucide lucide-wifi-icon lucide-wifi">
+                                            <path d="M12 20h.01" />
+                                            <path d="M2 8.82a15 15 0 0 1 20 0" />
+                                            <path d="M5 12.859a10 10 0 0 1 14 0" />
+                                            <path d="M8.5 16.429a5 5 0 0 1 7 0" />
+                                        </svg>Wifi</p>
+                                    <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="icon icon-tabler icons-tabler-outline icon-tabler-fridge">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                            <path
+                                                d="M5 3m0 2a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2z" />
+                                            <path d="M5 10h14" />
+                                            <path d="M9 13v3" />
+                                            <path d="M9 6v1" />
+                                        </svg>Refrigerator</p>
+                                    <p class="filtertest kitchen"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                            height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                            class="lucide lucide-chef-hat-icon lucide-chef-hat">
+                                            <path
+                                                d="M17 21a1 1 0 0 0 1-1v-5.35c0-.457.316-.844.727-1.041a4 4 0 0 0-2.134-7.589 5 5 0 0 0-9.186 0 4 4 0 0 0-2.134 7.588c.411.198.727.585.727 1.041V20a1 1 0 0 0 1 1Z" />
+                                            <path d="M6 17h12" />
+                                        </svg>Kitchen</p>
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="name">
+                            <h2 class="house-name-one">Beachside Bungalow with Hammock</h2>
+                            <a href="house1.html"><button class="button-listing-one" onclick="viewDetailsByIndex(0)">
+                                    Check
+                                    Availability
+                                </button></a>
+
+
+                        </div>
+                        <hr>
+                    </div>
+                    <!-- Second listing -->
+                    <div class="house-list1 ptest">
+                        <div class="hovertext">
+                            <h2>Available Now In Phuket</h2>
+                            <button>Reserve</button>
+                        </div>
+                        <div class="imgam">
+                            <img class="house-image-Two" src="img/img2.jpeg">
+                            <div class="description">
+                                <h4>Ammenities</h4>
+                                <div class="ptags">
+                                    <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="lucide lucide-bed-double-icon lucide-bed-double">
+                                            <path d="M2 20v-8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8" />
+                                            <path d="M4 10V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4" />
+                                            <path d="M12 4v6" />
+                                            <path d="M2 18h20" />
+                                        </svg> Bed (1)</p>
+                                    <p class="three"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="icon icon-tabler icons-tabler-outline icon-tabler-fridge">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                            <path
+                                                d="M5 3m0 2a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2z" />
+                                            <path d="M5 10h14" />
+                                            <path d="M9 13v3" />
+                                            <path d="M9 6v1" />
+                                        </svg>Refrigerator</p>
+                                    <p class="amenityThree"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                            height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                            class="lucide lucide-wifi-icon lucide-wifi">
+                                            <path d="M12 20h.01" />
+                                            <path d="M2 8.82a15 15 0 0 1 20 0" />
+                                            <path d="M5 12.859a10 10 0 0 1 14 0" />
+                                            <path d="M8.5 16.429a5 5 0 0 1 7 0" />
+                                        </svg>Wifi</p>
+                                    <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="lucide lucide-waves-ladder-icon lucide-waves-ladder">
+                                            <path d="M19 5a2 2 0 0 0-2 2v11" />
+                                            <path
+                                                d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1" />
+                                            <path d="M7 13h10" />
+                                            <path d="M7 9h10" />
+                                            <path d="M9 5a2 2 0 0 0-2 2v11" />
+                                        </svg>Pool</p>
+                                    <p class="filtertest"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="lucide lucide-chef-hat-icon lucide-chef-hat">
+                                            <path
+                                                d="M17 21a1 1 0 0 0 1-1v-5.35c0-.457.316-.844.727-1.041a4 4 0 0 0-2.134-7.589 5 5 0 0 0-9.186 0 4 4 0 0 0-2.134 7.588c.411.198.727.585.727 1.041V20a1 1 0 0 0 1 1Z" />
+                                            <path d="M6 17h12" />
+                                        </svg>Kitchen</p>
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="name">
+                            <h2 class="house-name-two">Oceanfront King Suite with Balcony</h2>
+                            <a href="house1.html"><button class="button-listing-two" onclick="viewDetailsByIndex(1)">
+                                    Check Availability
+                                </button></a>
+                        </div>
+                        <hr>
+                    </div>
+
+                    <!-- third listing -->
+                    <div class="house-list1 ptest">
+                        <div class="hovertext">
+                            <h2>Available Now In Phuket</h2>
+                            <button>Reserve</button>
+                        </div>
+                        <div class="imgam">
+                            <img class="house-image-Three" src="img/img3.jpeg">
+                            <div class="description">
+                                <h4>Ammenities</h4>
+                                <div class="ptags">
+                                    <p class="amenityFour"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                            height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                            class="lucide lucide-bed-double-icon lucide-bed-double">
+                                            <path d="M2 20v-8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8" />
+                                            <path d="M4 10V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4" />
+                                            <path d="M12 4v6" />
+                                            <path d="M2 18h20" />
+                                        </svg> Bed (1)</p>
+                                    <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="lucide lucide-shower-head-icon lucide-shower-head">
+                                            <path d="m4 4 2.5 2.5" />
+                                            <path d="M13.5 6.5a4.95 4.95 0 0 0-7 7" />
+                                            <path d="M15 5 5 15" />
+                                            <path d="M14 17v.01" />
+                                            <path d="M10 16v.01" />
+                                            <path d="M13 13v.01" />
+                                            <path d="M16 10v.01" />
+                                            <path d="M11 20v.01" />
+                                            <path d="M17 14v.01" />
+                                            <path d="M20 11v.01" />
+                                        </svg>Bathroom(2)</p>
+                                    <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="icon icon-tabler icons-tabler-outline icon-tabler-sofa">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                            <path
+                                                d="M4 11a2 2 0 0 1 2 2v1h12v-1a2 2 0 1 1 4 0v5a1 1 0 0 1 -1 1h-18a1 1 0 0 1 -1 -1v-5a2 2 0 0 1 2 -2z" />
+                                            <path d="M4 11v-3a3 3 0 0 1 3 -3h10a3 3 0 0 1 3 3v3" />
+                                            <path d="M12 5v9" />
+                                        </svg>Furniture</p>
+                                    <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="lucide lucide-waves-ladder-icon lucide-waves-ladder">
+                                            <path d="M19 5a2 2 0 0 0-2 2v11" />
+                                            <path
+                                                d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1" />
+                                            <path d="M7 13h10" />
+                                            <path d="M7 9h10" />
+                                            <path d="M9 5a2 2 0 0 0-2 2v11" />
+                                        </svg>Pool</p>
+                                    <p class="filtertest kitchen"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                            height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                            class="lucide lucide-chef-hat-icon lucide-chef-hat">
+                                            <path
+                                                d="M17 21a1 1 0 0 0 1-1v-5.35c0-.457.316-.844.727-1.041a4 4 0 0 0-2.134-7.589 5 5 0 0 0-9.186 0 4 4 0 0 0-2.134 7.588c.411.198.727.585.727 1.041V20a1 1 0 0 0 1 1Z" />
+                                            <path d="M6 17h12" />
+                                        </svg>Kitchen</p>
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="name">
+                            <h2 class="house-name-three">Cozy Studio in Downtown Phuket</h2>
+                            <a href="house1.html"><button class="button-listing-three" onclick="viewDetailsByIndex(2)">
+                                    Check Availability
+                                </button></a>
+                        </div>
+                        <hr>
+                    </div>
+                    <!-- fourth listing -->
+                    <div class="house-list1">
+                        <div class="hovertext">
+                            <h2>Available Now In Phuket</h2>
+                            <button>Reserve</button>
+                        </div>
+                        <div class="imgam">
+                            <img class="house-image-Four" src="img/img4.jpeg">
+                            <div class="description">
+                                <h4>Ammenities</h4>
+                                <div class="ptags">
+                                    <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="icon icon-tabler icons-tabler-outline icon-tabler-fire-extinguisher">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                            <path
+                                                d="M12 7a4 4 0 0 1 4 4v9a1 1 0 0 1 -1 1h-6a1 1 0 0 1 -1 -1v-9a4 4 0 0 1 4 -4z" />
+                                            <path d="M9 16h6" />
+                                            <path d="M12 7v-3" />
+                                            <path d="M16 5l-4 -1l4 -1" />
+                                            <path d="M12 4h-3a3 3 0 0 0 -3 3" />
+                                        </svg> Extinguisher</p>
+                                    <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="lucide lucide-shower-head-icon lucide-shower-head">
+                                            <path d="m4 4 2.5 2.5" />
+                                            <path d="M13.5 6.5a4.95 4.95 0 0 0-7 7" />
+                                            <path d="M15 5 5 15" />
+                                            <path d="M14 17v.01" />
+                                            <path d="M10 16v.01" />
+                                            <path d="M13 13v.01" />
+                                            <path d="M16 10v.01" />
+                                            <path d="M11 20v.01" />
+                                            <path d="M17 14v.01" />
+                                            <path d="M20 11v.01" />
+                                        </svg>Bathroom(2)</p>
+                                    <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="lucide lucide-wifi-icon lucide-wifi">
+                                            <path d="M12 20h.01" />
+                                            <path d="M2 8.82a15 15 0 0 1 20 0" />
+                                            <path d="M5 12.859a10 10 0 0 1 14 0" />
+                                            <path d="M8.5 16.429a5 5 0 0 1 7 0" />
+                                        </svg>Wifi</p>
+                                    <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="icon icon-tabler icons-tabler-outline icon-tabler-fridge">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                            <path
+                                                d="M5 3m0 2a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2z" />
+                                            <path d="M5 10h14" />
+                                            <path d="M9 13v3" />
+                                            <path d="M9 6v1" />
+                                        </svg>Refrigerator</p>
+                                    <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="icon icon-tabler icons-tabler-outline icon-tabler-sofa">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                            <path
+                                                d="M4 11a2 2 0 0 1 2 2v1h12v-1a2 2 0 1 1 4 0v5a1 1 0 0 1 -1 1h-18a1 1 0 0 1 -1 -1v-5a2 2 0 0 1 2 -2z" />
+                                            <path d="M4 11v-3a3 3 0 0 1 3 -3h10a3 3 0 0 1 3 3v3" />
+                                            <path d="M12 5v9" />
+                                        </svg>Furniture</p>
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="name">
+                            <h2 class="house-name-four">Modern Loft with City Skyline View</h2>
+                            <a href="house1.html"><button class="button-listing-four" onclick="viewDetailsByIndex(3)">
+                                    Check
+                                    Availability</button></a>
+                        </div>
+                        <hr>
+                    </div>
+                    <!-- fifth listing -->
+                    <div class="house-list1">
+                        <div class="hovertext">
+                            <h2>Available Now In Phuket</h2>
+                            <button>Reserve</button>
+                        </div>
+                        <div class="imgam">
+                            <img class="house-image-Five" src="img/img5.jpg">
+                            <div class="description">
+                                <h4>Ammenities</h4>
+                                <div class="ptags">
+                                    <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="lucide lucide-bed-double-icon lucide-bed-double">
+                                            <path d="M2 20v-8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8" />
+                                            <path d="M4 10V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4" />
+                                            <path d="M12 4v6" />
+                                            <path d="M2 18h20" />
+                                        </svg> Bed (1)</p>
+                                    <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="icon icon-tabler icons-tabler-outline icon-tabler-fridge">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                            <path
+                                                d="M5 3m0 2a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2z" />
+                                            <path d="M5 10h14" />
+                                            <path d="M9 13v3" />
+                                            <path d="M9 6v1" />
+                                        </svg>Refrigerator</p>
+                                    <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="lucide lucide-wifi-icon lucide-wifi">
+                                            <path d="M12 20h.01" />
+                                            <path d="M2 8.82a15 15 0 0 1 20 0" />
+                                            <path d="M5 12.859a10 10 0 0 1 14 0" />
+                                            <path d="M8.5 16.429a5 5 0 0 1 7 0" />
+                                        </svg>Wifi</p>
+                                    <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="icon icon-tabler icons-tabler-outline icon-tabler-sofa">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                            <path
+                                                d="M4 11a2 2 0 0 1 2 2v1h12v-1a2 2 0 1 1 4 0v5a1 1 0 0 1 -1 1h-18a1 1 0 0 1 -1 -1v-5a2 2 0 0 1 2 -2z" />
+                                            <path d="M4 11v-3a3 3 0 0 1 3 -3h10a3 3 0 0 1 3 3v3" />
+                                            <path d="M12 5v9" />
+                                        </svg>Furniture</p>
+                                    <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="lucide lucide-chef-hat-icon lucide-chef-hat">
+                                            <path
+                                                d="M17 21a1 1 0 0 0 1-1v-5.35c0-.457.316-.844.727-1.041a4 4 0 0 0-2.134-7.589 5 5 0 0 0-9.186 0 4 4 0 0 0-2.134 7.588c.411.198.727.585.727 1.041V20a1 1 0 0 0 1 1Z" />
+                                            <path d="M6 17h12" />
+                                        </svg>Kitchen</p>
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="name">
+                            <h2 class="house-name-five">Luxury Villa with Private Poo</h2>
+                            <a href="house1.html"><button class="button-listing-five" onclick="viewDetailsByIndex(4)">
+                                    Check Availability
+                                </button></a>
+                        </div>
+                        <hr>
+                    </div>
+                    <!-- sixth listing -->
+                    <div class="house-list1">
+                        <div class="hovertext">
+                            <h2>Available Now In Phuket</h2>
+                            <button>Reserve</button>
+                        </div>
+                        <div class="imgam">
+                            <img class="house-image-Six" src="img/img6.jpeg">
+                            <div class="description">
+                                <h4>Ammenities</h4>
+                                <div class="ptags">
+                                    <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="icon icon-tabler icons-tabler-outline icon-tabler-fridge">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                            <path
+                                                d="M5 3m0 2a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2z" />
+                                            <path d="M5 10h14" />
+                                            <path d="M9 13v3" />
+                                            <path d="M9 6v1" />
+                                        </svg>Refrigerator</p>
+                                    <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="lucide lucide-shower-head-icon lucide-shower-head">
+                                            <path d="m4 4 2.5 2.5" />
+                                            <path d="M13.5 6.5a4.95 4.95 0 0 0-7 7" />
+                                            <path d="M15 5 5 15" />
+                                            <path d="M14 17v.01" />
+                                            <path d="M10 16v.01" />
+                                            <path d="M13 13v.01" />
+                                            <path d="M16 10v.01" />
+                                            <path d="M11 20v.01" />
+                                            <path d="M17 14v.01" />
+                                            <path d="M20 11v.01" />
+                                        </svg>Bathroom(2)</p>
+                                    <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="lucide lucide-wifi-icon lucide-wifi">
+                                            <path d="M12 20h.01" />
+                                            <path d="M2 8.82a15 15 0 0 1 20 0" />
+                                            <path d="M5 12.859a10 10 0 0 1 14 0" />
+                                            <path d="M8.5 16.429a5 5 0 0 1 7 0" />
+                                        </svg>Wifi</p>
+                                    <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="lucide lucide-waves-ladder-icon lucide-waves-ladder">
+                                            <path d="M19 5a2 2 0 0 0-2 2v11" />
+                                            <path
+                                                d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1" />
+                                            <path d="M7 13h10" />
+                                            <path d="M7 9h10" />
+                                            <path d="M9 5a2 2 0 0 0-2 2v11" />
+                                        </svg>Pool</p>
+                                    <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="lucide lucide-chef-hat-icon lucide-chef-hat">
+                                            <path
+                                                d="M17 21a1 1 0 0 0 1-1v-5.35c0-.457.316-.844.727-1.041a4 4 0 0 0-2.134-7.589 5 5 0 0 0-9.186 0 4 4 0 0 0-2.134 7.588c.411.198.727.585.727 1.041V20a1 1 0 0 0 1 1Z" />
+                                            <path d="M6 17h12" />
+                                        </svg>Kitchen</p>
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="name">
+                            <h2 class="house-name-six">Rustic Cabin Near the Lake</h2>
+                            <a href="house1.html"><button class="button-listing-six" onclick="viewDetailsByIndex(5)">
+                                    Check Availability
+                                </button></a>
+                        </div>
+                        <hr>
+                    </div>
+                    <!-- seventh listing -->
+                    <div class="house-list1">
+                        <div class="hovertext">
+                            <h2>Available Now In Phuket</h2>
+                            <button>Reserve</button>
+                        </div>
+                        <div class="imgam">
+                            <img class="house-image-Seven" src="img/img7.jpeg">
+                            <div class="description">
+                                <h4>Ammenities</h4>
+                                <div class="ptags">
+                                    <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="icon icon-tabler icons-tabler-outline icon-tabler-sofa">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                            <path
+                                                d="M4 11a2 2 0 0 1 2 2v1h12v-1a2 2 0 1 1 4 0v5a1 1 0 0 1 -1 1h-18a1 1 0 0 1 -1 -1v-5a2 2 0 0 1 2 -2z" />
+                                            <path d="M4 11v-3a3 3 0 0 1 3 -3h10a3 3 0 0 1 3 3v3" />
+                                            <path d="M12 5v9" />
+                                        </svg>Furniture</p>
+                                    <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="lucide lucide-shower-head-icon lucide-shower-head">
+                                            <path d="m4 4 2.5 2.5" />
+                                            <path d="M13.5 6.5a4.95 4.95 0 0 0-7 7" />
+                                            <path d="M15 5 5 15" />
+                                            <path d="M14 17v.01" />
+                                            <path d="M10 16v.01" />
+                                            <path d="M13 13v.01" />
+                                            <path d="M16 10v.01" />
+                                            <path d="M11 20v.01" />
+                                            <path d="M17 14v.01" />
+                                            <path d="M20 11v.01" />
+                                        </svg>Bathroom(2)</p>
+                                    <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="lucide lucide-wifi-icon lucide-wifi">
+                                            <path d="M12 20h.01" />
+                                            <path d="M2 8.82a15 15 0 0 1 20 0" />
+                                            <path d="M5 12.859a10 10 0 0 1 14 0" />
+                                            <path d="M8.5 16.429a5 5 0 0 1 7 0" />
+                                        </svg>Wifi</p>
+                                    <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="lucide lucide-waves-ladder-icon lucide-waves-ladder">
+                                            <path d="M19 5a2 2 0 0 0-2 2v11" />
+                                            <path
+                                                d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1" />
+                                            <path d="M7 13h10" />
+                                            <path d="M7 9h10" />
+                                            <path d="M9 5a2 2 0 0 0-2 2v11" />
+                                        </svg>Pool</p>
+                                    <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="lucide lucide-chef-hat-icon lucide-chef-hat">
+                                            <path
+                                                d="M17 21a1 1 0 0 0 1-1v-5.35c0-.457.316-.844.727-1.041a4 4 0 0 0-2.134-7.589 5 5 0 0 0-9.186 0 4 4 0 0 0-2.134 7.588c.411.198.727.585.727 1.041V20a1 1 0 0 0 1 1Z" />
+                                            <path d="M6 17h12" />
+                                        </svg>Kitchen</p>
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="name">
+                            <h2 class="house-name-seven">Charming Cottage with Flower Garden</h2>
+                            <a href="house1.html"><button class="button-listing-seven" onclick="viewDetailsByIndex(6)">
+                                    Check Availability
+                                </button></a>
+                        </div>
+                        <hr>
+                    </div>
+                    <!-- eigth listing -->
+                    <div class="house-list1">
+                        <div class="hovertext">
+                            <h2>Available Now In Phuket</h2>
+                            <button>Reserve</button>
+                        </div>
+                        <div class="imgam">
+                            <img class="house-image-Eigth" src="img/img8.jpeg">
+                            <div class="description">
+                                <h4>Ammenities</h4>
+                                <div class="ptags">
+                                    <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="lucide lucide-bed-double-icon lucide-bed-double">
+                                            <path d="M2 20v-8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8" />
+                                            <path d="M4 10V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4" />
+                                            <path d="M12 4v6" />
+                                            <path d="M2 18h20" />
+                                        </svg> Bed (1)</p>
+                                    <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="lucide lucide-shower-head-icon lucide-shower-head">
+                                            <path d="m4 4 2.5 2.5" />
+                                            <path d="M13.5 6.5a4.95 4.95 0 0 0-7 7" />
+                                            <path d="M15 5 5 15" />
+                                            <path d="M14 17v.01" />
+                                            <path d="M10 16v.01" />
+                                            <path d="M13 13v.01" />
+                                            <path d="M16 10v.01" />
+                                            <path d="M11 20v.01" />
+                                            <path d="M17 14v.01" />
+                                            <path d="M20 11v.01" />
+                                        </svg>Bathroom(2)</p>
+                                    <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="lucide lucide-wifi-icon lucide-wifi">
+                                            <path d="M12 20h.01" />
+                                            <path d="M2 8.82a15 15 0 0 1 20 0" />
+                                            <path d="M5 12.859a10 10 0 0 1 14 0" />
+                                            <path d="M8.5 16.429a5 5 0 0 1 7 0" />
+                                        </svg>Wifi</p>
+                                    <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="lucide lucide-waves-ladder-icon lucide-waves-ladder">
+                                            <path d="M19 5a2 2 0 0 0-2 2v11" />
+                                            <path
+                                                d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1" />
+                                            <path d="M7 13h10" />
+                                            <path d="M7 9h10" />
+                                            <path d="M9 5a2 2 0 0 0-2 2v11" />
+                                        </svg>Pool</p>
+                                    <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="icon icon-tabler icons-tabler-outline icon-tabler-fridge">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                            <path
+                                                d="M5 3m0 2a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2z" />
+                                            <path d="M5 10h14" />
+                                            <path d="M9 13v3" />
+                                            <path d="M9 6v1" />
+                                        </svg>Refrigerator</p>
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="name">
+                            <h2 class="house-name-eigth">Elegant Penthouse Overlooking Central Park</h2>
+                            <a href="house1.html"><button class="button-listing-eigth" onclick="viewDetailsByIndex(7)">
+                                    Check Availability
+                                </button></a>
+                        </div>
+                        <hr>
+                    </div>
+                    <!-- ninth listing -->
+                    <div class="house-list1">
+                        <div class="hovertext">
+                            <h2>Available Now In Phuket</h2>
+                            <button>Reserve</button>
+                        </div>
+                        <div class="imgam">
+                            <img class="house-image-Nine" src="img/img9.jpeg">
+                            <div class="description">
+                                <h4>Ammenities</h4>
+                                <div class="ptags">
+                                    <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="lucide lucide-bed-double-icon lucide-bed-double">
+                                            <path d="M2 20v-8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8" />
+                                            <path d="M4 10V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4" />
+                                            <path d="M12 4v6" />
+                                            <path d="M2 18h20" />
+                                        </svg> Bed (1)</p>
+                                    <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="icon icon-tabler icons-tabler-outline icon-tabler-sofa">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                            <path
+                                                d="M4 11a2 2 0 0 1 2 2v1h12v-1a2 2 0 1 1 4 0v5a1 1 0 0 1 -1 1h-18a1 1 0 0 1 -1 -1v-5a2 2 0 0 1 2 -2z" />
+                                            <path d="M4 11v-3a3 3 0 0 1 3 -3h10a3 3 0 0 1 3 3v3" />
+                                            <path d="M12 5v9" />
+                                        </svg>Furniture</p>
+                                    <p><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="lucide lucide-building2-icon lucide-building-2">
+                                            <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z" />
+                                            <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2" />
+                                            <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2" />
+                                            <path d="M10 6h4" />
+                                            <path d="M10 10h4" />
+                                            <path d="M10 14h4" />
+                                            <path d="M10 18h4" />
+                                        </svg>City SkyLine</p>
+                                    <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="lucide lucide-waves-ladder-icon lucide-waves-ladder">
+                                            <path d="M19 5a2 2 0 0 0-2 2v11" />
+                                            <path
+                                                d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1" />
+                                            <path d="M7 13h10" />
+                                            <path d="M7 9h10" />
+                                            <path d="M9 5a2 2 0 0 0-2 2v11" />
+                                        </svg>Pool</p>
+                                    <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="icon icon-tabler icons-tabler-outline icon-tabler-escalator-up">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                            <path
+                                                d="M19.5 7h-2.672a2 2 0 0 0 -1.414 .586l-8.414 8.414h-2.5a2.5 2.5 0 1 0 0 5h3.672a2 2 0 0 0 1.414 -.586l8.414 -8.414h1.5a2.5 2.5 0 1 0 0 -5z" />
+                                            <path d="M6 10v-7" />
+                                            <path d="M3 6l3 -3l3 3" />
+                                        </svg>Elevator</p>
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="name">
+                            <h2 class="house-name-nine">Villa in Downtown Phuket</h2>
+                            <a href="house1.html"><button class="button-listing-nine" onclick="viewDetailsByIndex(8)">
+                                    Check Availability
+                                </button></a>
+                        </div>
+                        <hr>
+                    </div>
+                    <!-- tenth listing -->
+                    <div class="house-list1">
+                        <div class="hovertext">
+                            <h2>Available Now In Phuket</h2>
+                            <button>Reserve</button>
+                        </div>
+                        <div class="imgam">
+                            <img class="house-image-Ten" src="img/img10.jpeg">
+                            <div class="description">
+                                <h4>Ammenities</h4>
+                                <div class="ptags">
+                                    <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="icon icon-tabler icons-tabler-outline icon-tabler-escalator-up">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                            <path
+                                                d="M19.5 7h-2.672a2 2 0 0 0 -1.414 .586l-8.414 8.414h-2.5a2.5 2.5 0 1 0 0 5h3.672a2 2 0 0 0 1.414 -.586l8.414 -8.414h1.5a2.5 2.5 0 1 0 0 -5z" />
+                                            <path d="M6 10v-7" />
+                                            <path d="M3 6l3 -3l3 3" />
+                                        </svg>Elevator</p>
+                                    <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="lucide lucide-shower-head-icon lucide-shower-head">
+                                            <path d="m4 4 2.5 2.5" />
+                                            <path d="M13.5 6.5a4.95 4.95 0 0 0-7 7" />
+                                            <path d="M15 5 5 15" />
+                                            <path d="M14 17v.01" />
+                                            <path d="M10 16v.01" />
+                                            <path d="M13 13v.01" />
+                                            <path d="M16 10v.01" />
+                                            <path d="M11 20v.01" />
+                                            <path d="M17 14v.01" />
+                                            <path d="M20 11v.01" />
+                                        </svg>Bathroom(2)</p>
+                                    <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="lucide lucide-wifi-icon lucide-wifi">
+                                            <path d="M12 20h.01" />
+                                            <path d="M2 8.82a15 15 0 0 1 20 0" />
+                                            <path d="M5 12.859a10 10 0 0 1 14 0" />
+                                            <path d="M8.5 16.429a5 5 0 0 1 7 0" />
+                                        </svg>Wifi</p>
+                                    <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="lucide lucide-waves-ladder-icon lucide-waves-ladder">
+                                            <path d="M19 5a2 2 0 0 0-2 2v11" />
+                                            <path
+                                                d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1" />
+                                            <path d="M7 13h10" />
+                                            <path d="M7 9h10" />
+                                            <path d="M9 5a2 2 0 0 0-2 2v11" />
+                                        </svg>Pool</p>
+                                    <p><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="lucide lucide-square-parking-icon lucide-square-parking">
+                                            <rect width="18" height="18" x="3" y="3" rx="2" />
+                                            <path d="M9 17V7h4a3 3 0 0 1 0 6H9" />
+                                        </svg>Free Parking</p>
+                                    <p>
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="name">
+                            <h2 class="house-name-ten">Modern Bungallow With City Skyline</h2>
+                            <a href="house1.html"><button class="button-listing-ten" onclick="viewDetailsByIndex(9)">
+                                    Check Availability
+                                </button></a>
+                        </div>
+                        <hr>
+                    </div>
+
+                    <a href="#othercities">
+                        <button onclick="moreListFunc()"
+                            style="width: 55%; margin-left: 3%; color: #fff; font-size: 110%; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; height: 30px; border: none; background-color: #2d2851; border-radius: 5px;">Listings
+                            in Other Cities
+                        </button>
+                    </a>
+                </div>
+            </div>
+
+
+            <div class="right-col">
+
+                <div id="ri" class="right-col-content">
+                    <div class="heading">
+                        <h3>Filters</h3>
+                        <h5>Property Type</h5>
+                    </div>
+                    <div class="amenities-labels">
+                        <div class="amen-right">
+                            <label>House</label>
+                            <label>Hostel</label>
+                            <label>Flat</label>
+                            <label>Villa</label>
+                            <label>Suite</label>
+                        </div>
+                        <div class="amen-check">
+                            <input type="checkbox">
+                            <input type="checkbox">
+                            <input type="checkbox">
+                            <input type="checkbox">
+                            <input type="checkbox">
+                        </div>
+
+                    </div>
+                    <div class="heading">
+                        <h3>Amenities</h3>
+                    </div>
+                    <div class="amenities-labels-bottom">
+                        <div class="amen-right-bottom">
+                            <label>Swimming</label>
+                            <label>Wifi</label>
+                            <label>Bathub</label>
+                            <label>Parking</label>
+                            <label>Kitchen</label>
+                        </div>
+                        <div class="amen-check-bottom">
+                            <input type="checkbox">
+                            <input type="checkbox">
+                            <input type="checkbox">
+                            <input type="checkbox">
+                            <input type="checkbox">
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+        <!-- FOOTER -->
+        <div id="footer" class="footer">
+            <div class="content-footer">
+                <div class="support">
+                    <h3>Tranquil Support</h3>
+                    <p>Help Center</p>
+                    <p>Anti-Discrimination</p>
+                    <p>Disabilty Support</p>
+                    <p>Cancellation Options</p>
+                    <p>Neighborhood Support</p>
+                    <p>Report A listing</p>
+                </div>
+                <div class="hostingService">
+                    <h3>Hosting Services</h3>
+                    <p>Become a Host</p>
+                    <p>Host Support</p>
+                    <p>Responsible Hosting</p>
+                    <p>Find a Co-host</p>
+                    <p>List Your Home</p>
+                    <p>Community Center</p>
+                </div>
+                <div class="Tranquil-service">
+                    <h3>Tranquil-service</h3>
+                    <p>About Us</p>
+                    <p>Careers</p>
+                    <p>Investors</p>
+                    <p>Press</p>
+                    <p>Affiliates</p>
+                    <p>Blog</p>
+                </div>
+                <div class="contact-us">
+                    <h3>Contact Us</h3>
+                    <p>kevinlangat419@gmail.com</p>
+                    <p>+254729354323</p>
+                    <p>Nairobi, Kenya</p>
+                    <p>Twitter</p>
+                    <p>Facebook</p>
+                    <p>LinkedIn</p>
+                </div>
+
+
+
+            </div>
+            <hr style="opacity: 0.3;">
+            <div class="socials">
+                <p style="width: 60%; display: flex; align-items: center;
+            justify-content: center;">&copy; 2025 Tranquil Homes. All Rights Reserved . Terms . Cookie Policy . Your
+                    Privacy Choices <img src="check.png" style="transform: scale(0.5);" alt=""></p>
+
+                <p style="width: 30%; display: flex; align-items: center;
+            justify-content: center;"><img src=" globe.png" style="transform: scale(0.5);" alt="">English(USA) <img
+                        src="usd.png" style="transform: scale(0.5);" alt="">Usd</p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="main.js"></script>
+    <script src="filtertest.js"></script>
+    <script src="housedataswitcher.js"></script>
+    <script src="houselisting.js"></script>
+
+</body>
+
+</html>

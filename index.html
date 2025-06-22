@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tranquil Homes</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- <link rel="stylesheet" href="styleforhousedetails.css"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+
+<body>
+    <div id="hero" class="hero">
+        <img src="menu.png" style="position: absolute; display: none;" alt="open">
+        <div class="navforsm">
+            <div class="closeopen">
+                <img src="close.png" style="width: 20%; height: 80%; margin-top: 3%; margin-left: 2%;" alt="close">
+            </div>
+            <div class="navlistforsm">
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li class="listing"><a href="houselisting.html">Listings</a></li>
+                        <li><a href="#trend">Trending</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#footer">Contact</a></li>
+                        <button
+                            style="color: #fff; width: 130%; height: 7vh; border-radius: 5px; background-color: orangered; font-size: medium; border: none;">Register
+                        </button>
+                        <button
+                            style="color: #fff; width: 130%; height: 7vh; border-radius: 5px; background-color: orangered; font-size: medium; border: none;">Login
+                        </button>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <div class="navbar">
+            <div class="logo">
+                <img src="logo.png" alt="logo">
+            </div>
+
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li class="listing"><a href="houselisting.html">Listings</a></li>
+                    <li><a href="#trend">Trending</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#footer">Contact</a></li>
+                </ul>
+
+                <button style="color: #fff;">Register</button>
+
+            </nav>
+
+        </div>
+        <div class="introduction">
+            <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                Disconnect, Unwind And <br> Explore With Us
+            </h1>
+            <h3
+                style="color: #000; font-style: italic; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+                From peaceful homes to a vibrant culture, <br> Discover a destination that has it all.
+            </h3>
+            <a href="houselisting.html"><button
+                    style="color: #fff; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: medium;">Discover
+                    Now</button></a>
+        </div>
+        <div style="box-shadow: 0 0 5px #000; overflow: hidden;" class="searchbar">
+            <h2 style="margin-left: 15%; font-family: Arial, Helvetica, sans-serif;">Find a perfect place</h2>
+            <div class="searchinfo">
+                <div class="location">
+                    <label>Location</label>
+                    <input class="location-input" type="text" onkeydown="resetFindPlace()"
+                        placeholder="Your destination place" required>
+                </div>
+                <div class="guests">
+                    <label>Guests</label>
+                    <input class="guests-input" type="number" min="1" max="10" onkeydown="resetFindPlace()" placeholder="
+                        Enter amount of guests" required>
+                </div>
+
+            </div>
+            <div class="checkinoutinfo">
+                <div class="check-in">
+                    <label>Check In</label>
+                    <input class="check-in-input" type="date" placeholder="Enter check in date" required>
+                </div>
+                <div class="check-out">
+                    <label>Check Out</label>
+                    <input class="check-out-input" type="date" placeholder="Enter check out date" required>
+                </div>
+            </div>
+            <button class="checkavailabilitybtn" style="width: 50%;
+            border-radius: 5px;
+            height: 5dvh;
+            right: 2%;
+            margin-left: 25%;
+            justify-content: right;
+            margin-top: 15px;
+            border: 0;
+            background-color: orangered;"><a style="color: #fff;" href="#">Check Availability <img
+                        class="loading-state" src="loading.gif" alt=""></a></button>
+        </div>
+
+
+        <div style="position: absolute; display: flex;  width: 35%; height: 10vh; top: 85%; margin-left: 5%; "
+            class="satisfiedclients">
+            <div style="width: 50%;" class="profileimg">
+                <img style=" position: absolute; height: 7dvh; width: 10%; border-radius: 50%; border: 1px solid rgb(0, 255, 21);"
+                    src="icon/monet.PNG" alt="kim">
+                <img style=" position: absolute; height: 7dvh; width: 10%; border-radius: 50%; margin-left: 7%; border: 1px solid rgb(0, 255, 21);"
+                    src="icon/amandla.PNG" alt="tate">
+                <img style=" position: absolute; height: 7dvh; width: 10%; border-radius: 50%; margin-left: 14%; border: 1px solid rgb(0, 255, 21);"
+                    src="icon/kim.PNG" alt="Monet">
+                <p
+                    style=" position: absolute; left: 25%; width: 40%; font-style: italic; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight: 600; font-size: 600;">
+                    5000+ <br>
+                    Satisfied
+                    Travellers</p>
+            </div>
+            <div style="display: flex;  margin-left: 10%;" class="locations">
+                <img style="height: 6vh; width: 20% ;" src="icon/pin.PNG" alt="pin">
+                <p
+                    style="margin-left: 10px; font-style: italic; font-weight: 600; font-size: 700; font-weight: 600; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                    150+ Destinations
+                </p>
+            </div>
+        </div>
+        <div class="backgroundimg">
+            <img src="img/shanghai2.jpg">
+        </div>
+
+    </div>
+
+
+
+    <!-- second page  -->
+
+    <div class="exclusive">
+
+        <h2>Exclusive Places</h2>
+        <div class="imgs">
+            <div class="london">
+                <img style="height: 45vh;" src="img/london.jpg">
+                <span style="position: absolute; top: 75%; right: 70%;  ">
+                    <h4 style="color: #fff;">London</h4>
+                    <h5 style="color: #fff;">From £500 only</h5>
+                </span>
+            </div>
+            <div class="phuket">
+                <img style="height: 45vh;" src="img/phuket.jpg">
+                <span style="position: absolute; top: 75%; right: 70%; ">
+                    <h4 style="color: #fff;">Phuket</h4>
+                    <h5 style="color: #fff;">From £500 only</h5>
+
+                </span>
+            </div>
+            <div class="paris">
+                <img style="height: 45vh;" src="img/paris.jpg">
+                <span style="position: absolute; top: 75%; right: 70%; ">
+                    <h4 style="color: #fff;">Paris</h4>
+                    <h5 style="color: #fff;">From £500 only</h5>
+
+                </span>
+            </div>
+
+        </div>
+
+        <!-- 2 imgs -->
+
+        <div class="imgs">
+            <div class="london">
+                <img style="height: 45vh;" src="img/dubai4.jpg">
+                <span style="position: absolute; top: 75%; right: 70%;  ">
+                    <h4 style="color: #fff;">Dubai</h4>
+                    <h5 style="color: #fff;">From £450 only</h5>
+
+                </span>
+            </div>
+            <div class="phuket">
+                <img style="height: 45vh;" src="img/nairobi.jpg">
+                <span style="position: absolute; top: 75%; right: 70%; ">
+                    <h4 style="color: #fff;">Nairobi</h4>
+                    <h5 style="color: #fff;">From £300 only</h5>
+                </span>
+            </div>
+            <div class="paris">
+                <img style="height: 45vh;" src="img/shanghai.jpg">
+                <span style="position: absolute; top: 75%; right: 70%; ">
+                    <h4 style="color: #fff;">Shanghai</h4>
+                    <h5 style="color: #fff;">From £700 only</h5>
+                </span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Div3 for Trending Places-->
+    <div id="trend" class="trending">
+        <h1>Trending Places</h1>
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img style="width: 1400px;" src="img/nepal.jpg" alt=""></div>
+                <div class="swiper-slide"><img style="width: 1400px;" src="img/paris2.jpg" alt=""></div>
+                <div class="swiper-slide"><img style="width: 1400%;" src="img/phuket2.jpg" alt=""></div>
+                <div class="swiper-slide"><img style="width: 1400;" src="img/dubai2.jpg" alt=""></div>
+
+
+            </div>
+            <div class="swiper-pagination"></div>
+
+        </div>
+    </div>
+
+    <!-- Referral Program -->
+    <div class="refer">
+        <div class="refer-content">
+            <h2>Sharing is Earning Today</h2>
+            <p>Want to make money? Our referral program has got you.<br>Refer you friends and get paid.<br>To explore
+                this program click start <br>and start earning today!</p>
+            <button class="referbtn"><a href="#">Start</a></button>
+
+        </div>
+
+    </div>
+
+    <!-- subscribe -->
+
+    <div class="subscribe">
+        <div id="about" class="subscribe-con">
+            <h2 style="font-size: 150%;">Don't Want To Miss Our Latest Updates? Subscribe!</h2>
+            <div class="email">
+                <input id="emailin" type="email" class="email-input" placeholder="Enter your email">
+                <button class="subscribe-btn">Subscribe</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Page -->
+
+    <div id="about" class="aboutSection">
+        <hr>
+        <div class="aboutContent">
+            <h3> About Tranquil</h3>
+            <h4>Welcome to Tranquil Homes, your ultimate travel and accommodation partner! We connect travelers with
+                top-rated stays across the globe, offering everything from cozy budget-friendly rooms to luxurious
+                vacation homes.
+                At Tranquil Homes, we believe that where you stay shapes your travel experience. That’s why we make it
+                easy to find and book safe, comfortable, and affordable accommodations tailored to your needs.
+            </h4>
+            <h3>Why Choose Tranquil Homes?</h3>
+            <h4>1. Global Stays – Explore accommodations in cities, beaches, and countryside retreats worldwide.<br>
+                2. Verified Listings – Every stay is carefully vetted for quality and security.<br>
+                3. Affordable & Luxurious Options – Find a stay that matches your budget and lifestyle.<br>
+                4. Seamless Booking – A hassle-free experience from search to check-in.<br>
+                5. 24/7 Support – Travel with confidence, knowing help is just a click away.<br>
+            </h4>
+            <h4>Start your
+                journey with Tranquil Homes today and experience
+                travel, the right
+                way!
+            </h4>
+        </div>
+        <hr>
+    </div>
+    </div>
+
+    <!-- Review Section -->
+
+    <div class="reviewSection">
+        <h2
+            style="margin-left: 2%; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+            Let Our Travellers Speak For Us</h2>
+        <div class="reviewContainer">
+            <div class="firstReview">
+                <img src="icon/annah.PNG" alt="Diana">
+                <p
+                    style="font-size: 15px; font-weight: bold; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+                    Diana Muthoni</p>
+                <p>Nairobi, Kenya</p>
+                <p style="color: #000;">Tranquil home services are top notch, i would highly reccommend them when you
+                    want to travel. Lorem
+                    ipsum dolor sit, amet consectetur adipisicing elit. Exercitationem culpa dolores</p>
+            </div>
+            <div class="secondReview">
+                <img src="icon/p2rev.PNG" alt="Charly">
+                <p
+                    style="font-size: 15px; font-weight: bold; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+                    Charly Cruz</p>
+                <p>Bucharest, Romania</p>
+                <p style="color: #000;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure, deleniti aliquid
+                    nostrum laudantium
+                    numquam aperiam?Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+
+            </div>
+            <div class="thirdReview">
+                <img src="icon/amandl.PNG" alt="Veronica">
+                <p
+                    style="font-size: 15px; font-weight: bold; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+                    Veronica Marquez</p>
+                <p>Bogota, Colombia</p>
+                <p style="color: #000;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. At culpa quo delectus,
+                    quas minus
+                    doloribus. Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <div id="footer" class="footer">
+        <div class="content-footer">
+            <div class="support">
+                <h3>Tranquil Support</h3>
+                <p>Help Center</p>
+                <p>Anti-Discrimination</p>
+                <p>Disabilty Support</p>
+                <p>Cancellation Options</p>
+                <p>Neighborhood Support</p>
+                <p>Report A listing</p>
+            </div>
+            <div class="hostingService">
+                <h3>Hosting Services</h3>
+                <p>Become a Host</p>
+                <p>Host Support</p>
+                <p>Responsible Hosting</p>
+                <p>Find a Co-host</p>
+                <p>List Your Home</p>
+                <p>Community Center</p>
+            </div>
+            <div class="Tranquil-service">
+                <h3>Tranquil-service</h3>
+                <p>About Us</p>
+                <p>Careers</p>
+                <p>Investors</p>
+                <p>Press</p>
+                <p>Affiliates</p>
+                <p>Blog</p>
+            </div>
+            <div class="contact-us">
+                <h3>Contact Us</h3>
+                <p>kevinlangat419@gmail.com</p>
+                <p>+254729354323</p>
+                <p>Nairobi, Kenya</p>
+                <p>Twitter</p>
+                <p>Facebook</p>
+                <p>LinkedIn</p>
+            </div>
+
+
+
+        </div>
+        <hr style="opacity: 0.3;">
+        <div class="socials">
+            <p style="width: 60%; display: flex; align-items: center;
+            justify-content: center;">&copy; 2025 Tranquil Homes. All Rights Reserved . Terms . Cookie Policy . Your
+                Privacy Choices <img src="check.png" style="transform: scale(0.5);" alt=""></p>
+
+            <p style="width: 30%; display: flex; align-items: center;
+            justify-content: center;"><img src=" globe.png" style="transform: scale(0.5);" alt="">English(USA) <img
+                    src="usd.png" style="transform: scale(0.5);" alt="">Usd</p>
+        </div>
+
+    </div>
+
+    <!-- JAVASCRIPT -->
+
+    <script src="index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.swiper', {
+            autoplay: {
+                delay: 2000,
+                disableOnInteraction: false
+            },
+
+
+            loop: true,
+
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+
+
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+
+
+        });
+    </script>
+</body>
+
+</html>
