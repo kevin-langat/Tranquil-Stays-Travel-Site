@@ -575,8 +575,8 @@
   /* background-color: beige; */
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  gap: 5%;
+  justify-content: space-between;
+  gap: 1%;
   align-items: center;
   overflow: hidden;
 }
@@ -586,15 +586,25 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   overflow: hidden;
+  width: 60%;
+  height: 80%;
+  font-weight: bold;
 }
 
 .check-in-con input,
 .check-out-con input {
   border: none;
-  padding: 10%;
+  padding-left: 5%;
   cursor: text;
+  border-radius: 0.7em;
+  width: 100%;
+  height: 60%;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: medium;
+  font-weight: bold;
+
 }
 
 .Guests-in-total {
@@ -606,13 +616,14 @@
   align-items: center;
   justify-content: center;
 
+
 }
 
-
 .Guests-in-total input {
-  padding: 2%;
-  border: none;
   width: 90%;
+  padding: 3%;
+  border-radius: 0.5em;
+
 }
 
 .charges {

@@ -15,7 +15,7 @@ const eachSavedHouse = document.querySelector('.each-saved-house');
 
 const leftBtns = document.querySelectorAll('.all-con');
 window.addEventListener('DOMContentLoaded', displayProfile);
-function displayProfile(eventTarget) {
+function displayProfile() {
   allEachCon.innerHTML = `<div class="my-profile-container">
           <h1>My Profile</h1>
           <div class="loader-container"><img src="ringspinone.svg" alt=""></div>
@@ -24,13 +24,12 @@ function displayProfile(eventTarget) {
   allEachCon.style.display = 'flex';
   myProfileCon.style.display = 'none';
   myTripsCon.style.display = 'none';
-  // mywishlistCon.style.display = 'none';
   hostCon.style.display = 'none';
   getHelpCon.style.display = 'none';
   settingsCon.style.display = 'none';
   headingName.innerHTML = '<img src="accountUser.svg" alt="">My Profile';
 }
-function displayTrips(eventTarget) {
+function displayTrips() {
   allEachCon.innerHTML = `<div class="my-trips-container">
           <h1>My Trips</h1>
           <div class="loader-container"><img src="ringspinone.svg" alt=""></div>
@@ -258,12 +257,5 @@ function deleteWishlistItem(eventTarget, itemId) {
       );
     }
   });
-  // console.log(itemId);
   console.log(wishlistedHouses);
 }
-// function changeSaveImg(eventTarget) {
-//   if (!save.attributes.src.value === 'saved.png') {
-//     eventTarget.src = 'savedh.png';
-//   }
-// }
-// function removeSaveImg(eventTarget) {}

@@ -3071,7 +3071,6 @@ if (house) {
     reservePriceCon.innerHTML = `$ ${house.price}`;
   }, 1903);
   reserveGuestInput.setAttribute('max', house.guests[0]);
-  console.log(reserveGuestInput.attributes.max);
   reviewOneImage.src = `${house.personOneReview.image}`;
   reviewOneName.innerHTML = `${house.personOneReview.name}`;
   reviewOneLocation.innerHTML = `${house.personOneReview.location}`;
@@ -3087,14 +3086,50 @@ if (house) {
   reviewThreeLocation.innerHTML = `${house.personThreeReview.location}`;
   reviewThreeReview.innerHTML = `${house.personThreeReview.review}`;
 }
+const checkInInput = document.querySelector('.check-in-input');
+const checkOutInput = document.querySelector('.check-out-input');
+const guestsInput = document.querySelector('.incoming-guests');
 
-function processCheckInDate(eventTarget) {
-  let checkInDateValue = new Date(eventTarget.value);
-  let imaginaryDate = new Date('2025,7,26');
-  let currentDate = new Date();
-  if (checkInDateValue >= currentDate) {
-    eventTarget.style.border = '0.1em solid green';
+const checkInInputValue = new Date(checkInInput.value);
+const checkOutInputValue = new Date(checkOutInput.value);
+
+function authenticateValidDate(eventTarget) {
+  const checkInInputValue = new Date(checkInInput.value);
+  const checkOutInputValue = new Date(checkOutInput.value);
+  const rawCheckOutValue = checkOutInput.value;
+  if (checkInInputValue >= new Date()) {
+    if (rawCheckOutValue.length > 0 && checkInInputValue < checkOutInputValue) {
+      checkInInput.style.border = '0.1em solid seagreen';
+    } else if (
+      rawCheckOutValue.length > 0 &&
+      checkInInputValue >= checkOutInputValue
+    ) {
+      checkInInput.style.border = '0.1em solid red';
+    } else {
+      checkInInput.style.border = '0.1em solid seagreen';
+    }
   } else {
-    eventTarget.style.border = '0.1em solid red';
+    checkInInput.style.border = '0.1em solid red';
   }
+}
+function calculateDaysDifference() {
+  const checkInInputValue = new Date(checkInInput.value);
+  const checkOutInputValue = new Date(checkOutInput.value);
+  if (
+    checkInInputValue.toString().length > 15 &&
+    checkInInputValue >= new Date() &&
+    checkInInputValue < checkOutInputValue
+  ) {
+    checkOutInput.style.border = '0.1em solid seagreen';
+    let timeDifference = checkOutInputValue - checkInInputValue;
+    let daysDifference = timeDifference / (1000 * 60 * 60 * 24);
+    checkInInput.style.border = '0.1em solid seagreen';
+  } else {
+    checkInInput.style.border = '0.1em solid red';
+  }
+}
+
+function vaidateGuestsInput(eventTarget) {
+  let guestValue = Number(eventTarget.value);
+  console.log(typeof guestValue);
 }

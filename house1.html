@@ -422,12 +422,14 @@
                     <div class="check-in-out-dates">
                         <div class="check-in-con">
                             <label for="check-in-date">Check In</label>
-                            <input type="date" name="check-in-date" onchange="processCheckInDate(event.target)">
+                            <input type="date" name="check-in-date" class="check-in-input"
+                                onchange="authenticateValidDate(event.target)">
                         </div>
                         <hr style="height: 100%;">
                         <div class="check-out-con">
                             <label for="check-out-date">Check Out</label>
-                            <input type="date" name="check-out-date" min="1">
+                            <input type="date" name="check-out-date" class="check-out-input"
+                                oninput="calculateDaysDifference(event.target)">
                         </div>
 
                     </div>
@@ -435,7 +437,7 @@
                     <div class="Guests-in-total">
                         <label for="guests-incoming">Guests </label>
                         <input type="number" name="guests-incoming" class="incoming-guests" min="1"
-                            placeholder="Guests">
+                            oninput="vaidateGuestsInput(event.target)" placeholder="Guests">
                     </div>
                 </div>
                 <div class="charges">
