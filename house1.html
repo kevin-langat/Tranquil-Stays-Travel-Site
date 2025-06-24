@@ -33,12 +33,11 @@
             </div>
             <!-- User on hover -->
             <div class="userInfo">
-                <p><a href="accountpage.html">My account </a><img src="dash.png" alt="account"></p>
-                <p>Saved listings<img src="starred.png" alt="saved">
-                </p>
-                <p>Get help <img src="help.png" alt="help"></p>
-                <p>Settings <img src="settings.png" alt="settings"></p>
-                <p>Logout <img src="logout.png" alt="logout"></p>
+                <p><a href="accountpage.html">My account </a></p>
+                <p>Saved listings</p>
+                <p>Get help</p>
+                <p>Settings</p>
+                <p>Logout</p>
             </div>
         </div>
 
@@ -50,6 +49,7 @@
                 <img src="save.png" class="save" onclick="addToWishlist(event.target)" alt="save">
             </div>
         </div>
+
 
         <!-- ------------IMAGES CONTAINER----------- -->
         <div class="imagehero">
@@ -415,12 +415,14 @@
         <div class="rigth-column">
             <div class="rightinfo">
 
-                <h3>$ 299 / Night</h3>
+                <h3>
+                    <p class="reserve-price">299</p> / Night
+                </h3>
                 <div class="checkinInfo">
                     <div class="check-in-out-dates">
                         <div class="check-in-con">
                             <label for="check-in-date">Check In</label>
-                            <input type="date" name="check-in-date">
+                            <input type="date" name="check-in-date" onchange="processCheckInDate(event.target)">
                         </div>
                         <hr style="height: 100%;">
                         <div class="check-out-con">
@@ -432,7 +434,8 @@
                     <hr>
                     <div class="Guests-in-total">
                         <label for="guests-incoming">Guests </label>
-                        <input type="number" name="guests-incoming" max="7" min="1" placeholder="Guests">
+                        <input type="number" name="guests-incoming" class="incoming-guests" min="1"
+                            placeholder="Guests">
                     </div>
                 </div>
                 <div class="charges">

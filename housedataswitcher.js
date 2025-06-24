@@ -344,7 +344,7 @@ const houseData = [
   },
   {
     id: 7,
-    name: 'Elegant Penthouse Overlooking Central Park',
+    name: 'Elegant Penthouse Overlooking Park',
     mainImage: 'DetailImg/img36.jpeg',
     imageTwo: 'DetailImg/img37.jpeg',
     imageThree: 'DetailImg/img38.jpeg',
@@ -2958,6 +2958,8 @@ const bedroomContainer = document.querySelector('.bedrooms-number-con');
 const bedContainer = document.querySelector('.beds-number-con');
 const bathroomContainer = document.querySelector('.bathrooms-number-con');
 const priceContainer = document.querySelector('.price-container');
+const reservePriceCon = document.querySelector('.reserve-price');
+const reserveGuestInput = document.querySelector('.incoming-guests');
 const ratedNumber = document.querySelector('.review-number');
 const starContainer = document.querySelector('.starimgs');
 const reviewNumber = document.querySelector('.number-of-review');
@@ -3065,6 +3067,11 @@ if (house) {
   setTimeout(() => {
     bedroomTwoCon.src = `${house.bedTwoImage}`;
   }, 1900);
+  setTimeout(() => {
+    reservePriceCon.innerHTML = `$ ${house.price}`;
+  }, 1903);
+  reserveGuestInput.setAttribute('max', house.guests[0]);
+  console.log(reserveGuestInput.attributes.max);
   reviewOneImage.src = `${house.personOneReview.image}`;
   reviewOneName.innerHTML = `${house.personOneReview.name}`;
   reviewOneLocation.innerHTML = `${house.personOneReview.location}`;
@@ -3079,4 +3086,15 @@ if (house) {
   reviewThreeName.innerHTML = `${house.personThreeReview.name}`;
   reviewThreeLocation.innerHTML = `${house.personThreeReview.location}`;
   reviewThreeReview.innerHTML = `${house.personThreeReview.review}`;
+}
+
+function processCheckInDate(eventTarget) {
+  let checkInDateValue = new Date(eventTarget.value);
+  let imaginaryDate = new Date('2025,7,26');
+  let currentDate = new Date();
+  if (checkInDateValue >= currentDate) {
+    eventTarget.style.border = '0.1em solid green';
+  } else {
+    eventTarget.style.border = '0.1em solid red';
+  }
 }

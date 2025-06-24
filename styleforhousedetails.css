@@ -546,6 +546,16 @@
   /* transition: 0.2s; */
 }
 
+.rightinfo h3 {
+  /* background-color: red; */
+  width: 40%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  color: orangered;
+}
+
 .checkinInfo {
   width: 90%;
   height: 30%;

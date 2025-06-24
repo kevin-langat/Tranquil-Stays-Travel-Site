@@ -6,7 +6,7 @@ const headingName = document.querySelector('.heading-name');
 
 const myProfileCon = document.querySelector('.my-profile-container');
 const myTripsCon = document.querySelector('.my-trips-container');
-const mywishlistCon = document.querySelector('.my-wishlist-loader');
+const mywishlistCon = document.querySelector('.my-wishlist-container');
 const hostCon = document.querySelector('.become-host-container');
 const getHelpCon = document.querySelector('.get-help-container');
 const settingsCon = document.querySelector('.my-settings-container');
@@ -22,9 +22,9 @@ function displayProfile(eventTarget) {
 
         </div>`;
   allEachCon.style.display = 'flex';
-  myProfileCon.style.display = 'block';
+  myProfileCon.style.display = 'none';
   myTripsCon.style.display = 'none';
-  mywishlistCon.style.display = 'none';
+  // mywishlistCon.style.display = 'none';
   hostCon.style.display = 'none';
   getHelpCon.style.display = 'none';
   settingsCon.style.display = 'none';
@@ -39,7 +39,7 @@ function displayTrips(eventTarget) {
   allEachCon.style.display = 'flex';
   myProfileCon.style.display = 'none';
   myTripsCon.style.display = 'block';
-  mywishlistCon.style.display = 'none';
+  // mywishlistCon.style.display = 'none';
   hostCon.style.display = 'none';
   getHelpCon.style.display = 'none';
   settingsCon.style.display = 'none';
@@ -54,7 +54,7 @@ function displayHost(eventTarget) {
   allEachCon.style.display = 'flex';
   myProfileCon.style.display = 'none';
   myTripsCon.style.display = 'none';
-  mywishlistCon.style.display = 'none';
+  // mywishlistCon.style.display = 'none';
   hostCon.style.display = 'block';
   getHelpCon.style.display = 'none';
   settingsCon.style.display = 'none';
@@ -69,7 +69,7 @@ function displayHelp(eventTarget) {
   allEachCon.style.display = 'flex';
   myProfileCon.style.display = 'none';
   myTripsCon.style.display = 'none';
-  mywishlistCon.style.display = 'none';
+  // mywishlistCon.style.display = 'none';
   hostCon.style.display = 'none';
   getHelpCon.style.display = 'block';
   settingsCon.style.display = 'none';
@@ -84,7 +84,7 @@ function displaySettings(eventTarget) {
   allEachCon.style.display = 'flex';
   myProfileCon.style.display = 'none';
   myTripsCon.style.display = 'none';
-  mywishlistCon.style.display = 'none';
+  // mywishlistCon.style.display = 'none';
   hostCon.style.display = 'none';
   getHelpCon.style.display = 'none';
   settingsCon.style.display = 'block';
@@ -201,4 +201,69 @@ function wislistToStorage() {
 }
 
 // Account page
-function displaySavedHouses(eventTarget) {}
+function displaySavedHouses(eventTarget) {
+  headingName.innerHTML =
+    '<img style="width:20%; heigth:50%"; src="saved.png" alt="">My Wishlist';
+  let wishlistedHouses = JSON.parse(localStorage.getItem('wishlistedHouses'));
+  allEachCon.innerHTML = `<div class="my-profile-container">
+          <div class="loader-container"><img src="ringspinone.svg" alt=""></div>
+        </div>`;
+
+  setTimeout(() => {
+    allEachCon.innerHTML = '';
+    mywishlistCon.innerHTML = wishlistedHouses
+      .map(
+        (item) => `<div class="each-saved-house">
+        <div class="saved-img-Container">
+          <img src=${item.mainImage} alt="">
+        </div>
+        <div class="savedHouseInfo">
+          <p>${item.name}</p>
+          <p>${item.price} /Night</p>
+          <div class="viewDetailsBtn">
+          <a href="house1.html"><button onclick="viewDetailsByIndex(${item.id})">Check More Details</button></a>
+          <img src='saved.png' onclick='deleteWishlistItem(event.target,${item.id})' alt="">
+          </div>
+        </div>
+      </div>`
+      )
+      .join(' ');
+    allEachCon.appendChild(mywishlistCon);
+  }, 500);
+  setTimeout(() => {
+    if (wishlistedHouses.length === 0) {
+      allEachCon.innerHTML = `<div class="my-profile-container empty-Container">
+        <div class="loader-container"><img src="empty.png" alt=""></div>
+          <h2>Oops! Nothing Is In Your Wishlist</h2>
+        </div>`;
+    }
+  }, 600);
+}
+function deleteWishlistItem(eventTarget, itemId) {
+  const imediateParent = eventTarget.parentElement;
+  const grandParent = imediateParent.parentElement;
+  const greatGrandParent = grandParent.parentElement;
+  greatGrandParent.style.transform = 'scale(0.05)';
+  setTimeout(() => {
+    greatGrandParent.remove();
+  }, 201);
+  const wishlistedHouses = JSON.parse(localStorage.getItem('wishlistedHouses'));
+  wishlistedHouses.forEach((targetItem, index) => {
+    if (targetItem.id === itemId) {
+      console.log(wishlistedHouses.indexOf(targetItem), targetItem.id);
+      wishlistedHouses.splice(wishlistedHouses.indexOf(targetItem), 1);
+      localStorage.setItem(
+        'wishlistedHouses',
+        JSON.stringify(wishlistedHouses)
+      );
+    }
+  });
+  // console.log(itemId);
+  console.log(wishlistedHouses);
+}
+// function changeSaveImg(eventTarget) {
+//   if (!save.attributes.src.value === 'saved.png') {
+//     eventTarget.src = 'savedh.png';
+//   }
+// }
+// function removeSaveImg(eventTarget) {}
