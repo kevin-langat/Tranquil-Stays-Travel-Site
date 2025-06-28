@@ -18,7 +18,7 @@ window.addEventListener('DOMContentLoaded', displayProfile);
 function displayProfile() {
   allEachCon.innerHTML = `<div class="my-profile-container">
           <h1>My Profile</h1>
-          <div class="loader-container"><img src="ringspinone.svg" alt=""></div>
+          <div class="loader-container"><img src="spinner.svg" alt=""></div>
 
         </div>`;
   allEachCon.style.display = 'flex';
@@ -29,16 +29,67 @@ function displayProfile() {
   settingsCon.style.display = 'none';
   headingName.innerHTML = '<img src="accountUser.svg" alt="">My Profile';
 }
+
 function displayTrips() {
   allEachCon.innerHTML = `<div class="my-trips-container">
           <h1>My Trips</h1>
-          <div class="loader-container"><img src="ringspinone.svg" alt=""></div>
+          <div class="loader-container"><img src="spinner.svg" alt=""></div>
 
         </div>`;
+
+  setTimeout(() => {
+    allEachCon.innerHTML = `<div class="my-trips-container">
+              <div class="tripDetails">
+                <img style="width: 40%; height: 100%; border-radius: 1em;" src="DetailImg/img10.jpeg" alt="">
+                <div class="all-trip-details-info">
+                    <div class="trip-house-name">
+                        <h2 style="  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-style: italic;">BeachSide Bungallow With A Hammock Field</h2>
+                    </div>
+                    <div class="all-other-trip-details">
+                        <div class="hostAndNameInformation">
+                  <div class="hostInfo">
+                   <img src="icon/sagar.png" alt="hostImage">
+                   <div class="hostfulldetails">
+                    <h3>Host Name:<h4>Annah Marquez</h4></h3>
+                    <h3>Host Rating:<h4><img src="star.png" alt="star"><img src="star.png" alt="star"><img src="star.png" alt="star"> <img src="star.png" alt="star"></h4></h3>
+                    </div>
+                  </div>
+                </div>
+          <div class="trips-check-in-out-info">
+            <div class="trips-check-in">
+              <h3>Check In Date</h3>
+              <h4>12/06/2025</h4>
+            </div>
+            <div class="trips-check-out">
+              <h3>Check Out Date</h3>
+              <h4>12/06/2025</h4>
+            </div>
+            <div class="days-of-stays">
+              <h3>Days Of Stay</h3>
+              <h4>5 Days</h4>
+            </div>
+            <div class="total-amount-to-pay">
+              <h3>Total Amount</h3>
+              <h4>$ 500</h4>
+            </div>
+            </div>
+            
+            </div>
+                <div class="trip-info-button">
+                <button  class="check-Listing-btn">Check Listing</button>
+                  <button style="background-color: red;" class="check-more-details">Cancel Booking</button>
+              </div>
+          </div>  
+        </div>`;
+  }, 200);
+
+  // <div class="nameInformation">
+  //                 <h4>Beachside Bungallow</h4>
+  //               </div>
+
   allEachCon.style.display = 'flex';
   myProfileCon.style.display = 'none';
   myTripsCon.style.display = 'block';
-  // mywishlistCon.style.display = 'none';
   hostCon.style.display = 'none';
   getHelpCon.style.display = 'none';
   settingsCon.style.display = 'none';
@@ -47,7 +98,7 @@ function displayTrips() {
 function displayHost(eventTarget) {
   allEachCon.innerHTML = `  <div class="become-host-container">
           <h1>Become a Host</h1>
-          <div class="loader-container"><img src="ringspinone.svg" alt=""></div>
+          <div class="loader-container"><img src="spinner.svg" alt=""></div>
 
         </div>`;
   allEachCon.style.display = 'flex';
@@ -62,7 +113,7 @@ function displayHost(eventTarget) {
 function displayHelp(eventTarget) {
   allEachCon.innerHTML = `<div class="get-help-container">
           <h1>Get Help</h1>
-          <div class="loader-container"><img src="ringspinone.svg" alt=""></div>
+          <div class="loader-container"><img src="spinner.svg" alt=""></div>
 
         </div>`;
   allEachCon.style.display = 'flex';
@@ -77,7 +128,7 @@ function displayHelp(eventTarget) {
 function displaySettings(eventTarget) {
   allEachCon.innerHTML = `  <div class="my-settings-container">
           <h1>Settings</h1>
-          <div class="loader-container"><img src="ringspinone.svg" alt=""></div>
+          <div class="loader-container"><img src="spinner.svg" alt=""></div>
 
         </div>`;
   allEachCon.style.display = 'flex';
@@ -99,9 +150,10 @@ const previ = document.querySelector('.nameandlocation');
 const closeSave = document.querySelector('.close-saved');
 const savedListingsCon = document.querySelector('.container');
 const rightinfo = document.querySelector('.rightinfo');
+const rigthColumn = document.querySelector('.rigth-column');
 
 // WINDOWS SCROLL FOR RIGHT COLUMN
-
+window.addEventListener('DOMContentLoaded', displayTrips);
 window.onscroll = function () {
   handleScroll();
 };
@@ -112,23 +164,18 @@ function handleScroll() {
     document.documentElement.scrollHeight -
     document.documentElement.clientHeight;
   const scrolledPercentage = (getScrollFromTop / heigth) * 100;
-
-  if (scrolledPercentage >= 25 && scrolledPercentage < 30) {
-    rightinfo.style.position = 'fixed';
-    rightinfo.style.top = '1%';
-    rightinfo.style.width = '34%';
-  } else if (scrolledPercentage >= 51) {
+  if (scrolledPercentage <= 29) {
     rightinfo.style.position = '';
-    rightinfo.style.marginTop = '120vh';
-    rightinfo.style.width = '90%';
-  } else if (scrolledPercentage < 25) {
-    rightinfo.style.position = 'relative';
-    rightinfo.style.marginTop = '0%';
-    rightinfo.style.width = '90%';
-  } else if (scrolledPercentage >= 30 && scrolledPercentage < 51) {
+    rigthColumn.style.paddingTop = '1%';
+    rightinfo.style.width = '95%';
+  } else if (scrolledPercentage >= 30 && scrolledPercentage < 63) {
     rightinfo.style.position = 'fixed';
-    rightinfo.style.marginTop = '5%';
-    rightinfo.style.width = '34%';
+    rightinfo.style.top = '7%';
+    rightinfo.style.width = '34.5%';
+  } else if (scrolledPercentage >= 63) {
+    rightinfo.style.position = '';
+    rigthColumn.style.paddingTop = '60%';
+    rightinfo.style.width = '95%';
   }
 }
 
@@ -205,7 +252,7 @@ function displaySavedHouses(eventTarget) {
     '<img style="width:20%; heigth:50%"; src="saved.png" alt="">My Wishlist';
   let wishlistedHouses = JSON.parse(localStorage.getItem('wishlistedHouses'));
   allEachCon.innerHTML = `<div class="my-profile-container">
-          <div class="loader-container"><img src="ringspinone.svg" alt=""></div>
+          <div class="loader-container"><img src="spinner.svg" alt=""></div>
         </div>`;
 
   setTimeout(() => {

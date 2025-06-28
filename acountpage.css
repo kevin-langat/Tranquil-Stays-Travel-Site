@@ -128,10 +128,157 @@
   flex-direction: column;
   background-color: rgba(199, 212, 224, 0.226);
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
+  padding: 2%;
+  overflow: auto;
 
 }
 
+.tripDetails {
+  width: 95%;
+  height: 50%;
+  display: flex;
+  flex-direction: row;
+  border-radius: 1em;
+  background-color: #fff;
+  box-shadow: 0 0 0.5em #000;
+}
+
+.all-trip-details-info {
+  width: 60%;
+  height: 100%;
+  border-radius: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.all-other-trip-details {
+  width: 100%;
+  height: 70%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.hostAndNameInformation {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+
+}
+
+.nameInformation {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nameInformation h4 {
+  /* color: orangered; */
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.hostInfo {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: 0.5em;
+  box-shadow: 0 0 0.5em #000;
+}
+
+.hostInfo img {
+  width: 40%;
+  height: 90%;
+  border-radius: 50%;
+
+}
+
+.hostfulldetails {
+  width: 50%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.hostfulldetails h4 {
+  /* color: orangered; */
+  font-size: large;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  height: 40%;
+}
+
+.hostfulldetails h4 img {
+  width: 13%;
+  height: 60%;
+}
+
+.trips-check-in-out-info {
+  width: 45%;
+  height: 80%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: space-around;
+  align-items: center;
+}
+
+.trips-check-in,
+.trips-check-out,
+.days-of-stays,
+.total-amount-to-pay {
+  padding: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border: 0.1em solid orangered;
+  border-radius: 1em;
+  margin-right: 3%;
+}
+
+.trips-check-in h4,
+.trips-check-out h4,
+.days-of-stays h4,
+.total-amount-to-pay h4 {
+  /* color: orangered; */
+  font-size: large;
+}
+
+.trip-info-button {
+  width: 50%;
+  height: 20%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.trip-info-button button {
+  width: 45%;
+  height: 80%;
+  background-color: rgb(50, 50, 97);
+  font-size: larger;
+  color: #fff;
+  border: none;
+  border-radius: 1em;
+
+}
 
 .each-saved-house {
   width: 100%;

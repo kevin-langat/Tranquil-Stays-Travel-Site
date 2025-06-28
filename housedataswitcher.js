@@ -3092,13 +3092,19 @@ const guestsInput = document.querySelector('.incoming-guests');
 
 const checkInInputValue = new Date(checkInInput.value);
 const checkOutInputValue = new Date(checkOutInput.value);
+const errorStringContainer = document.querySelector('.errorString');
 
 function authenticateValidDate(eventTarget) {
   const checkInInputValue = new Date(checkInInput.value);
   const checkOutInputValue = new Date(checkOutInput.value);
   const rawCheckOutValue = checkOutInput.value;
+  guestsInput.setAttribute('disabled', 'true');
   if (checkInInputValue >= new Date()) {
-    if (rawCheckOutValue.length > 0 && checkInInputValue < checkOutInputValue) {
+    if (
+      rawCheckOutValue.length > 0 &&
+      checkInInputValue.toString().length < 15 &&
+      checkInInputValue < checkOutInputValue
+    ) {
       checkInInput.style.border = '0.1em solid seagreen';
     } else if (
       rawCheckOutValue.length > 0 &&
@@ -3112,9 +3118,18 @@ function authenticateValidDate(eventTarget) {
     checkInInput.style.border = '0.1em solid red';
   }
 }
+const numberOfNigthsCon = document.querySelector('.numberOfNigths');
+const totalBillContainer = document.querySelector('.total-bill');
+const guestInput = document.querySelector('.incoming-guests');
+const cleaningFeeContainer = document.querySelector('.cleaning-fee-container');
+const tranquilServiceContainer = document.querySelector('.tranquil-fee');
+const totalAmountContainer = document.querySelector('.total-charges-amount');
+
+let sharedDaysDiff = {};
 function calculateDaysDifference() {
   const checkInInputValue = new Date(checkInInput.value);
   const checkOutInputValue = new Date(checkOutInput.value);
+  const currentInput = Number(guestInput.value);
   if (
     checkInInputValue.toString().length > 15 &&
     checkInInputValue >= new Date() &&
@@ -3124,12 +3139,99 @@ function calculateDaysDifference() {
     let timeDifference = checkOutInputValue - checkInInputValue;
     let daysDifference = timeDifference / (1000 * 60 * 60 * 24);
     checkInInput.style.border = '0.1em solid seagreen';
+    guestsInput.removeAttribute('disabled', 'true');
+    sharedDaysDiff.daysDiff = daysDifference;
+    numberOfNigthsCon.innerHTML = daysDifference + ' ' + 'Nights';
+    errorStringContainer.style.display = 'none';
+
+    if (guestInput.value > 0) {
+      let totalBill = daysDifference * house.price * currentInput;
+      let cleaningFee = Math.ceil(totalBill * (5 / 100));
+      let tranquilServiceFee = Math.ceil(totalBill * (10 / 100));
+      let totalAmount = totalBill + cleaningFee + tranquilServiceFee;
+      totalBillContainer.innerHTML = '$' + ' ' + totalBill;
+      cleaningFeeContainer.innerHTML = '$' + ' ' + cleaningFee;
+      tranquilServiceContainer.innerHTML = '$' + ' ' + tranquilServiceFee;
+      totalAmountContainer.innerHTML = '$' + ' ' + totalAmount;
+      errorStringContainer.style.display = 'none';
+    }
   } else {
     checkInInput.style.border = '0.1em solid red';
+    guestsInput.setAttribute('disabled', 'true');
+  }
+}
+let reserveValidationInputs = {};
+function validateGuestsInput(eventTarget) {
+  const currentInput = Number(eventTarget.value);
+  if (currentInput <= house.guests[0] && currentInput > 0) {
+    eventTarget.style.border = '0.1em solid green';
+    let totalBill = sharedDaysDiff.daysDiff * house.price * currentInput;
+    let cleaningFee = Math.ceil(totalBill * (5 / 100));
+    let tranquilServiceFee = Math.ceil(totalBill * (10 / 100));
+    let totalAmount = totalBill + cleaningFee + tranquilServiceFee;
+    totalBillContainer.innerHTML = '$' + ' ' + totalBill;
+    cleaningFeeContainer.innerHTML = '$' + ' ' + cleaningFee;
+    tranquilServiceContainer.innerHTML = '$' + ' ' + tranquilServiceFee;
+    totalAmountContainer.innerHTML = '$' + ' ' + totalAmount;
+    reserveValidationInputs.validFormData = totalAmount;
+    errorStringContainer.style.display = 'none';
+  } else {
+    eventTarget.style.border = '0.1em solid red';
+  }
+}
+const reserveDialogBox = document.querySelector('.confirmReservation');
+const reserveBtn = document.querySelector('.reserve-final-btn');
+const reserveSipnnerImage = document.querySelector(
+  '.reserve-final-btn-spinner'
+);
+const lastReviewCon = document.querySelector('.acceptingandreviewContainer');
+
+function openConfirmBox(eventTarget) {
+  if (reserveValidationInputs.validFormData === undefined) {
+    checkInInput.style.border = '0.1em solid red';
+    checkOutInput.style.border = '0.1em solid red';
+    guestInput.style.border = '0.1em solid red';
+    errorStringContainer.style.display = 'block';
+  } else {
+    if (
+      guestInput.value === '' ||
+      Number(guestInput.value) > Number(house.guests[0])
+    ) {
+      guestInput.style.border = '0.1em solid red';
+      errorStringContainer.style.display = 'block';
+    } else {
+      checkInInput.style.border = '0.1em solid seagreen';
+      checkOutInput.style.border = '0.1em solid seagreen';
+      guestInput.style.border = '0.1em solid seagreen';
+      eventTarget.setAttribute('disabled', 'true');
+      reserveDialogBox.style.transform = 'scale(1)';
+    }
   }
 }
 
-function vaidateGuestsInput(eventTarget) {
-  let guestValue = Number(eventTarget.value);
-  console.log(typeof guestValue);
+reserveBtn.addEventListener('click', () => {
+  reserveSipnnerImage.style.display = 'block';
+  setTimeout(() => {
+    lastReviewCon.innerHTML = `<div class="paymentSuccessful">
+                <h2>Reservation Successfull <img src="close.png" onclick="closeReserseDialog(event.target)" class="close-Dialog" alt=""></h2>
+                <img src="succes.png" alt="">
+                <div class="paymentsuccessfullbuttton">
+                    <button>Go To My Bookings</button>
+                </div>
+            </div>`;
+  }, 5000);
+  let currentBooking = JSON.parse(localStorage.getItem('selectedHouse'));
+  console.log(currentBooking);
+});
+
+// async function fetchData() {
+//   const response = await fetch('https', {
+//     method: 'GET',
+//   });
+//   const result = await response.json();
+//   if (result && result.person) console.log(result);
+// }
+
+function closeReserseDialog(eventTarget) {
+  reserveDialogBox.style.transform = 'scale(0.0005)';
 }

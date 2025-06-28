@@ -54,14 +54,14 @@
         <!-- ------------IMAGES CONTAINER----------- -->
         <div class="imagehero">
             <div class="main-image">
-                <img id="imgone" class="first-hero-image" src="ringspinone.svg" alt="">
+                <img id="imgone" class="first-hero-image" src="spinner.svg" alt="">
 
             </div>
             <div class="other-images">
-                <img id="imgtwo" class="second-image" src="ringspinone.svg" alt="">
-                <img id="imgthree" class="third-image" src="ringspinone.svg" alt="">
-                <img id="imgfour" class="fourth-image" src="ringspinone.svg" alt="">
-                <img id="imgfive" class="fifth-image" src="ringspinone.svg" alt="">
+                <img id="imgtwo" class="second-image" src="spinner.svg" alt="">
+                <img id="imgthree" class="third-image" src="spinner.svg" alt="">
+                <img id="imgfour" class="fourth-image" src="spinner.svg" alt="">
+                <img id="imgfive" class="fifth-image" src="spinner.svg" alt="">
             </div>
         </div>
 
@@ -379,12 +379,12 @@
         </div>
         <div class="confirmReservation">
             <div class="acceptingandreviewContainer">
-                <div class="check-inpay">
-                    <h1>Confirm And Reserve</h1>
-                    <img src="close.png" class="close-Dialog" alt="">
+                <div class="confirmReservationHeader">
+                    <h2>Confirm And Reserve </h2>
+                    <img src="close.png" onclick="closeReserseDialog(event.target)" class="close-Dialog" alt="">
                 </div>
                 <div class="check-in-payment">
-                    <h2>Payment Method</h2>
+                    <h2>Payment Method:</h2>
                     <div class="payment-method-container">
                         <label for="payoncheckin">Payment On Check In</label>
                         <img src="select.png" alt="">
@@ -393,24 +393,17 @@
 
 
                 </div>
-                <img src="loading.gif" class="loading-Gif" alt="">
 
                 <div class="reviewterms">
-                    <h3>Review Your Reservation</h3>
-                    <h6>By clicking Make Reservation You Accept Our Booking Terms</h6>
-                    <button class="reserve-final-btn">Make Reservation</button>
+                    <div class="accepting-terms">
+                        <h3>Review Your Reservation</h3>
+                        <h6>By clicking Make Reservation You Accept Our Booking Terms</h6>
+                    </div>
+
+                    <button class="reserve-final-btn">Make Reservation <img class="reserve-final-btn-spinner"
+                            src="ringspinthree.svg" alt=""></button>
                 </div>
-
-
             </div>
-            <div class="paymentSuccessful">
-                <h2>Reservation Successfull <img src="close.png" class="close-Dialog2" alt=""></h2>
-                <img src="succes.png" alt="">
-                <button>Go To My Bookings</button>
-            </div>
-
-
-
         </div>
         <div class="rigth-column">
             <div class="rightinfo">
@@ -436,33 +429,42 @@
                     <hr>
                     <div class="Guests-in-total">
                         <label for="guests-incoming">Guests </label>
-                        <input type="number" name="guests-incoming" class="incoming-guests" min="1"
-                            oninput="vaidateGuestsInput(event.target)" placeholder="Guests">
+                        <input type="number" name="guests-incoming" class="incoming-guests" min="1" disabled="true"
+                            oninput="validateGuestsInput(event.target)" placeholder="Guests">
                     </div>
                 </div>
                 <div class="charges">
                     <div class="totalAmountsCon">
-                        <p>5 Nights</p>
-                        <p>$1,020</p>
+                        <p class="numberOfNigths">0 Nights:</p>
+                        <p class="total-bill">$ 0</p>
                     </div>
                     <div class="clean-Con">
-                        <p>Cleaning Fee</p>
-                        <p>$70</p>
+                        <p>Cleaning Fee:</p>
+                        <p class="cleaning-fee-container">$ 0</p>
                     </div>
                     <div class="services-fee-con">
-                        <p>Tranquil Service Fee</p>
-                        <p>$150</p>
+                        <p>Tranquil Service Fee:</p>
+                        <p class="tranquil-fee">$ 0</p>
+                    </div>
+                    <hr>
+                    <div class="total-charges-container">
+                        <p>Total Amount:</p>
+                        <p style="color: orangered;" class="total-charges-amount">$ 0</p>
                     </div>
                 </div>
                 <div class="paymentOptions">
+                    <p>Payment method:</p>
                     <div class="on-check-in-payment">
-                        <label for="on-Checkin"><img src="incoming.png" alt="">Pay on check-in</label>
-                        <input type="checkbox" name="on-Checkin">
+                        <p><img src="incoming.png" alt="">Pay on check-in <img src="select.png" alt=""></p>
                     </div>
                 </div>
                 <div class="reservebtn">
-                    <p>* you will not be charged for now</p>
-                    <button onclick="openConfirmBox()">Reserve</button>
+                    <div class="reserveBtnInfo">
+                        <p>You will not be charged for now</p>
+                        <p class="errorString" style="display: none; color: red; font-size: medium;">*correct the errors
+                            above</p>
+                    </div>
+                    <button onclick="openConfirmBox(event.target)">Reserve</button>
 
                 </div>
             </div>
@@ -583,8 +585,6 @@
 
     </div>
 
-
-    <script src="payment.js"></script>
     <script src="main.js"></script>
     <script src="housedataswitcher.js"></script>
 

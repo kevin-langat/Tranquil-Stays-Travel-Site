@@ -1,5 +1,4 @@
 const otherCon = document.getElementById('othercities');
-const atag = document.querySelector('.otherC');
 const lefC = document.getElementById('left-column');
 const london = document.getElementById('london');
 const phuket = document.getElementById('phuket');
@@ -126,26 +125,7 @@ const furnitureSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height=
                                     <path d="M12 5v9" />
         </svg>`;
 
-atag.addEventListener('click', () => {
-  if (!atag.classList.contains('active-other')) {
-    otherCon.style.transform = 'scaleY(0.002)';
-    otherCon.style.marginTop = '-10vh';
-    atag.classList.add('active-other');
-  } else {
-    otherCon.style.transform = 'scaleY(1)';
-    otherCon.style.marginTop = '10vh';
-    atag.classList.remove('active-other');
-  }
-});
-
 window.addEventListener('DOMContentLoaded', phuFunc);
-window.addEventListener('DOMContentLoaded', displayOther);
-function displayOther() {
-  if (!atag.classList.contains('active-other')) {
-    otherCon.style.transform = 'scaleY(1)';
-    otherCon.style.marginTop = '20vh';
-  }
-}
 function phuFunc() {
   phuket.style.boxShadow = '0 0 0 2px #fff, 0 0 0 4px blue';
   london.style.boxShadow = '0 0 0 1px #fff, 0 0 0 2px black';

@@ -537,6 +537,7 @@
   height: 80vh;
   box-shadow: 0 0 5px #000;
   border-radius: 0.5em;
+  background-color: #fff;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -558,7 +559,7 @@
 
 .checkinInfo {
   width: 90%;
-  height: 30%;
+  height: 35%;
   /* background-color: red; */
   display: flex;
   flex-direction: column;
@@ -566,7 +567,7 @@
   border: 1px solid #0000006c;
   border-radius: 1em;
   justify-content: center;
-  gap: 2%;
+  padding: 2%;
 }
 
 .check-in-out-dates {
@@ -591,6 +592,7 @@
   width: 60%;
   height: 80%;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .check-in-con input,
@@ -604,6 +606,7 @@
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: medium;
   font-weight: bold;
+  cursor: pointer;
 
 }
 
@@ -623,16 +626,22 @@
   width: 90%;
   padding: 3%;
   border-radius: 0.5em;
+  border: none;
 
+}
+
+:disabled {
+  cursor: no-drop;
+  background: #dbd2d2;
 }
 
 .charges {
   width: 90%;
-  height: 20%;
+  height: 30%;
   /* background-color: red; */
   display: flex;
   flex-direction: column;
-  gap: 10%;
+  justify-content: space-around;
   font-size: 1.1em;
 }
 
@@ -664,59 +673,71 @@
   justify-content: space-between;
 }
 
-.paymentOptions {
-  width: 90%;
-  height: 5%;
-  /* background-color: red; */
+.total-charges-container {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  width: 90%;
+  justify-content: space-between;
+}
+
+.paymentOptions {
+  width: 90%;
+  height: 13%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  /* background-color: blue; */
 }
 
 .on-check-in-payment {
   width: 100%;
-  /* background-color: aqua; */
-  height: 100%;
+  height: 60%;
   display: flex;
   flex-direction: row;
   gap: 2%;
   align-items: center;
   justify-content: center;
+  color: rgb(19, 160, 19);
+
+}
+
+.on-check-in-payment p {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  flex-direction: row;
+  gap: 2%;
+  align-items: center;
+  justify-content: center;
+  /* background-color: red; */
 }
 
 
 .on-check-in-payment img {
-  width: 16%;
-  height: 15%;
-}
-
-
-.credit-card-payment {
-  width: 45%;
-  /* background-color: aqua; */
+  width: 6%;
   height: 100%;
-  display: flex;
-  flex-direction: row;
-  gap: 2%;
-  align-items: center;
-  justify-content: center;
-}
-
-.credit-card-payment img {
-  width: 18%;
-  height: 15%;
 }
 
 .reservebtn {
   width: 100%;
-  height: 20%;
-  /* background-color: red; */
+  height: 25%;
   display: flex;
   flex-direction: column;
-  gap: 20%;
+  gap: 10%;
   justify-content: center;
   align-items: center;
 
+}
+
+.reserveBtnInfo {
+  width: 100%;
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  /* background-color: #bfc6d4; */
 }
 
 .reservebtn button {
@@ -727,6 +748,169 @@
   background-color: orangered;
   font-size: larger;
   color: #fff;
+}
+
+.confirmReservation {
+  position: fixed;
+  width: 40%;
+  height: 50vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  top: 10%;
+  left: 30%;
+  border-radius: 0.5em;
+  box-shadow: 0 0 0.5em #000;
+  z-index: 8500;
+  /* transform: scale(0.0005); */
+  transition: 0.2s;
+}
+
+.acceptingandreviewContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  /* background-color: #bfc6d4; */
+}
+
+.confirmReservationHeader {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: orangered;
+  padding-left: 25%;
+  /* background-color: rgb(0, 255, 200); */
+
+}
+
+.confirmReservationHeader img {
+  width: 9%;
+  height: 80%;
+  /* background-color: red; */
+  border-radius: 50%;
+}
+
+.check-in-payment {
+  width: 80%;
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.payment-method-container {
+  width: 60%;
+  height: 20%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2%;
+}
+
+.payment-method-container img {
+  width: 10%;
+  height: 90%;
+}
+
+.reviewterms {
+  width: 80%;
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  /* background-color: red; */
+}
+
+.accepting-terms {
+  width: 100%;
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+}
+
+.reviewterms button {
+  width: 80%;
+  background-color: green;
+  height: 30%;
+  font-size: large;
+  font-weight: bold;
+  border: none;
+  border-radius: 0.5em;
+  color: #fff;
+
+}
+
+.reserve-final-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.reserve-final-btn img {
+  display: none;
+  transition: 1s;
+}
+
+.paymentSuccessful {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  transition: 1s;
+}
+
+.paymentSuccessful h2 {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 20%;
+}
+
+.paymentSuccessful h2 img {
+  width: 7%;
+  height: 80%;
+  border-radius: 50%;
+}
+
+.paymentsuccessfullbuttton {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.paymentsuccessfullbuttton button {
+  width: 80%;
+  height: 60%;
+  background-color: orangered;
+  font-size: large;
+  font-weight: bold;
+  border: none;
+  border-radius: 0.5em;
+  color: #fff;
+
 }
 
 /* END OF DIV 2 BEGIN OF DIV 3 -- MAP AND REVIEW SECTION */
@@ -898,166 +1082,4 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-}
-
-.confirmReservation {
-  position: absolute;
-  width: 50%;
-  height: 60vh;
-  background-color: #fff;
-  box-shadow: 0 0 1em #000;
-  left: 25%;
-  display: flex;
-  flex-direction: row;
-  overflow: hidden;
-  cursor: pointer;
-  /* display: none; */
-  padding-left: 2%;
-  display: none;
-
-}
-
-.check-inpay {
-  display: flex;
-  justify-content: center;
-  background-color: #fff;
-  align-items: center;
-  width: 100%;
-}
-
-.check-inpay img {
-  transform: scale(0.7);
-  margin-left: 30%;
-  cursor: pointer;
-}
-
-.acceptingandreviewContainer {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 10%;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  /* margin-left: -100%; */
-  transition: 0.5s;
-
-}
-
-.moveCon {
-  display: none;
-}
-
-.check-in-payment {
-  width: 90%;
-  height: 30%;
-  box-shadow: inset 0 0 0.2em #000;
-  border: 0.1em solid #6b6969;
-  border-radius: 1em;
-  color: green;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 10%;
-}
-
-.check-in-payment input {
-  transform: scale(1.2);
-  margin-left: 3%;
-}
-
-.payment-method-container {
-  width: 45%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1%;
-  color: #000;
-  padding-left: 4%;
-}
-
-.payment-method-container img {
-  transform: scale(0.6);
-
-}
-
-.loading-state img {
-  mix-blend-mode: multiply;
-}
-
-.loading-Gif {
-  width: 8%;
-  height: 6vh;
-  position: absolute;
-  mix-blend-mode: multiply;
-  top: 3vh;
-  left: 70%;
-  transform: scale(0.005);
-  transition: 0.5s;
-}
-
-.loaderActive {
-  transform: scale(1);
-}
-
-.reviewterms {
-  width: 90%;
-  height: 30%;
-  border-radius: 1em;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0 0 0.2em #000;
-  gap: 5%;
-}
-
-.reviewterms button {
-  width: 95%;
-  height: 35%;
-  font-size: large;
-  border: none;
-  border-radius: 0.5em;
-  background-color: rgb(7, 167, 7);
-  color: #fff;
-
-}
-
-.paymentSuccessful {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 10%;
-  justify-content: center;
-  margin-right: -100%;
-  align-items: center;
-}
-
-.paymentSuccessful h2 {
-  width: 75%;
-  margin-left: 20%;
-  display: flex;
-  justify-content: center;
-  gap: 30%;
-  align-items: center;
-
-}
-
-.paymentSuccessful h2 img {
-  width: 7%;
-}
-
-.paymentSuccessful button {
-  width: 30%;
-  height: 10%;
-  border: none;
-  border-radius: 0.5em;
-  font-weight: bold;
-  font-size: medium;
-  background-color: orangered;
-  color: #fff;
-  cursor: pointer;
 }
