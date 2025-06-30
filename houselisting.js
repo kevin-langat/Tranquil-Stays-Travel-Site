@@ -125,7 +125,28 @@ const furnitureSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height=
                                     <path d="M12 5v9" />
         </svg>`;
 
-window.addEventListener('DOMContentLoaded', phuFunc);
+window.addEventListener('DOMContentLoaded', () => {
+  if (window.location.pathname.endsWith('houselisting.html')) {
+    let currentActiveTab = JSON.parse(
+      localStorage.getItem('HouseListingActiveTab')
+    );
+    console.log(currentActiveTab);
+    if (currentActiveTab === 1) {
+      phuFunc();
+      console.log('london function');
+    } else if (currentActiveTab === 2) {
+      lonFunc();
+    } else if (currentActiveTab === 3) {
+      parFunc();
+    } else if (currentActiveTab === 4) {
+      dubFunc();
+    } else if (currentActiveTab === 5) {
+      naiFunc();
+    } else if (currentActiveTab === 6) {
+      shaFunc();
+    }
+  }
+});
 function phuFunc() {
   phuket.style.boxShadow = '0 0 0 2px #fff, 0 0 0 4px blue';
   london.style.boxShadow = '0 0 0 1px #fff, 0 0 0 2px black';
@@ -167,6 +188,7 @@ function phuFunc() {
   amenityOne.innerHTML = `${coffeeSvg} Coffee Maker`;
   amenityTwo.innerHTML = `${furnitureSvg} Furniture`;
   amenityFive.innerHTML = `${wifiSvg} Wifi`;
+  localStorage.setItem('HouseListingActiveTab', JSON.stringify(1));
 }
 function lonFunc() {
   london.style.boxShadow = '0 0 0 2px #fff, 0 0 0 4px blue';
@@ -211,6 +233,7 @@ function lonFunc() {
   amenityFive.innerHTML = `${gymnSvg} Gymn`;
   amenityFour.innerHTML = `${dishWasherSvg} Dish Washer`;
   amenityThree.innerHTML = `${coffeeSvg} Coffee Maker`;
+  localStorage.setItem('HouseListingActiveTab', JSON.stringify(2));
 }
 
 function parFunc() {
@@ -256,6 +279,7 @@ function parFunc() {
   amenityFive.innerHTML = `${furnitureSvg} Furniture`;
   amenityFour.innerHTML = `${elevatorSvg} Elevator`;
   amenityThree.innerHTML = `${gymnSvg} Gymn`;
+  localStorage.setItem('HouseListingActiveTab', JSON.stringify(3));
 }
 function dubFunc() {
   dubai.style.boxShadow = ' 0 0 0 2px #fff, 0 0 0 4px blue';
@@ -300,6 +324,7 @@ function dubFunc() {
   amenityThree.innerHTML = `${coffeeSvg} Coffee Maker`;
   amenityFive.innerHTML = `${furnitureSvg} Furniture`;
   amenityFour.innerHTML = `${gymnSvg} Gymn`;
+  localStorage.setItem('HouseListingActiveTab', JSON.stringify(4));
 }
 function naiFunc() {
   nairobi.style.boxShadow = '0 0 0 2px #fff, 0 0 0 4px blue';
@@ -344,6 +369,7 @@ function naiFunc() {
   amenityFive.innerHTML = `${gymnSvg} Gymn`;
   amenityFour.innerHTML = `${dishWasherSvg} Dish Washer`;
   amenityThree.innerHTML = `${BooksSvg} Books`;
+  localStorage.setItem('HouseListingActiveTab', JSON.stringify(5));
 }
 function shaFunc() {
   shanghai.style.boxShadow = '0 0 0 2px #fff, 0 0 0 4px blue';
@@ -388,17 +414,5 @@ function shaFunc() {
   amenityFive.innerHTML = `${gymnSvg} Gymn`;
   amenityFour.innerHTML = `${furnitureSvg} Furniture `;
   amenityThree.innerHTML = `${wifiSvg} Wifi`;
-}
-
-function moreListFunc() {
-  otherCon.style.transform = 'scaleY(1)';
-  lefC.style.marginTop = '10vh';
-  atag.classList.toggle('otherC');
-  phuket.style.boxShadow = '0 0 0 2px #fff, 0 0 0 4px blue';
-  london.style.boxShadow = '0 0 0 1px #fff, 0 0 0 2px black';
-  paris.style.boxShadow = '0 0 0 1px #fff, 0 0 0 2px black';
-  dubai.style.boxShadow = '0 0 0 1px #fff, 0 0 0 2px black';
-  nairobi.style.boxShadow = '0 0 0 1px #fff, 0 0 0 2px black';
-  shanghai.style.boxShadow = '0 0 0 1px #fff, 0 0 0 2px black';
-  head.innerHTML = 'Listings In Phuket';
+  localStorage.setItem('HouseListingActiveTab', JSON.stringify(6));
 }

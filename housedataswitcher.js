@@ -691,7 +691,7 @@ const houseData = [
     imageTwo: 'DetailImg/img72.jpeg',
     imageThree: 'DetailImg/img73.jpeg',
     imageFour: 'DetailImg/img74.jpeg',
-    imageFive: 'DetailImg/img75.jpeg',
+    imageFive: 'DetailImg/img75.jpg',
     guests: '2 Guests',
     bedroom: '2 Bedrooms',
     beds: '2 Beds',
@@ -709,8 +709,8 @@ const houseData = [
     hostCharacter: 'Friendly, Funny,hospitable',
     hostYearOfExperience: '7+',
     amenitiesOne: 'Outdoor pool',
-    bedOneImage: 'DetailImgimg18.jpeg',
-    bedTwoImage: 'DetailImgimg19.jpeg',
+    bedOneImage: 'Beds/img209.jpeg',
+    bedTwoImage: 'Beds/img212.jpeg',
     personOneReview: {
       name: 'Nathan Dickson',
       image: 'icon/uifaces-human-image (22).jpg',
@@ -2405,7 +2405,7 @@ const houseData = [
     mainImage: 'DetailImg/img246.jpeg',
     imageTwo: 'DetailImg/img247.jpeg',
     imageThree: 'DetailImg/img248.jpeg',
-    imageFour: 'DetailImg/img249.jpeg',
+    imageFour: 'DetailImg/img249.jpg',
     imageFive: 'DetailImg/img250.jpeg',
     guests: '3 Guests',
     bedroom: '1 Bedrooms',
@@ -2453,8 +2453,8 @@ const houseData = [
     name: 'Cloud Nine Cottage',
     mainImage: 'DetailImg/img251.jpeg',
     imageTwo: 'DetailImg/img252.jpeg',
-    imageThree: 'DetailImg/img253.jpeg',
-    imageFour: 'DetailImg/img254.jpeg',
+    imageThree: 'DetailImg/img253.jpg',
+    imageFour: 'DetailImg/img254.jpg',
     imageFive: 'DetailImg/img255.jpeg',
     guests: '4 Guests',
     bedroom: '2 Bedrooms',
@@ -2990,7 +2990,7 @@ const reviewThreeName = document.querySelector('.review-Three-Name');
 const reviewThreeLocation = document.querySelector('.review-Three-Location');
 const reviewThreeReview = document.querySelector('.review-Three-Review');
 
-if (house) {
+if (house && window.location.pathname.endsWith('house1.html')) {
   setTimeout(() => {
     firstImage.src = `${house.mainImage}`;
   }, 500);
@@ -3100,6 +3100,7 @@ function authenticateValidDate(eventTarget) {
   const rawCheckOutValue = checkOutInput.value;
   guestsInput.setAttribute('disabled', 'true');
   if (checkInInputValue >= new Date()) {
+    console.log(checkInInputValue);
     if (
       rawCheckOutValue.length > 0 &&
       checkInInputValue.toString().length < 15 &&
@@ -3125,11 +3126,14 @@ const cleaningFeeContainer = document.querySelector('.cleaning-fee-container');
 const tranquilServiceContainer = document.querySelector('.tranquil-fee');
 const totalAmountContainer = document.querySelector('.total-charges-amount');
 
+let allTripInfo = {};
+
 let sharedDaysDiff = {};
 function calculateDaysDifference() {
   const checkInInputValue = new Date(checkInInput.value);
   const checkOutInputValue = new Date(checkOutInput.value);
   const currentInput = Number(guestInput.value);
+  console.log(checkOutInputValue);
   if (
     checkInInputValue.toString().length > 15 &&
     checkInInputValue >= new Date() &&
@@ -3143,6 +3147,9 @@ function calculateDaysDifference() {
     sharedDaysDiff.daysDiff = daysDifference;
     numberOfNigthsCon.innerHTML = daysDifference + ' ' + 'Nights';
     errorStringContainer.style.display = 'none';
+    allTripInfo.daysOfStays = daysDifference;
+    allTripInfo.checkInDate = checkInInputValue;
+    allTripInfo.checkOutDate = checkOutInputValue;
 
     if (guestInput.value > 0) {
       let totalBill = daysDifference * house.price * currentInput;
@@ -3175,6 +3182,11 @@ function validateGuestsInput(eventTarget) {
     totalAmountContainer.innerHTML = '$' + ' ' + totalAmount;
     reserveValidationInputs.validFormData = totalAmount;
     errorStringContainer.style.display = 'none';
+    allTripInfo.numberOfGuests = currentInput;
+    allTripInfo.totalBill = totalBill;
+    allTripInfo.cleaningFee = cleaningFee;
+    allTripInfo.tranquilServiceFee = tranquilServiceFee;
+    allTripInfo.totalAmount = totalAmount;
   } else {
     eventTarget.style.border = '0.1em solid red';
   }
@@ -3203,6 +3215,7 @@ function openConfirmBox(eventTarget) {
       checkInInput.style.border = '0.1em solid seagreen';
       checkOutInput.style.border = '0.1em solid seagreen';
       guestInput.style.border = '0.1em solid seagreen';
+      reserveButton.style.backgroundColor = 'rgba(128, 128, 128, 0.4)';
       eventTarget.setAttribute('disabled', 'true');
       reserveDialogBox.style.transform = 'scale(1)';
     }
@@ -3213,25 +3226,112 @@ reserveBtn.addEventListener('click', () => {
   reserveSipnnerImage.style.display = 'block';
   setTimeout(() => {
     lastReviewCon.innerHTML = `<div class="paymentSuccessful">
-                <h2>Reservation Successfull <img src="close.png" onclick="closeReserseDialog(event.target)" class="close-Dialog" alt=""></h2>
+                <h2>Reservation Successfull <img src="close.png" onclick="closeAndDisableBooking()" onclick="closeReserseDialog(event.target)" class="close-Dialog" alt=""></h2>
                 <img src="succes.png" alt="">
                 <div class="paymentsuccessfullbuttton">
                     <button>Go To My Bookings</button>
                 </div>
             </div>`;
-  }, 5000);
+  }, 3000);
+  let bookingDate = new Date();
   let currentBooking = JSON.parse(localStorage.getItem('selectedHouse'));
-  console.log(currentBooking);
+  let requiredBookingInfo = {
+    bookingId: currentBooking.id,
+    bookingImage: currentBooking.imageTwo,
+    bookingName: currentBooking.name,
+    bookingHostIamge: currentBooking.hostImage,
+    bookingHostName: currentBooking.hostName,
+    bookingHostYOE: currentBooking.hostYearOfExperience,
+  };
+  let requiredBookingInfoFromReserve = allTripInfo;
+  allTripInfo.bookingDate = bookingDate;
+
+  let allRequiredBookingInfo = {
+    ...requiredBookingInfo,
+    ...requiredBookingInfoFromReserve,
+  };
+
+  console.log(requiredBookingInfo);
+  console.log(requiredBookingInfoFromReserve);
+  console.log(allRequiredBookingInfo);
+
+  let bookedHouses = JSON.parse(localStorage.getItem('BookedHouses'));
+  setTimeout(() => {
+    if (bookedHouses === null) {
+      let firstBooking = [];
+      firstBooking.push(allRequiredBookingInfo);
+      localStorage.setItem('BookedHouses', JSON.stringify(firstBooking));
+    } else {
+      let currentBookedHouses = JSON.parse(
+        localStorage.getItem('BookedHouses')
+      );
+      currentBookedHouses.unshift(allRequiredBookingInfo);
+      localStorage.setItem('BookedHouses', JSON.stringify(currentBookedHouses));
+    }
+  }, 3000);
 });
-
-// async function fetchData() {
-//   const response = await fetch('https', {
-//     method: 'GET',
-//   });
-//   const result = await response.json();
-//   if (result && result.person) console.log(result);
-// }
-
 function closeReserseDialog(eventTarget) {
   reserveDialogBox.style.transform = 'scale(0.0005)';
 }
+function closeAndDisableBooking() {
+  reserveDialogBox.style.transform = 'scale(0.0005)';
+  reserveButton.setAttribute('disabled', 'true');
+  reserveButton.style.backgroundColor = 'rgba(128, 128, 128, 0.4)';
+  reserveButton.style.color = 'red';
+  reserveButton.style.fontSize = 'small';
+  reserveButton.textContent = 'You Have Already Reserved This House';
+  checkInInput.setAttribute('disabled', 'true');
+  checkInInput.style.cursor = 'no-drop';
+  checkInInput.style.backgroundColor = 'rgba(128, 128, 128, 0.4)';
+  checkOutInput.setAttribute('disabled', 'true');
+  checkOutInput.style.cursor = 'no-drop';
+  checkOutInput.style.backgroundColor = 'rgba(128, 128, 128, 0.4)';
+  guestInput.style.backgroundColor = 'rgba(128, 128, 128, 0.4)';
+}
+const reserveButton = document.querySelector('.reserve-actual-button');
+window.addEventListener('DOMContentLoaded', () => {
+  if (window.location.pathname.endsWith('house1.html')) {
+    let currentBookedHouses = JSON.parse(localStorage.getItem('BookedHouses'));
+    let selectedCurrentHouse = JSON.parse(
+      localStorage.getItem('selectedHouse')
+    );
+
+    let idsOfCurrentBookedHouses = [];
+    currentBookedHouses.forEach((item) => {
+      idsOfCurrentBookedHouses.push(item.bookingId);
+    });
+    if (idsOfCurrentBookedHouses.includes(selectedCurrentHouse.id)) {
+      reserveButton.setAttribute('disabled', 'true');
+      reserveButton.style.backgroundColor = 'rgba(128, 128, 128, 0.4)';
+      reserveButton.style.color = 'red';
+      reserveButton.style.fontSize = 'small';
+      reserveButton.textContent = 'You Have Already Reserved This House';
+      checkInInput.setAttribute('disabled', 'true');
+      checkInInput.style.cursor = 'no-drop';
+      checkInInput.style.backgroundColor = 'rgba(128, 128, 128, 0.4)';
+      checkOutInput.setAttribute('disabled', 'true');
+      checkOutInput.style.cursor = 'no-drop';
+      checkOutInput.style.backgroundColor = 'rgba(128, 128, 128, 0.4)';
+      guestInput.style.backgroundColor = 'rgba(128, 128, 128, 0.4)';
+
+      let currentBookingId = selectedCurrentHouse.id;
+      currentBookedHouses.forEach((displayItem) => {
+        if (displayItem.bookingId === currentBookingId) {
+          totalBillContainer.innerHTML = '$' + ' ' + displayItem.totalBill;
+          cleaningFeeContainer.innerHTML = '$' + ' ' + displayItem.cleaningFee;
+          tranquilServiceContainer.innerHTML =
+            '$' + ' ' + displayItem.tranquilServiceFee;
+          totalAmountContainer.innerHTML = '$' + ' ' + displayItem.totalAmount;
+          numberOfNigthsCon.innerHTML =
+            displayItem.daysOfStays + ' ' + 'Nights';
+          let yearOfBooking = new Date(displayItem.checkOutDate).getFullYear();
+          let monthOfBooking = new Date(displayItem.checkOutDate).getFullYear();
+          let dayOfBooking = new Date(displayItem.checkOutDate).getFullYear();
+
+          let checkOutDisplayDate = new Date(checkInInput.value);
+          checkInInput.value = new Date(displayItem.checkOutDate);
+        }
+      });
+    }
+  }
+});

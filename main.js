@@ -2,144 +2,13 @@ const imghero = document.querySelector('.main-image');
 const namesec = document.querySelector('.nameabout');
 const saveText = document.querySelector('.saveText');
 const save = document.querySelector('.save');
-const headingName = document.querySelector('.heading-name');
-
-const myProfileCon = document.querySelector('.my-profile-container');
-const myTripsCon = document.querySelector('.my-trips-container');
-const mywishlistCon = document.querySelector('.my-wishlist-container');
-const hostCon = document.querySelector('.become-host-container');
-const getHelpCon = document.querySelector('.get-help-container');
-const settingsCon = document.querySelector('.my-settings-container');
-const allEachCon = document.querySelector('.all-each-containers');
-const eachSavedHouse = document.querySelector('.each-saved-house');
 
 const leftBtns = document.querySelectorAll('.all-con');
-window.addEventListener('DOMContentLoaded', displayProfile);
-function displayProfile() {
-  allEachCon.innerHTML = `<div class="my-profile-container">
-          <h1>My Profile</h1>
-          <div class="loader-container"><img src="spinner.svg" alt=""></div>
-
-        </div>`;
-  allEachCon.style.display = 'flex';
-  myProfileCon.style.display = 'none';
-  myTripsCon.style.display = 'none';
-  hostCon.style.display = 'none';
-  getHelpCon.style.display = 'none';
-  settingsCon.style.display = 'none';
-  headingName.innerHTML = '<img src="accountUser.svg" alt="">My Profile';
-}
-
-function displayTrips() {
-  allEachCon.innerHTML = `<div class="my-trips-container">
-          <h1>My Trips</h1>
-          <div class="loader-container"><img src="spinner.svg" alt=""></div>
-
-        </div>`;
-
-  setTimeout(() => {
-    allEachCon.innerHTML = `<div class="my-trips-container">
-              <div class="tripDetails">
-                <img style="width: 40%; height: 100%; border-radius: 1em;" src="DetailImg/img10.jpeg" alt="">
-                <div class="all-trip-details-info">
-                    <div class="trip-house-name">
-                        <h2 style="  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-style: italic;">BeachSide Bungallow With A Hammock Field</h2>
-                    </div>
-                    <div class="all-other-trip-details">
-                        <div class="hostAndNameInformation">
-                  <div class="hostInfo">
-                   <img src="icon/sagar.png" alt="hostImage">
-                   <div class="hostfulldetails">
-                    <h3>Host Name:<h4>Annah Marquez</h4></h3>
-                    <h3>Host Rating:<h4><img src="star.png" alt="star"><img src="star.png" alt="star"><img src="star.png" alt="star"> <img src="star.png" alt="star"></h4></h3>
-                    </div>
-                  </div>
-                </div>
-          <div class="trips-check-in-out-info">
-            <div class="trips-check-in">
-              <h3>Check In Date</h3>
-              <h4>12/06/2025</h4>
-            </div>
-            <div class="trips-check-out">
-              <h3>Check Out Date</h3>
-              <h4>12/06/2025</h4>
-            </div>
-            <div class="days-of-stays">
-              <h3>Days Of Stay</h3>
-              <h4>5 Days</h4>
-            </div>
-            <div class="total-amount-to-pay">
-              <h3>Total Amount</h3>
-              <h4>$ 500</h4>
-            </div>
-            </div>
-            
-            </div>
-                <div class="trip-info-button">
-                <button  class="check-Listing-btn">Check Listing</button>
-                  <button style="background-color: red;" class="check-more-details">Cancel Booking</button>
-              </div>
-          </div>  
-        </div>`;
-  }, 200);
-
-  // <div class="nameInformation">
-  //                 <h4>Beachside Bungallow</h4>
-  //               </div>
-
-  allEachCon.style.display = 'flex';
-  myProfileCon.style.display = 'none';
-  myTripsCon.style.display = 'block';
-  hostCon.style.display = 'none';
-  getHelpCon.style.display = 'none';
-  settingsCon.style.display = 'none';
-  headingName.innerHTML = '<img src="trip.svg" alt="">My Trips';
-}
-function displayHost(eventTarget) {
-  allEachCon.innerHTML = `  <div class="become-host-container">
-          <h1>Become a Host</h1>
-          <div class="loader-container"><img src="spinner.svg" alt=""></div>
-
-        </div>`;
-  allEachCon.style.display = 'flex';
-  myProfileCon.style.display = 'none';
-  myTripsCon.style.display = 'none';
-  // mywishlistCon.style.display = 'none';
-  hostCon.style.display = 'block';
-  getHelpCon.style.display = 'none';
-  settingsCon.style.display = 'none';
-  headingName.innerHTML = '<img src="home.svg" alt="">Host Now';
-}
-function displayHelp(eventTarget) {
-  allEachCon.innerHTML = `<div class="get-help-container">
-          <h1>Get Help</h1>
-          <div class="loader-container"><img src="spinner.svg" alt=""></div>
-
-        </div>`;
-  allEachCon.style.display = 'flex';
-  myProfileCon.style.display = 'none';
-  myTripsCon.style.display = 'none';
-  // mywishlistCon.style.display = 'none';
-  hostCon.style.display = 'none';
-  getHelpCon.style.display = 'block';
-  settingsCon.style.display = 'none';
-  headingName.innerHTML = '<img src="help.svg" alt="">Get Help';
-}
-function displaySettings(eventTarget) {
-  allEachCon.innerHTML = `  <div class="my-settings-container">
-          <h1>Settings</h1>
-          <div class="loader-container"><img src="spinner.svg" alt=""></div>
-
-        </div>`;
-  allEachCon.style.display = 'flex';
-  myProfileCon.style.display = 'none';
-  myTripsCon.style.display = 'none';
-  // mywishlistCon.style.display = 'none';
-  hostCon.style.display = 'none';
-  getHelpCon.style.display = 'none';
-  settingsCon.style.display = 'block';
-  headingName.innerHTML = '<img src="settings.svg" alt="">Settings';
-}
+// window.addEventListener('DOMContentLoaded', () => {
+//   if (window.location.pathname.endsWith('accountpage.html')) {
+//     displaySavedHouses();
+//   }
+// });
 
 const child = document.querySelector('.deleteCheck');
 const savedCon = document.querySelector('.allSaved');
@@ -153,9 +22,10 @@ const rightinfo = document.querySelector('.rightinfo');
 const rigthColumn = document.querySelector('.rigth-column');
 
 // WINDOWS SCROLL FOR RIGHT COLUMN
-window.addEventListener('DOMContentLoaded', displayTrips);
 window.onscroll = function () {
-  handleScroll();
+  if (window.location.pathname.endsWith('house1.html')) {
+    handleScroll();
+  }
 };
 function handleScroll() {
   let getScrollFromTop =
@@ -179,7 +49,7 @@ function handleScroll() {
   }
 }
 
-function addToWishlist(saveHeart) {
+function addToWishlist() {
   let selectedCurrentHouse = JSON.parse(localStorage.getItem('selectedHouse'));
   let wishlistedHouses = JSON.parse(localStorage.getItem('wishlistedHouses'));
   if (wishlistedHouses === null) {
@@ -187,11 +57,10 @@ function addToWishlist(saveHeart) {
       alert('Nothing To Show Here');
     } else {
       wislistToStorage();
-      alreadySavedHelper(save);
     }
   } else {
     if (selectedCurrentHouse === null) {
-      alert('Nothing To Show Here, Go Back And Selected The House First');
+      alert('Nothing To Show Here, Go Back And Select The House');
     } else {
       let existingWishlistedHousesId = [];
       wishlistedHouses.forEach((item) => {
@@ -199,33 +68,38 @@ function addToWishlist(saveHeart) {
       });
 
       if (existingWishlistedHousesId.includes(selectedCurrentHouse.id)) {
-        alreadySavedHelper(saveHeart);
+        alert('Already In Your Wishlist');
       } else {
         wislistToStorage();
       }
     }
   }
 }
-function alreadySavedHelper(savedHeart) {
-  savedHeart.src = 'saved.png';
-}
-window.addEventListener('DOMContentLoaded', () => {
-  let selectedCurrentHouse = JSON.parse(localStorage.getItem('selectedHouse'));
-  let wishlistedHouses = JSON.parse(localStorage.getItem('wishlistedHouses'));
-  if (selectedCurrentHouse === null) {
-    alert('Nothing To Show Here, Go Back And Select The House First');
-  } else {
-    let existingWishlistedHousesId = [];
-    wishlistedHouses.forEach((item) => {
-      existingWishlistedHousesId.push(item.id);
-    });
 
-    if (existingWishlistedHousesId.includes(selectedCurrentHouse.id)) {
-      alreadySavedHelper(save);
+window.addEventListener('DOMContentLoaded', () => {
+  if (window.location.pathname.endsWith('house1.html')) {
+    let selectedCurrentHouse = JSON.parse(
+      localStorage.getItem('selectedHouse')
+    );
+    let wishlistedHouses = JSON.parse(localStorage.getItem('wishlistedHouses'));
+    if (selectedCurrentHouse === null) {
+      alert('Nothing To Show Here, Go Back And Select The House');
     } else {
+      let existingWishlistedHousesId = [];
+      wishlistedHouses.forEach((item) => {
+        existingWishlistedHousesId.push(item.id);
+      });
+
+      if (existingWishlistedHousesId.includes(selectedCurrentHouse.id)) {
+        alreadySavedHelper(save);
+      }
     }
   }
 });
+
+function alreadySavedHelper(savedHeart) {
+  savedHeart.src = 'saved.png';
+}
 
 function wislistToStorage() {
   let selectedCurrentHouse = JSON.parse(localStorage.getItem('selectedHouse'));
@@ -238,25 +112,62 @@ function wislistToStorage() {
     let existingWishlistedHouses = JSON.parse(
       localStorage.getItem('wishlistedHouses')
     );
-    existingWishlistedHouses.push(selectedCurrentHouse);
-    localStorage.setItem(
-      'wishlistedHouses',
-      JSON.stringify(existingWishlistedHouses)
-    );
+    if (existingWishlistedHouses.length < 10) {
+      existingWishlistedHouses.push(selectedCurrentHouse);
+      localStorage.setItem(
+        'wishlistedHouses',
+        JSON.stringify(existingWishlistedHouses)
+      );
+      save.src = 'saved.png';
+    } else {
+      alert(
+        'You have exceeded the required number of wishlist. You can add upto 10 items only '
+      );
+    }
   }
+}
+window.addEventListener('DOMContentLoaded', () => {
+  if (window.location.pathname.endsWith('accountpage.html')) {
+    displayWishlistsNumber();
+  }
+});
+const wishlistNumberContainer = document.querySelector('.wishlist-number');
+
+function displayWishlistsNumber() {
+  let wishlistedHouses = JSON.parse(localStorage.getItem('wishlistedHouses'));
+  wishlistNumberContainer.textContent = wishlistedHouses.length;
 }
 
 // Account page
-function displaySavedHouses(eventTarget) {
+const headingName = document.querySelector('.heading-name');
+const myProfileCon = document.querySelector('.myprofilecontainer');
+const myTripsCon = document.querySelector('.mytripscontainer');
+const mywishlistCon = document.querySelector('.mywishlistcontainer');
+const hostCon = document.querySelector('.becomehostcontainer');
+const getHelpCon = document.querySelector('.gethelpcontainer');
+const settingsCon = document.querySelector('.settingscontainer');
+const allEachCon = document.querySelector('.all-each-containers');
+
+window.addEventListener('DOMContentLoaded', () => {
+  if (window.location.pathname.endsWith('accountpage.html')) {
+    displayTrips();
+  }
+});
+
+function displaySavedHouses() {
   headingName.innerHTML =
     '<img style="width:20%; heigth:50%"; src="saved.png" alt="">My Wishlist';
   let wishlistedHouses = JSON.parse(localStorage.getItem('wishlistedHouses'));
-  allEachCon.innerHTML = `<div class="my-profile-container">
-          <div class="loader-container"><img src="spinner.svg" alt=""></div>
+  mywishlistCon.style.display = 'flex';
+  mywishlistCon.style.flexDirection = 'column';
+  mywishlistCon.style.alignItems = 'center';
+  mywishlistCon.style.justifyContent = 'center';
+  mywishlistCon.innerHTML = `<div class="loading-state">
+          <img src="spinner.svg" alt="">
         </div>`;
-
   setTimeout(() => {
-    allEachCon.innerHTML = '';
+    mywishlistCon.style.display = 'grid';
+    mywishlistCon.style.gridTemplateColumns = 'repeat(3,1fr)';
     mywishlistCon.innerHTML = wishlistedHouses
       .map(
         (item) => `<div class="each-saved-house">
@@ -274,22 +185,33 @@ function displaySavedHouses(eventTarget) {
       </div>`
       )
       .join(' ');
-    allEachCon.appendChild(mywishlistCon);
-  }, 500);
-  setTimeout(() => {
-    if (wishlistedHouses.length === 0) {
-      allEachCon.innerHTML = `<div class="my-profile-container empty-Container">
+  }, 1500);
+  if (wishlistedHouses.length === 0) {
+    mywishlistCon.style.display = 'flex';
+    mywishlistCon.style.flexDirection = 'column';
+    mywishlistCon.style.alignItems = 'center';
+    mywishlistCon.style.justifyContent = 'center';
+    mywishlistCon.innerHTML = `<div class="loading-state">
+          <img src="spinner.svg" alt="">
+        </div>`;
+    setTimeout(() => {
+      mywishlistCon.innerHTML = `<div class="my-profile-container empty-Container">
         <div class="loader-container"><img src="empty.png" alt=""></div>
           <h2>Oops! Nothing Is In Your Wishlist</h2>
         </div>`;
-    }
-  }, 600);
+    }, 1500);
+  }
+
+  allEachCon.innerHTML = '';
+  allEachCon.appendChild(mywishlistCon);
 }
 function deleteWishlistItem(eventTarget, itemId) {
   const imediateParent = eventTarget.parentElement;
   const grandParent = imediateParent.parentElement;
   const greatGrandParent = grandParent.parentElement;
+  eventTarget.src = 'save.png';
   greatGrandParent.style.transform = 'scale(0.05)';
+
   setTimeout(() => {
     greatGrandParent.remove();
   }, 201);
@@ -304,5 +226,90 @@ function deleteWishlistItem(eventTarget, itemId) {
       );
     }
   });
-  console.log(wishlistedHouses);
+  displayWishlistsNumber();
+}
+
+function displayTrips() {
+  let currentTrips = JSON.parse(localStorage.getItem('BookedHouses'));
+  console.log(currentTrips[0]);
+
+  headingName.innerHTML =
+    '<img style="width:20%; heigth:50%"; src="trip.svg" alt="">My Trips';
+  myTripsCon.innerHTML = currentTrips
+    .map(
+      (displayTripItem) => `<div class="each-trip-con">
+            <div class="main-image-container">
+              <img src="${displayTripItem.bookingImage}" alt="">
+            </div>
+            <div class="each-left-column">
+              <div class="upper-container">
+                <h3>${displayTripItem.bookingName}</h3>
+              </div>
+              <div class="lower-container">
+                <div class="trip-host-card">
+                  <img src="${
+                    displayTripItem.bookingHostIamge
+                  }" alt="hostImage"></img>
+                  <div class="trip-host-details">
+                  <h3>Your Host:</h3>
+                  <h3>${displayTripItem.bookingHostName}</h3>
+                  <p>${displayTripItem.bookingHostYOE} Years Of Experience</p>
+                  </div>
+                </div>
+                <div class="trip-check-in-out-details">
+                  <div class="trip-check-in-container">
+                    <h4>Check In Date:</h4>
+                    <h4>${new Date(
+                      displayTripItem.checkInDate
+                    ).getDate()}/${new Date(
+        displayTripItem.checkInDate
+      ).getMonth()}/${new Date(displayTripItem.checkInDate).getFullYear()}</h4>
+                  </div>
+                  <div class="trip-check-out-container">
+                    <h4>Check Out Date:</h4>
+                    <h4>${new Date(
+                      displayTripItem.checkOutDate
+                    ).getDate()}/${new Date(
+        displayTripItem.checkOutDate
+      ).getMonth()}/${new Date(displayTripItem.checkOutDate).getFullYear()}</h4>
+                  </div>
+                  <div class="trip-days-stays-container">
+                    <h4>Days Of Stay:</h4>
+                    <h4>${displayTripItem.daysOfStays} Days</h4>
+                  </div>
+                  <div class="trip-total-amount-container">
+                    <h4>Total Amount:</h4>
+                    <h4>$ ${displayTripItem.totalAmount}</h4>
+                  </div>
+                </div>
+              </div>
+              <div class="lower-buttons-container">
+                <button>Check Listing</button>
+                <button style="background-color:red; color:#000;">Cancel Booking</button>
+              </div>
+            </div>
+
+          </div>`
+    )
+    .join(' ');
+  allEachCon.innerHTML = '';
+  allEachCon.appendChild(myTripsCon);
+}
+function displayProfile() {
+  headingName.innerHTML =
+    '<img style="width:20%; heigth:50%"; src="accountUser.svg" alt="">My Profile';
+  allEachCon.innerHTML = '';
+  allEachCon.appendChild(myProfileCon);
+}
+function displayHost() {
+  allEachCon.innerHTML = '';
+  allEachCon.appendChild(hostCon);
+}
+function displayHelp() {
+  allEachCon.innerHTML = '';
+  allEachCon.appendChild(getHelpCon);
+}
+function displaySettings() {
+  allEachCon.innerHTML = '';
+  allEachCon.appendChild(settingsCon);
 }

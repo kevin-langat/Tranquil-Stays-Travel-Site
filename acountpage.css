@@ -48,9 +48,44 @@
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
-  /* background-color: rgb(0, 255, 0); */
   font-weight: bold;
   border-radius: 1em;
+}
+
+.my-wishlist-header {
+  width: 90%;
+  height: 7vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.wishlist-number-Container {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-weight: bolder;
+  justify-content: space-around;
+}
+
+.wishlist-number-Container img {
+  width: 25%;
+  height: 80%;
+}
+
+.wishlist-number {
+  width: 10%;
+  height: 80%;
+  text-orientation: upright;
+  border-radius: 50%;
+  color: rgba(25, 216, 25, 0.932);
+  font-size: large;
+  font-weight: bolder;
+  transition: 1s ease-out;
 }
 
 .all-con p img {
@@ -93,17 +128,221 @@
 .all-each-containers {
   width: 100%;
   height: 95%;
-  background-color: rgba(199, 212, 224, 0.226);
+  background-color: rgba(201, 204, 206, 0.267);
   overflow: auto;
   gap: 2%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  overflow: auto;
+  padding: 1%;
 
+}
+
+.myprofilecontainer {
+  width: 100%;
+  height: 100%;
+  background-color: blue;
+  /* display: none; */
+}
+
+.mytripscontainer {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  gap: 5%;
+  overflow: auto;
+  padding: 2%;
+}
+
+.mywishlistcontainer {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  overflow: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2%;
+  padding: 2%;
+  /* display: none; */
+}
+
+.becomehostcontainer {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 255, 42);
+  /* display: none; */
+}
+
+.gethelpcontainer {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(217, 255, 0);
+  /* display: none; */
+}
+
+.settingscontainer {
+  width: 100%;
+  /* display: none; */
+  height: 100%;
+  background-color: rgb(255, 136, 0);
+}
+
+.myprofilecontainer {
+  width: 100%;
+  height: 100%;
+  background-color: blue;
 }
 
 .loader-container img {
   mix-blend-mode: multiply;
+}
+
+
+.my-trips-container {
+  width: 100%;
+  height: 95%;
+  background-color: #db7c7c;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2%;
+  padding-left: 5%;
+  padding-top: 1%;
+}
+
+.each-trip-con {
+  width: 95%;
+  height: 48%;
+  display: flex;
+  background-color: #fff;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 1em;
+  box-shadow: 0 0 0.5em #000;
+}
+
+.main-image-container {
+  width: 40%;
+  height: 100%;
+}
+
+.main-image-container img {
+  width: 100%;
+  height: 100%;
+  border-bottom-left-radius: 1em;
+  border-top-left-radius: 1em;
+}
+
+.each-left-column {
+  width: 60%;
+  height: 100%;
+  border-radius: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.upper-container {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: large;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border-radius: 1em;
+}
+
+.lower-container {
+  width: 100%;
+  height: 70%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.trip-host-card {
+  width: 45%;
+  height: 80%;
+  box-shadow: 0 0 0.5em #000;
+  border-radius: 0.5em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+
+}
+
+.trip-host-card img {
+  width: 40%;
+  height: 70%;
+  border-radius: 50%;
+}
+
+.trip-host-details {
+  width: 55%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  font-size: medium;
+}
+
+.trip-check-in-out-details {
+  width: 50%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+}
+
+.trip-check-in-container,
+.trip-check-out-container,
+.trip-days-stays-container,
+.trip-total-amount-container {
+  /* border: 0.1em solid rgb(0, 38, 255); */
+  box-shadow: 0 0 0.3em #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 95%;
+  height: 60%;
+  border-radius: 1em;
+  font-size: large;
+
+
+}
+
+.lower-buttons-container {
+  width: 60%;
+  height: 20%;
+  /* background-color: #e40808; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.lower-buttons-container button {
+  width: 45%;
+  height: 80%;
+  border: none;
+  background-color: #302b5e;
+  border-radius: 0.5em;
+  font-size: larger;
+  color: #fff;
 }
 
 .my-wishlist-container {
@@ -118,7 +357,6 @@
 }
 
 .my-profile-container,
-.my-trips-container,
 .become-host-container,
 .get-help-container,
 .my-settings-container {
@@ -132,36 +370,6 @@
   padding: 2%;
   overflow: auto;
 
-}
-
-.tripDetails {
-  width: 95%;
-  height: 50%;
-  display: flex;
-  flex-direction: row;
-  border-radius: 1em;
-  background-color: #fff;
-  box-shadow: 0 0 0.5em #000;
-}
-
-.all-trip-details-info {
-  width: 60%;
-  height: 100%;
-  border-radius: 1em;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-
-}
-
-.all-other-trip-details {
-  width: 100%;
-  height: 70%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-evenly;
 }
 
 .hostAndNameInformation {
@@ -284,7 +492,7 @@
   width: 100%;
   height: 50vh;
   background-color: #fff;
-  box-shadow: 0 0 0.2em #000;
+  box-shadow: 0 0 0.5em #000;
   border-radius: 0.5em;
   display: flex;
   flex-direction: column;
@@ -295,7 +503,7 @@
 }
 
 .empty-Container {
-  transition: 2s;
+  transition: 1s;
   color: orangered;
 }
 

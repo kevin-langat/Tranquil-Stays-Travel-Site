@@ -632,7 +632,7 @@
 
 :disabled {
   cursor: no-drop;
-  background: #dbd2d2;
+
 }
 
 .charges {
@@ -764,7 +764,7 @@
   border-radius: 0.5em;
   box-shadow: 0 0 0.5em #000;
   z-index: 8500;
-  /* transform: scale(0.0005); */
+  transform: scale(0.0005);
   transition: 0.2s;
 }
 
