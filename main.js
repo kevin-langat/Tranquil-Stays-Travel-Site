@@ -253,7 +253,9 @@ function displayTrips() {
                   <div class="trip-host-details">
                   <h3>Your Host:</h3>
                   <h3>${displayTripItem.bookingHostName}</h3>
-                  <p>${displayTripItem.bookingHostYOE} Years Of Experience</p>
+                  <p style="font-weight: bold;">${
+                    displayTripItem.bookingHostYOE
+                  } YOE</p>
                   </div>
                 </div>
                 <div class="trip-check-in-out-details">
@@ -285,7 +287,7 @@ function displayTrips() {
               </div>
               <div class="lower-buttons-container">
                 <button>Check Listing</button>
-                <button style="background-color:red; color:#000;">Cancel Booking</button>
+                <button style="background-color:red;">Cancel Booking</button>
               </div>
             </div>
 
@@ -302,14 +304,20 @@ function displayProfile() {
   allEachCon.appendChild(myProfileCon);
 }
 function displayHost() {
+  headingName.innerHTML =
+    '<img style="width:20%; heigth:50%"; src="home.svg" alt="">Become Host';
   allEachCon.innerHTML = '';
   allEachCon.appendChild(hostCon);
 }
 function displayHelp() {
+  headingName.innerHTML =
+    '<img style="width:20%; heigth:50%"; src="help.svg" alt="">Get Help';
   allEachCon.innerHTML = '';
   allEachCon.appendChild(getHelpCon);
 }
 function displaySettings() {
+  headingName.innerHTML =
+    '<img style="width:20%; heigth:50%"; src="settings.svg" alt="">Settings';
   allEachCon.innerHTML = '';
   allEachCon.appendChild(settingsCon);
 }

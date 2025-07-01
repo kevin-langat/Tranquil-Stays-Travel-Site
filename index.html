@@ -6,43 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tranquil Homes</title>
     <link rel="stylesheet" href="style.css">
-
-    <!-- <link rel="stylesheet" href="styleforhousedetails.css"> -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 
 <body>
     <div id="hero" class="hero">
-        <img src="menu.png" style="position: absolute; display: none;" alt="open">
-        <div class="navforsm">
-            <div class="closeopen">
-                <img src="close.png" style="width: 20%; height: 80%; margin-top: 3%; margin-left: 2%;" alt="close">
-            </div>
-            <div class="navlistforsm">
-                <nav>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li class="listing"><a href="houselisting.html">Listings</a></li>
-                        <li><a href="#trend">Trending</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#footer">Contact</a></li>
-                        <button
-                            style="color: #fff; width: 130%; height: 7vh; border-radius: 5px; background-color: orangered; font-size: medium; border: none;">Register
-                        </button>
-                        <button
-                            style="color: #fff; width: 130%; height: 7vh; border-radius: 5px; background-color: orangered; font-size: medium; border: none;">Login
-                        </button>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-
-        <div class="navbar">
-            <div class="logo">
+        <div class="navigation-bar">
+            <div class="icon-logo">
                 <img src="logo.png" alt="logo">
             </div>
-
-            <nav>
+            <div class="navigation-bar-information">
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li class="listing"><a href="houselisting.html">Listings</a></li>
@@ -50,89 +23,73 @@
                     <li><a href="#about">About</a></li>
                     <li><a href="#footer">Contact</a></li>
                 </ul>
-
-                <button style="color: #fff;">Register</button>
-
-            </nav>
-
+                <button>Register</button>
+            </div>
         </div>
-        <div class="introduction">
-            <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
-                Disconnect, Unwind And <br> Explore With Us
-            </h1>
-            <h3
-                style="color: #000; font-style: italic; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
-                From peaceful homes to a vibrant culture, <br> Discover a destination that has it all.
-            </h3>
-            <a href="houselisting.html"><button
-                    style="color: #fff; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: medium;">Discover
-                    Now</button></a>
-        </div>
-        <div style="box-shadow: 0 0 5px #000; overflow: hidden;" class="searchbar">
-            <h2 style="margin-left: 15%; font-family: Arial, Helvetica, sans-serif;">Find a perfect place</h2>
-            <div class="searchinfo">
-                <div class="location">
-                    <label>Location</label>
-                    <input class="location-input" type="text" onkeydown="resetFindPlace()"
-                        placeholder="Your destination place" required>
+        <div class="hero-section-page">
+            <div class="hero-left-column">
+                <div class="hero-title-text">
+                    <h2>Disconnect, Unwind And Explore With Us </h2>
+                    <h3>From beatiful homes to a wonderful culture, discover the <br> destination that has it all</h3>
+                    <a href="houselisting.html"><button>Discover Now</button></a>
+
                 </div>
-                <div class="guests">
-                    <label>Guests</label>
-                    <input class="guests-input" type="number" min="1" max="10" onkeydown="resetFindPlace()" placeholder="
-                        Enter amount of guests" required>
+                <div class="find-a-place-container">
+                    <div class="upper-find-place-information">
+                        <div class="find-place-check-in">
+                            <h4>Check In</h4>
+                            <input type="date" placeholder="anyday" class="find-place-check-input">
+                        </div>
+                        <div class="find-place-check-in">
+                            <h4>Check Out</h4>
+                            <input type="date" placeholder="anyday" class="find-place-check-input">
+                        </div>
+                        <div class="find-place-check-in">
+                            <h4>Location</h4>
+                            <input type="text" placeholder="anywhere" class="find-place-check-input">
+                        </div>
+                        <div class="find-place-check-in">
+                            <h4>Guests</h4>
+                            <input type="number" max="10" min="1" placeholder="guests" class="find-place-check-input">
+                        </div>
+                    </div>
+                    <div class="search-place-button-container">
+                        <button>Search</button>
+                    </div>
+                </div>
+
+                <div class="our-achievements-container">
+                    <div class="satisfied-customers-container">
+                        <div class="satisfied-customers-images">
+                            <img src="icon/uifaces-human-image (24).jpg" alt="">
+                            <img src="icon/uifaces-human-image (27).jpg" alt="">
+                            <img src="icon/uifaces-human-image (13).jpg" alt="">
+                            <img src="icon/uifaces-human-image (35).jpg" alt="">
+                        </div>
+                        <p>2500+ Satisfied Customers</p>
+                    </div>
+                    <div class="travelled-locations-container">
+                        <img src="home.png" alt="">
+                        <p>3500+ Homes Listed</p>
+
+                    </div>
                 </div>
 
             </div>
-            <div class="checkinoutinfo">
-                <div class="check-in">
-                    <label>Check In</label>
-                    <input class="check-in-input" type="date" placeholder="Enter check in date" required>
+            <div class="hero-right-column">
+                <div class="rigth-top-image">
+                    <img src="img/paris.jpg" alt="paris">
                 </div>
-                <div class="check-out">
-                    <label>Check Out</label>
-                    <input class="check-out-input" type="date" placeholder="Enter check out date" required>
+                <div class="rigth-lower-images">
+                    <img src="img/img29.jpeg" alt="">
+                    <img src="img/img20.jpg" alt="">
+                    <img src="img/img14.jpeg" alt="">
                 </div>
-            </div>
-            <button class="checkavailabilitybtn" style="width: 50%;
-            border-radius: 5px;
-            height: 5dvh;
-            right: 2%;
-            margin-left: 25%;
-            justify-content: right;
-            margin-top: 15px;
-            border: 0;
-            background-color: orangered;"><a style="color: #fff;" href="#">Check Availability <img
-                        class="loading-state" src="loading.gif" alt=""></a></button>
-        </div>
 
-
-        <div style="position: absolute; display: flex;  width: 35%; height: 10vh; top: 85%; margin-left: 5%; "
-            class="satisfiedclients">
-            <div style="width: 50%;" class="profileimg">
-                <img style=" position: absolute; height: 7dvh; width: 10%; border-radius: 50%; border: 1px solid rgb(0, 255, 21);"
-                    src="icon/monet.PNG" alt="kim">
-                <img style=" position: absolute; height: 7dvh; width: 10%; border-radius: 50%; margin-left: 7%; border: 1px solid rgb(0, 255, 21);"
-                    src="icon/amandla.PNG" alt="tate">
-                <img style=" position: absolute; height: 7dvh; width: 10%; border-radius: 50%; margin-left: 14%; border: 1px solid rgb(0, 255, 21);"
-                    src="icon/kim.PNG" alt="Monet">
-                <p
-                    style=" position: absolute; left: 25%; width: 40%; font-style: italic; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight: 600; font-size: 600;">
-                    5000+ <br>
-                    Satisfied
-                    Travellers</p>
-            </div>
-            <div style="display: flex;  margin-left: 10%;" class="locations">
-                <img style="height: 6vh; width: 20% ;" src="icon/pin.PNG" alt="pin">
-                <p
-                    style="margin-left: 10px; font-style: italic; font-weight: 600; font-size: 700; font-weight: 600; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
-                    150+ Destinations
-                </p>
             </div>
         </div>
-        <div class="backgroundimg">
-            <img src="img/shanghai2.jpg">
-        </div>
 
+    </div>
     </div>
 
 

@@ -143,8 +143,6 @@
 .myprofilecontainer {
   width: 100%;
   height: 100%;
-  background-color: blue;
-  /* display: none; */
 }
 
 .mytripscontainer {
@@ -168,34 +166,26 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 2%;
   padding: 2%;
-  /* display: none; */
 }
 
 .becomehostcontainer {
   width: 100%;
   height: 100%;
-  background-color: rgb(0, 255, 42);
-  /* display: none; */
 }
 
 .gethelpcontainer {
   width: 100%;
   height: 100%;
-  background-color: rgb(217, 255, 0);
-  /* display: none; */
 }
 
 .settingscontainer {
   width: 100%;
-  /* display: none; */
   height: 100%;
-  background-color: rgb(255, 136, 0);
 }
 
 .myprofilecontainer {
   width: 100%;
   height: 100%;
-  background-color: blue;
 }
 
 .loader-container img {
@@ -226,6 +216,7 @@
   align-items: center;
   border-radius: 1em;
   box-shadow: 0 0 0.5em #000;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .main-image-container {
@@ -274,7 +265,7 @@
 .trip-host-card {
   width: 45%;
   height: 80%;
-  box-shadow: 0 0 0.5em #000;
+  box-shadow: 0 0 0.2em #000;
   border-radius: 0.5em;
   display: flex;
   flex-direction: row;
@@ -311,8 +302,7 @@
 .trip-check-out-container,
 .trip-days-stays-container,
 .trip-total-amount-container {
-  /* border: 0.1em solid rgb(0, 38, 255); */
-  box-shadow: 0 0 0.3em #000;
+  box-shadow: 0 0 0.2em #000;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -337,7 +327,7 @@
 
 .lower-buttons-container button {
   width: 45%;
-  height: 80%;
+  height: 70%;
   border: none;
   background-color: #302b5e;
   border-radius: 0.5em;
