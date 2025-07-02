@@ -4,11 +4,6 @@ const saveText = document.querySelector('.saveText');
 const save = document.querySelector('.save');
 
 const leftBtns = document.querySelectorAll('.all-con');
-// window.addEventListener('DOMContentLoaded', () => {
-//   if (window.location.pathname.endsWith('accountpage.html')) {
-//     displaySavedHouses();
-//   }
-// });
 
 const child = document.querySelector('.deleteCheck');
 const savedCon = document.querySelector('.allSaved');
@@ -150,13 +145,46 @@ const allEachCon = document.querySelector('.all-each-containers');
 
 window.addEventListener('DOMContentLoaded', () => {
   if (window.location.pathname.endsWith('accountpage.html')) {
-    displayTrips();
+    let windowRequiredAction = JSON.parse(
+      localStorage.getItem('AccountInfoLoad')
+    );
+    if (windowRequiredAction === 1) {
+      displayProfile();
+    } else if (windowRequiredAction === 2) {
+      displayTrips();
+    } else if (windowRequiredAction === 3) {
+      displaySavedHouses();
+    } else if (windowRequiredAction === 4) {
+      displayHost();
+    } else if (windowRequiredAction === 5) {
+      displayHelp();
+    } else if (windowRequiredAction === 6) {
+      displaySettings();
+    } else if (windowRequiredAction === null) {
+      displayProfile();
+    } else {
+      displayProfile();
+    }
   }
 });
+const myProfileHeaderCon = document.querySelector('.displayProfileContainer');
+const myTripsHeaderCon = document.querySelector('.displayTripsContainer');
+const myWishlistHeaderCon = document.querySelector(
+  '.displaySavedHousesContainer'
+);
+const hostHeaderCon = document.querySelector('.displayHostContainer');
+const helpHeaderCon = document.querySelector('.displayHelpContainer');
+const settingsHeaderCon = document.querySelector('.displaySettingsContainer');
 
-function displaySavedHouses() {
-  headingName.innerHTML =
-    '<img style="width:20%; heigth:50%"; src="saved.png" alt="">My Wishlist';
+function displaySavedHouses(eventTarget) {
+  localStorage.setItem('AccountInfoLoad', JSON.stringify(3));
+  headingName.innerHTML = '<img src="saved.png" alt="">My Wishlist';
+  myProfileHeaderCon.style.border = 'none';
+  myTripsHeaderCon.style.border = 'none';
+  myWishlistHeaderCon.style.border = '0.1em solid rgb(55, 55, 126)';
+  hostHeaderCon.style.border = 'none';
+  helpHeaderCon.style.border = 'none';
+  settingsHeaderCon.style.border = 'none';
   let wishlistedHouses = JSON.parse(localStorage.getItem('wishlistedHouses'));
   mywishlistCon.style.display = 'flex';
   mywishlistCon.style.flexDirection = 'column';
@@ -185,7 +213,7 @@ function displaySavedHouses() {
       </div>`
       )
       .join(' ');
-  }, 1500);
+  }, 1000);
   if (wishlistedHouses.length === 0) {
     mywishlistCon.style.display = 'flex';
     mywishlistCon.style.flexDirection = 'column';
@@ -230,14 +258,24 @@ function deleteWishlistItem(eventTarget, itemId) {
 }
 
 function displayTrips() {
+  allEachCon.innerHTML = '';
+  localStorage.setItem('AccountInfoLoad', JSON.stringify(2));
   let currentTrips = JSON.parse(localStorage.getItem('BookedHouses'));
-  console.log(currentTrips[0]);
-
-  headingName.innerHTML =
-    '<img style="width:20%; heigth:50%"; src="trip.svg" alt="">My Trips';
-  myTripsCon.innerHTML = currentTrips
-    .map(
-      (displayTripItem) => `<div class="each-trip-con">
+  myProfileHeaderCon.style.border = 'none';
+  myTripsHeaderCon.style.border = '0.1em solid rgb(55, 55, 126)';
+  myWishlistHeaderCon.style.border = 'none';
+  hostHeaderCon.style.border = 'none';
+  helpHeaderCon.style.border = 'none';
+  settingsHeaderCon.style.border = 'none';
+  headingName.innerHTML = '<img src="trip.svg" alt="">My Trips';
+  myTripsCon.innerHTML =
+    '<div class=loader-image-trips><img src="spinner.svg"></div>';
+  allEachCon.appendChild(myTripsCon);
+  setTimeout(() => {
+    allEachCon.innerHTML = '';
+    myTripsCon.innerHTML = currentTrips
+      .map(
+        (displayTripItem) => `<div class="each-trip-con">
             <div class="main-image-container">
               <img src="${displayTripItem.bookingImage}" alt="">
             </div>
@@ -264,16 +302,20 @@ function displayTrips() {
                     <h4>${new Date(
                       displayTripItem.checkInDate
                     ).getDate()}/${new Date(
-        displayTripItem.checkInDate
-      ).getMonth()}/${new Date(displayTripItem.checkInDate).getFullYear()}</h4>
+          displayTripItem.checkInDate
+        ).getMonth()}/${new Date(
+          displayTripItem.checkInDate
+        ).getFullYear()}</h4>
                   </div>
                   <div class="trip-check-out-container">
                     <h4>Check Out Date:</h4>
                     <h4>${new Date(
                       displayTripItem.checkOutDate
                     ).getDate()}/${new Date(
-        displayTripItem.checkOutDate
-      ).getMonth()}/${new Date(displayTripItem.checkOutDate).getFullYear()}</h4>
+          displayTripItem.checkOutDate
+        ).getMonth()}/${new Date(
+          displayTripItem.checkOutDate
+        ).getFullYear()}</h4>
                   </div>
                   <div class="trip-days-stays-container">
                     <h4>Days Of Stay:</h4>
@@ -286,38 +328,84 @@ function displayTrips() {
                 </div>
               </div>
               <div class="lower-buttons-container">
-                <button>Check Listing</button>
-                <button style="background-color:red;">Cancel Booking</button>
+               <a href="house1.html"><button  onclick="viewDetailsByIndex(${
+                 displayTripItem.bookingId
+               })">Check Listing</button></a>
+                <button style="background-color:red;" onclick="cancelValidBooking(event.target,${
+                  displayTripItem.bookingId
+                })">Cancel Booking</button>
               </div>
             </div>
 
           </div>`
-    )
-    .join(' ');
-  allEachCon.innerHTML = '';
-  allEachCon.appendChild(myTripsCon);
+      )
+      .join(' ');
+    allEachCon.appendChild(myTripsCon);
+  }, 2000);
 }
 function displayProfile() {
-  headingName.innerHTML =
-    '<img style="width:20%; heigth:50%"; src="accountUser.svg" alt="">My Profile';
+  localStorage.setItem('AccountInfoLoad', JSON.stringify(1));
+  headingName.innerHTML = '<img src="accountUser.svg" alt="">My Profile';
+  myProfileHeaderCon.style.border = '0.1em solid rgb(55, 55, 126)';
+  myTripsHeaderCon.style.border = 'none';
+  myWishlistHeaderCon.style.border = 'none';
+  hostHeaderCon.style.border = 'none';
+  helpHeaderCon.style.border = 'none';
+  settingsHeaderCon.style.border = 'none';
   allEachCon.innerHTML = '';
   allEachCon.appendChild(myProfileCon);
 }
 function displayHost() {
-  headingName.innerHTML =
-    '<img style="width:20%; heigth:50%"; src="home.svg" alt="">Become Host';
+  localStorage.setItem('AccountInfoLoad', JSON.stringify(4));
+  headingName.innerHTML = '<img src="home.svg" alt="">Become Host';
+  myProfileHeaderCon.style.border = 'none';
+  myTripsHeaderCon.style.border = 'none';
+  myWishlistHeaderCon.style.border = 'none';
+  hostHeaderCon.style.border = '0.1em solid rgb(55, 55, 126)';
+  helpHeaderCon.style.border = 'none';
+  settingsHeaderCon.style.border = 'none';
   allEachCon.innerHTML = '';
   allEachCon.appendChild(hostCon);
 }
 function displayHelp() {
-  headingName.innerHTML =
-    '<img style="width:20%; heigth:50%"; src="help.svg" alt="">Get Help';
+  localStorage.setItem('AccountInfoLoad', JSON.stringify(5));
+  headingName.innerHTML = '<img src="help.svg" alt="">Get Help';
+  myProfileHeaderCon.style.border = 'none';
+  myTripsHeaderCon.style.border = 'none';
+  myWishlistHeaderCon.style.border = 'none';
+  hostHeaderCon.style.border = 'none';
+  helpHeaderCon.style.border = '0.1em solid rgb(55, 55, 126)';
+  settingsHeaderCon.style.border = 'none';
   allEachCon.innerHTML = '';
   allEachCon.appendChild(getHelpCon);
 }
 function displaySettings() {
-  headingName.innerHTML =
-    '<img style="width:20%; heigth:50%"; src="settings.svg" alt="">Settings';
+  localStorage.setItem('AccountInfoLoad', JSON.stringify(6));
+  headingName.innerHTML = '<img src="settings.svg" alt="">Settings';
+  myProfileHeaderCon.style.border = 'none';
+  myTripsHeaderCon.style.border = 'none';
+  myWishlistHeaderCon.style.border = 'none';
+  hostHeaderCon.style.border = 'none';
+  helpHeaderCon.style.border = 'none';
+  settingsHeaderCon.style.border = '0.1em solid rgb(55, 55, 126)';
   allEachCon.innerHTML = '';
   allEachCon.appendChild(settingsCon);
+}
+
+function cancelValidBooking(eventTarget, eachHouseId) {
+  let buttonParent = eventTarget.parentElement;
+  let buttonGrandParent = buttonParent.parentElement;
+  let buttonGreatGrandParent = buttonGrandParent.parentElement;
+  buttonGreatGrandParent.style.transform = 'scale(0.01)';
+  setTimeout(() => {
+    buttonGreatGrandParent.remove();
+    let allBookedHouses = JSON.parse(localStorage.getItem('BookedHouses'));
+    allBookedHouses.forEach((bookingItem) => {
+      if (bookingItem.bookingId === eachHouseId) {
+        let targetHouseIndex = allBookedHouses.indexOf(bookingItem);
+        allBookedHouses.splice(targetHouseIndex, 1);
+        localStorage.setItem('BookedHouses', JSON.stringify(allBookedHouses));
+      }
+    });
+  }, 401);
 }

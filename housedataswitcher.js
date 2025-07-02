@@ -3224,12 +3224,13 @@ function openConfirmBox(eventTarget) {
 
 reserveBtn.addEventListener('click', () => {
   reserveSipnnerImage.style.display = 'block';
+  reserveBtn.setAttribute('disabled', 'true');
   setTimeout(() => {
     lastReviewCon.innerHTML = `<div class="paymentSuccessful">
                 <h2>Reservation Successfull <img src="close.png" onclick="closeAndDisableBooking()" onclick="closeReserseDialog(event.target)" class="close-Dialog" alt=""></h2>
                 <img src="succes.png" alt="">
                 <div class="paymentsuccessfullbuttton">
-                    <button>Go To My Bookings</button>
+                <a href="accountpage.html"><button onclick="goToBookings()">Go To My Bookings</button></a>
                 </div>
             </div>`;
   }, 3000);
@@ -3251,10 +3252,6 @@ reserveBtn.addEventListener('click', () => {
     ...requiredBookingInfoFromReserve,
   };
 
-  console.log(requiredBookingInfo);
-  console.log(requiredBookingInfoFromReserve);
-  console.log(allRequiredBookingInfo);
-
   let bookedHouses = JSON.parse(localStorage.getItem('BookedHouses'));
   setTimeout(() => {
     if (bookedHouses === null) {
@@ -3270,6 +3267,18 @@ reserveBtn.addEventListener('click', () => {
     }
   }, 3000);
 });
+function goToBookings() {
+  localStorage.setItem('AccountInfoLoad', JSON.stringify(2));
+}
+function goToGetHelp() {
+  localStorage.setItem('AccountInfoLoad', JSON.stringify(5));
+}
+function goToSettings() {
+  localStorage.setItem('AccountInfoLoad', JSON.stringify(6));
+}
+function goToWishlist() {
+  localStorage.setItem('AccountInfoLoad', JSON.stringify(3));
+}
 function closeReserseDialog(eventTarget) {
   reserveDialogBox.style.transform = 'scale(0.0005)';
 }
