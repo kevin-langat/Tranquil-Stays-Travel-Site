@@ -130,7 +130,6 @@ window.addEventListener('DOMContentLoaded', () => {
     let currentActiveTab = JSON.parse(
       localStorage.getItem('HouseListingActiveTab')
     );
-    console.log(currentActiveTab);
     if (currentActiveTab === 1) {
       phuFunc();
       console.log('london function');

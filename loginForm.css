@@ -1,0 +1,144 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  background-image: linear-gradient(rgba(0, 0, 50, 0.582), rgba(0, 0, 50, 0.404)), url(img/phuket2.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-box {
+  width: 35%;
+  height: 70%;
+  background-color: aliceblue;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: 1em;
+  transition: 0.5s;
+
+}
+
+.form-header {
+  width: 30%;
+  height: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: blue;
+}
+
+.form-header h3 {
+  font-size: xx-large;
+  transition: 0.5s;
+}
+
+.form-header span {
+  width: 60%;
+  height: 6.5%;
+  background-color: #5f05f0;
+  border-radius: 5em;
+}
+
+.input-form {
+  width: 70%;
+  height: 70%;
+  /* background-color: blueviolet; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  transition: 0.2s;
+}
+
+.input-containers {
+  width: 90%;
+  height: 20%;
+  /* background-color: yellow; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: medium;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.input-containers input {
+  width: 100%;
+  height: 80%;
+  background-color: #d6dbd7;
+  border: none;
+  padding-left: 20%;
+  border-radius: 0.2em;
+}
+
+.input-containers input::placeholder {
+  font-size: small;
+  color: #555;
+}
+
+.buttons-container {
+  width: 80%;
+  height: 10%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.buttons-container a {
+  width: 45%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.buttons-container button {
+  width: 80%;
+  height: 80%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: #d6d4d4a2;
+  font-size: medium;
+  color: #555;
+  border: none;
+  border-radius: 2em;
+  transition: 0.5s ease-in;
+  cursor: pointer;
+}
+
+.active button {
+  background-color: #3c00a0;
+  color: #fff;
+  transition: 0.5s ease-out;
+
+}
+
+.name-container {
+  transition: 1s;
+}
+
+:disabled {
+  background-color: #d6d4d4a2;
+  color: #000;
+}
