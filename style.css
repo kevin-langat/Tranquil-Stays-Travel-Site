@@ -88,9 +88,34 @@ a {
     color: #000;
 }
 
-.navigation-bar-information button {
+.nav-button-container {
     width: 15%;
     height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.nav-button-container a {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-button-container img {
+    width: 25%;
+    height: 80%;
+}
+
+.nav-button-container button {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
     background-color: #473f80;
     border: none;
     font-size: medium;

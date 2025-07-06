@@ -256,11 +256,19 @@ function deleteWishlistItem(eventTarget, itemId) {
   });
   displayWishlistsNumber();
 }
+const tripsNumber = document.querySelector('.trips-number');
 
+window.addEventListener('DOMContentLoaded', () => {
+  if (window.location.pathname.endsWith('accountpage.html')) {
+    let currentTrips = JSON.parse(localStorage.getItem('BookedHouses'));
+    tripsNumber.textContent = currentTrips.length;
+  }
+});
 function displayTrips() {
   allEachCon.innerHTML = '';
   localStorage.setItem('AccountInfoLoad', JSON.stringify(2));
   let currentTrips = JSON.parse(localStorage.getItem('BookedHouses'));
+  tripsNumber.textContent = currentTrips.length;
   myProfileHeaderCon.style.border = 'none';
   myTripsHeaderCon.style.border = '0.1em solid rgb(55, 55, 126)';
   myWishlistHeaderCon.style.border = 'none';
@@ -273,9 +281,15 @@ function displayTrips() {
   allEachCon.appendChild(myTripsCon);
   setTimeout(() => {
     allEachCon.innerHTML = '';
-    myTripsCon.innerHTML = currentTrips
-      .map(
-        (displayTripItem) => `<div class="each-trip-con">
+    if (currentTrips.length === 0) {
+      myTripsCon.innerHTML = `<div class="my-profile-container empty-Container">
+        <div class="loader-container"><img src="empty.png" alt=""></div>
+          <h2>Oops! You Don't Have Any Trips Now</h2>
+        </div>`;
+    } else {
+      myTripsCon.innerHTML = currentTrips
+        .map(
+          (displayTripItem) => `<div class="each-trip-con">
             <div class="main-image-container">
               <img src="${displayTripItem.bookingImage}" alt="">
             </div>
@@ -302,20 +316,20 @@ function displayTrips() {
                     <h4>${new Date(
                       displayTripItem.checkInDate
                     ).getDate()}/${new Date(
-          displayTripItem.checkInDate
-        ).getMonth()}/${new Date(
-          displayTripItem.checkInDate
-        ).getFullYear()}</h4>
+            displayTripItem.checkInDate
+          ).getMonth()}/${new Date(
+            displayTripItem.checkInDate
+          ).getFullYear()}</h4>
                   </div>
                   <div class="trip-check-out-container">
                     <h4>Check Out Date:</h4>
                     <h4>${new Date(
                       displayTripItem.checkOutDate
                     ).getDate()}/${new Date(
-          displayTripItem.checkOutDate
-        ).getMonth()}/${new Date(
-          displayTripItem.checkOutDate
-        ).getFullYear()}</h4>
+            displayTripItem.checkOutDate
+          ).getMonth()}/${new Date(
+            displayTripItem.checkOutDate
+          ).getFullYear()}</h4>
                   </div>
                   <div class="trip-days-stays-container">
                     <h4>Days Of Stay:</h4>
@@ -338,11 +352,20 @@ function displayTrips() {
             </div>
 
           </div>`
-      )
-      .join(' ');
+        )
+        .join(' ');
+    }
+
     allEachCon.appendChild(myTripsCon);
   }, 2000);
 }
+const allPersonalCon = document.querySelector('.all-personal-info-container');
+const profilenameInput = document.querySelector('.firstNameInput');
+const profileNickNameInput = document.querySelector('.nickNameInput');
+const profileEmailInput = document.querySelector('.profileEmailInput');
+const profilePhoneNumberInput = document.querySelector('.phoneNumber');
+const userNameDisplay = document.querySelector('.userNameDisplay');
+
 function displayProfile() {
   localStorage.setItem('AccountInfoLoad', JSON.stringify(1));
   headingName.innerHTML = '<img src="accountUser.svg" alt="">My Profile';
@@ -353,7 +376,39 @@ function displayProfile() {
   helpHeaderCon.style.border = 'none';
   settingsHeaderCon.style.border = 'none';
   allEachCon.innerHTML = '';
+  myProfileCon.innerHTML =
+    '<div class=loader-image-trips><img src="spinner.svg"></div>';
   allEachCon.appendChild(myProfileCon);
+  setTimeout(() => {
+    allEachCon.innerHTML = '';
+    myProfileCon.innerHTML = '';
+    myProfileCon.appendChild(allPersonalCon);
+    allEachCon.appendChild(myProfileCon);
+  }, 500);
+
+  let currentUserInfo = JSON.parse(localStorage.getItem('CurrentLoggedInUser'));
+  userNameDisplay.textContent = currentUserInfo.username;
+  profilenameInput.setAttribute('value', `${currentUserInfo.username}`);
+  profileEmailInput.setAttribute('value', `${currentUserInfo.email}`);
+  if (
+    currentUserInfo.nickname === undefined ||
+    currentUserInfo.nickname === null
+  ) {
+    profileNickNameInput.setAttribute('value', 'Not provided');
+  } else if (currentUserInfo.nickname) {
+    profileNickNameInput.setAttribute('value', `${currentUserInfo.nickname}`);
+  }
+  if (
+    currentUserInfo.phoneNumber === undefined ||
+    currentUserInfo.phoneNumber === null
+  ) {
+    profilePhoneNumberInput.setAttribute('value', 'Not provided');
+  } else if (currentUserInfo.phoneNumber) {
+    profilePhoneNumberInput.setAttribute(
+      'value',
+      `${currentUserInfo.phoneNumber}`
+    );
+  }
 }
 function displayHost() {
   localStorage.setItem('AccountInfoLoad', JSON.stringify(4));
@@ -397,9 +452,11 @@ function cancelValidBooking(eventTarget, eachHouseId) {
   let buttonGrandParent = buttonParent.parentElement;
   let buttonGreatGrandParent = buttonGrandParent.parentElement;
   buttonGreatGrandParent.style.transform = 'scale(0.01)';
+
   setTimeout(() => {
     buttonGreatGrandParent.remove();
     let allBookedHouses = JSON.parse(localStorage.getItem('BookedHouses'));
+
     allBookedHouses.forEach((bookingItem) => {
       if (bookingItem.bookingId === eachHouseId) {
         let targetHouseIndex = allBookedHouses.indexOf(bookingItem);
@@ -407,5 +464,168 @@ function cancelValidBooking(eventTarget, eachHouseId) {
         localStorage.setItem('BookedHouses', JSON.stringify(allBookedHouses));
       }
     });
+    tripsNumber.textContent = allBookedHouses.length;
   }, 401);
+}
+// Edit profile info
+function clearCurrentValue(eventTarget) {
+  eventTarget.setAttribute('value', '');
+}
+
+function editFirstName(eventTarget) {
+  let currentUserInfo = JSON.parse(localStorage.getItem('CurrentLoggedInUser'));
+  let allCurrentUsers = JSON.parse(localStorage.getItem('Userlogins'));
+  if (profilenameInput.value.length >= 4) {
+    if (currentUserInfo !== null && !allCurrentUsers !== null) {
+      currentUserInfo.username = profilenameInput.value;
+      localStorage.setItem(
+        'CurrentLoggedInUser',
+        JSON.stringify(currentUserInfo)
+      );
+      eventTarget.style.backgroundColor = 'green';
+      eventTarget.textContent = 'Editted';
+      setTimeout(() => {
+        eventTarget.style.backgroundColor = '#302b5e';
+        eventTarget.textContent = 'Edit';
+      }, 1000);
+
+      let userInStorage;
+      let indexOfUserInStorage;
+      allCurrentUsers.forEach((item) => {
+        if (currentUserInfo.email === item.email) {
+          userInStorage = item;
+          indexOfUserInStorage = allCurrentUsers.indexOf(item);
+        }
+      });
+      userInStorage.username = profilenameInput.value;
+      allCurrentUsers[indexOfUserInStorage] = userInStorage;
+      localStorage.setItem('Userlogins', JSON.stringify(allCurrentUsers));
+      profilenameInput.style.border = '0.1em solid green';
+    } else {
+      alert('Something Went Wrong');
+    }
+  } else {
+    profilenameInput.style.border = '0.1em solid red';
+  }
+}
+
+function editNickName(eventTarget) {
+  let currentUserInfo = JSON.parse(localStorage.getItem('CurrentLoggedInUser'));
+  let allCurrentUsers = JSON.parse(localStorage.getItem('Userlogins'));
+  if (profileNickNameInput.value.length >= 4) {
+    if (currentUserInfo !== null && !allCurrentUsers !== null) {
+      currentUserInfo.nickname = profileNickNameInput.value;
+      localStorage.setItem(
+        'CurrentLoggedInUser',
+        JSON.stringify(currentUserInfo)
+      );
+      eventTarget.style.backgroundColor = 'green';
+      eventTarget.textContent = 'Editted';
+      setTimeout(() => {
+        eventTarget.style.backgroundColor = '#302b5e';
+        eventTarget.textContent = 'Edit';
+      }, 1000);
+
+      let userInStorage;
+      let indexOfUserInStorage;
+      allCurrentUsers.forEach((item) => {
+        if (currentUserInfo.email === item.email) {
+          userInStorage = item;
+          indexOfUserInStorage = allCurrentUsers.indexOf(item);
+        }
+      });
+      userInStorage.nickname = profileNickNameInput.value;
+      allCurrentUsers[indexOfUserInStorage] = userInStorage;
+      localStorage.setItem('Userlogins', JSON.stringify(allCurrentUsers));
+      profileNickNameInput.style.border = '0.1em solid green';
+    } else {
+      alert('Something Went Wrong');
+    }
+  } else {
+    profileNickNameInput.style.border = '0.1em solid red';
+  }
+}
+function editEmailInfo(eventTarget) {
+  // window.location.reload();
+  let currentUserInfo = JSON.parse(localStorage.getItem('CurrentLoggedInUser'));
+  let allCurrentUsers = JSON.parse(localStorage.getItem('Userlogins'));
+  if (
+    profileEmailInput.value.length >= 15 &&
+    profileEmailInput.value.endsWith('@gmail.com')
+  ) {
+    if (currentUserInfo !== null && !allCurrentUsers !== null) {
+      let userInStorage;
+      let indexOfUserInStorage;
+      allCurrentUsers.forEach((item) => {
+        if (currentUserInfo.email === item.email) {
+          userInStorage = item;
+          indexOfUserInStorage = allCurrentUsers.indexOf(item);
+        }
+      });
+      console.log(userInStorage);
+      userInStorage.email = profileEmailInput.value;
+      allCurrentUsers[indexOfUserInStorage] = userInStorage;
+      localStorage.setItem('Userlogins', JSON.stringify(allCurrentUsers));
+      profileNickNameInput.style.border = '0.1em solid green';
+
+      console.log(currentUserInfo.email);
+      currentUserInfo.email = profileEmailInput.value;
+      localStorage.setItem(
+        'CurrentLoggedInUser',
+        JSON.stringify(currentUserInfo)
+      );
+      console.log(currentUserInfo.email);
+      eventTarget.style.backgroundColor = 'green';
+      eventTarget.textContent = 'Editted';
+      setTimeout(() => {
+        eventTarget.style.backgroundColor = '#302b5e';
+        eventTarget.textContent = 'Edit';
+      }, 1000);
+      profileEmailInput.style.border = '0.1em solid green';
+    } else {
+      alert('Something Went Wrong');
+    }
+  } else {
+    profileEmailInput.style.border = '0.1em solid red';
+  }
+}
+
+function editPhoneNumber(eventTarget) {
+  let currentUserInfo = JSON.parse(localStorage.getItem('CurrentLoggedInUser'));
+  let allCurrentUsers = JSON.parse(localStorage.getItem('Userlogins'));
+  if (
+    profilePhoneNumberInput.value.length > 0 &&
+    profilePhoneNumberInput.value.length <= 10
+  ) {
+    if (currentUserInfo !== null && !allCurrentUsers !== null) {
+      currentUserInfo.phoneNumber = profilePhoneNumberInput.value;
+      localStorage.setItem(
+        'CurrentLoggedInUser',
+        JSON.stringify(currentUserInfo)
+      );
+      eventTarget.style.backgroundColor = 'green';
+      eventTarget.textContent = 'Editted';
+      setTimeout(() => {
+        eventTarget.style.backgroundColor = '#302b5e';
+        eventTarget.textContent = 'Edit';
+      }, 1000);
+
+      let userInStorage;
+      let indexOfUserInStorage;
+      allCurrentUsers.forEach((item) => {
+        if (currentUserInfo.email === item.email) {
+          userInStorage = item;
+          indexOfUserInStorage = allCurrentUsers.indexOf(item);
+        }
+      });
+      userInStorage.phoneNumber = profilePhoneNumberInput.value;
+      allCurrentUsers[indexOfUserInStorage] = userInStorage;
+      localStorage.setItem('Userlogins', JSON.stringify(allCurrentUsers));
+      profilePhoneNumberInput.style.border = '0.1em solid green';
+    } else {
+      alert('Something Went Wrong');
+    }
+  } else {
+    profilePhoneNumberInput.style.border = '0.1em solid red';
+  }
 }

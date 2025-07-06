@@ -1,77 +1,59 @@
-const checkAvailabilityBtn = document.querySelector('.checkavailabilitybtn');
-const locationInput = document.querySelector('.location-input');
-const guestInput = document.querySelector('.guests-input');
-const checkInInput = document.querySelector('.check-in-input');
-const checkOutInput = document.querySelector('.check-out-input');
-const loadingState = document.querySelector('.loading-state');
-
-checkAvailabilityBtn.addEventListener('click', () => {
-  if (locationInput.value.length === 0) {
-    locationInput.style.border = '1px solid red';
-  } else {
-    locationInput.style.border = '1px solid green';
-  }
-
-  if (guestInput.value > 10 || !guestInput.value.length <= 0) {
-    guestInput.value = 10;
-    guestInput.style.border = '1px solid green';
-  } else {
-    guestInput.style.border = '1px solid red';
-  }
-  if (checkInInput.value.length <= 0) {
-    checkInInput.style.border = '1px solid red';
-  } else {
-    checkInInput.style.border = '1px solid green';
-  }
-  if (checkOutInput.value.length === 0) {
-    checkOutInput.style.border = '1px solid red';
-  } else {
-    checkOutInput.style.border = '1px solid green';
-  }
-  if (
-    locationInput.value.length > 0 &&
-    guestInput.value.length > 0 &&
-    checkOutInput.value.length > 0 &&
-    checkInInput.value.length > 0 &&
-    (locationInput.value == 'London' ||
-      locationInput.value == 'Phuket' ||
-      locationInput.value == 'Nairobi' ||
-      locationInput.value == 'Shanghai' ||
-      locationInput.value == 'Dubai' ||
-      locationInput.value == 'Paris')
-  ) {
-    loadingState.classList.add('active');
-  } else {
-    locationInput.style.border = '1px solid red';
-  }
-});
-function resetFindPlace() {
-  loadingState.classList.remove('active');
-}
-
 // Subscribe  logic
 
-const emailInput = document.querySelector('.email-input');
+const subscribeEmailInput = document.querySelector('.email-input');
 const subscribeBtn = document.querySelector('.subscribe-btn');
 
 subscribeBtn.addEventListener('click', () => {
-  if (emailInput.value.length === 0) {
-    emailInput.setAttribute('placeholder', '*email required');
-    emailInput.style.border = '1px solid red';
+  if (subscribeEmailInput.value.length === 0) {
+    subscribeEmailInput.setAttribute('placeholder', '*email required');
+    subscribeEmailInput.style.border = '1px solid red';
   } else {
     validateSubscribeEmail();
   }
 });
 
 function validateSubscribeEmail() {
-  const emailValue = emailInput.value;
+  const emailValue = subscribeEmailInput.value;
   if (!emailValue.match(/^[A-Za-z]\._\-[0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/)) {
-    emailInput.setAttribute('placeholder', '*invalid email');
-    emailInput.style.border = '2px solid green';
+    subscribeEmailInput.setAttribute('placeholder', '*invalid email');
+    subscribeEmailInput.style.border = '2px solid green';
     subscribeBtn.innerHTML = 'Subscribed';
     subscribeBtn.style.background = 'green';
   } else {
-    emailInput.style.border = '2px solid green';
+    subscribeEmailInput.style.border = '2px solid green';
     alert('valid email');
   }
 }
+const listingLink = document.querySelector('.listingLink');
+const navBtnContainer = document.querySelector('.nav-button-container');
+window.addEventListener('DOMContentLoaded', () => {
+  if (
+    window.location.pathname.endsWith('acountpage.html') ||
+    window.location.pathname.endsWith('house1.html') ||
+    window.location.pathname.endsWith('houselisting.html')
+  ) {
+    let authStatus = JSON.parse(localStorage.getItem('UserStatus'));
+    if (authStatus === null || authStatus === 'No') {
+      window.location.replace('loginForm.html');
+      console.log('correct');
+      listingLink.setAttribute('href', 'loginForm.html');
+      navBtnContainer.innerHTML =
+        '<a href="loginForm.html"><button>Register</button></a>';
+    } else if (authStatus === 'Yes') {
+      listingLink.setAttribute('href', 'houselisting.html');
+      navBtnContainer.innerHTML =
+        '<a href="accountpage.html"><img src="user.png" alt=""></a>';
+    }
+  } else if (window.location.pathname.endsWith('index.html')) {
+    let authStatus = JSON.parse(localStorage.getItem('UserStatus'));
+    if (authStatus === null || authStatus === 'No') {
+      listingLink.setAttribute('href', 'loginForm.html');
+      navBtnContainer.innerHTML =
+        '<a href="loginForm.html"><button>Register</button></a>';
+    } else if (authStatus === 'Yes') {
+      listingLink.setAttribute('href', 'houselisting.html');
+      navBtnContainer.innerHTML =
+        '<a href="accountpage.html"><img src="user.png" alt=""></a>';
+    }
+  }
+});

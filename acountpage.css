@@ -53,6 +53,49 @@
   border-radius: 1em;
 }
 
+.my-trips-header {
+  width: 90%;
+  height: 7vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1em;
+}
+
+.trips-number-container {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-weight: bolder;
+  justify-content: space-around;
+  border-radius: 1em;
+}
+
+.trips-number {
+  width: 10%;
+  height: 90%;
+}
+
+.trips-number-container img {
+  width: 25%;
+  height: 80%;
+}
+
+.trips-number {
+  width: 10%;
+  height: 80%;
+  text-orientation: upright;
+  border-radius: 50%;
+  color: rgba(25, 216, 25, 0.932);
+  font-size: large;
+  font-weight: bolder;
+  transition: 1s ease-out;
+}
+
+
 .my-wishlist-header {
   width: 90%;
   height: 7vh;
@@ -73,6 +116,7 @@
   align-items: center;
   font-weight: bolder;
   justify-content: space-around;
+  border-radius: 1em;
 }
 
 .wishlist-number-Container img {
@@ -136,7 +180,7 @@
 .all-each-containers {
   width: 100%;
   height: 95%;
-  background-color: rgba(201, 204, 206, 0.267);
+  background-color: rgba(201, 204, 206, 0.082);
   overflow: auto;
   gap: 2%;
   display: flex;
@@ -151,6 +195,116 @@
 .myprofilecontainer {
   width: 100%;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+
+}
+
+.all-personal-info-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.profile-picture-container {
+  width: 40%;
+  height: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* background-color: red; */
+  border-radius: 1em;
+  box-shadow: 0 0 0.2em #000;
+}
+
+.profile-pic-name {
+  width: 90%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-pic-name img {
+  width: 30%;
+  height: 75%;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.personal-information {
+  width: 90%;
+  height: 65%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+}
+
+.profile-heading {
+  width: 100%;
+  height: 15%;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.profile-heading p {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: bold;
+}
+
+.inputcontainer {
+  width: 100%;
+  height: 95%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.inputcontainer input {
+  width: 85%;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  height: 100%;
+  border-bottom: none;
+  background-color: #d6dbd7;
+  border-radius: 1em;
+  padding-left: 5%;
+  font-weight: lighter;
+
+
+}
+
+
+.inputcontainer button {
+  width: 10%;
+  height: 90%;
+  border: none;
+  background-color: #302b5e;
+  color: #fff;
+  font-size: medium;
+  border-radius: 1em;
+  cursor: pointer;
+}
+
+:disabled {
+  cursor: no-drop;
+  background-color: rgba(184, 181, 181, 0.418);
 }
 
 .mytripscontainer {
@@ -198,20 +352,6 @@
 
 .loader-container img {
   mix-blend-mode: multiply;
-}
-
-
-.my-trips-container {
-  width: 100%;
-  height: 95%;
-  background-color: #db7c7c;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 2%;
-  padding-left: 5%;
-  padding-top: 1%;
 }
 
 .each-trip-con {

@@ -15,8 +15,9 @@
       <div class="all-con displayProfileContainer" onclick="displayProfile(event.target)">
         <p><img src="accountUser.svg" alt="">My Profile</p>
       </div>
-      <div class="all-con displayTripsContainer" onclick="displayTrips(event.target)">
-        <p><img src="trip.svg" alt="">My Trips</p>
+      <div class="my-trips-header displayTripsContainer" onclick="displayTrips(event.target)">
+        <p class="trips-number-container"><img src="trip.svg" alt="">My Trips</p>
+        <p class="trips-number"></p>
       </div>
       <div class="my-wishlist-header displaySavedHousesContainer" onclick="displaySavedHouses(event.target)">
         <p class="wishlist-number-Container"><img src="wishlist.svg" alt="">My Wishlist</p>
@@ -37,11 +38,55 @@
       <div class="heading">
         <h4 class="heading-name"></h4>
       </div>
-
-
       <div class="all-each-containers">
+
         <div class="myprofilecontainer">
+          <div class="all-personal-info-container">
+            <div class="profile-picture-container">
+              <div class="profile-pic-name">
+                <img src="user.png" class="profile-icon-preview" alt="">
+                <h2 class="userNameDisplay">Kevin</h2>
+              </div>
+            </div>
+            <div class="personal-information">
+              <div class="profile-heading">
+                <hr>
+                <h2>Personal Information</h2>
+              </div>
+              <div class="profile-heading">
+                <p>First Name:<p3>
+                    <div class="inputcontainer UserNameContainer">
+                      <input type="text" onkeydown="clearCurrentValue(event.target)" value='' class="firstNameInput">
+                      <button onclick="editFirstName(event.target)">Edit</button>
+                    </div>
+              </div>
+              <div class="profile-heading">
+                <p>Nick Name:</p>
+                <div class="inputcontainer">
+                  <input type="text" onkeydown="clearCurrentValue(event.target)" value='' class="nickNameInput">
+                  <button onclick="editNickName(event.target)">Edit</button>
+                </div>
+              </div>
+              <div class="profile-heading">
+                <p>Your Email:</p>
+                <div class="inputcontainer">
+                  <input type="text" onkeydown="clearCurrentValue(event.target)" value='' class="profileEmailInput">
+                  <button onclick="editEmailInfo(event.target)">Edit</button>
+                </div>
+              </div>
+              <div class="profile-heading">
+                <p>Phone Number:</p>
+                <div class="inputcontainer">
+                  <input type="tel" onkeydown="clearCurrentValue(event.target)" value='' class="phoneNumber">
+                  <button onclick="editPhoneNumber(event.target)">Edit</button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
         </div>
+
         <div class="mytripscontainer">
         </div>
         <div class="mywishlistcontainer">
@@ -60,6 +105,7 @@
 
     <script src="main.js"></script>
     <script src="housedataswitcher.js"></script>
+    <script src="accountpage.js"></script>
 </body>
 
 </html>

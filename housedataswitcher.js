@@ -3090,8 +3090,10 @@ const checkInInput = document.querySelector('.check-in-input');
 const checkOutInput = document.querySelector('.check-out-input');
 const guestsInput = document.querySelector('.incoming-guests');
 
-const checkInInputValue = new Date(checkInInput.value);
-const checkOutInputValue = new Date(checkOutInput.value);
+if (window.location.pathname.endsWith('hpuse1.html')) {
+  const checkInInputValue = new Date(checkInInput.value);
+  const checkOutInputValue = new Date(checkOutInput.value);
+}
 const errorStringContainer = document.querySelector('.errorString');
 
 function authenticateValidDate(eventTarget) {
@@ -3221,81 +3223,85 @@ function openConfirmBox(eventTarget) {
     }
   }
 }
-
-reserveBtn.addEventListener('click', () => {
-  reserveSipnnerImage.style.display = 'block';
-  reserveBtn.setAttribute('disabled', 'true');
-  setTimeout(() => {
-    lastReviewCon.innerHTML = `<div class="paymentSuccessful">
+if (window.location.pathname.endsWith('house1.html')) {
+  reserveBtn.addEventListener('click', () => {
+    reserveSipnnerImage.style.display = 'block';
+    reserveBtn.setAttribute('disabled', 'true');
+    setTimeout(() => {
+      lastReviewCon.innerHTML = `<div class="paymentSuccessful">
                 <h2>Reservation Successfull <img src="close.png" onclick="closeAndDisableBooking()" onclick="closeReserseDialog(event.target)" class="close-Dialog" alt=""></h2>
                 <img src="succes.png" alt="">
                 <div class="paymentsuccessfullbuttton">
                 <a href="accountpage.html"><button onclick="goToBookings()">Go To My Bookings</button></a>
                 </div>
             </div>`;
-  }, 3000);
-  let bookingDate = new Date();
-  let currentBooking = JSON.parse(localStorage.getItem('selectedHouse'));
-  let requiredBookingInfo = {
-    bookingId: currentBooking.id,
-    bookingImage: currentBooking.imageTwo,
-    bookingName: currentBooking.name,
-    bookingHostIamge: currentBooking.hostImage,
-    bookingHostName: currentBooking.hostName,
-    bookingHostYOE: currentBooking.hostYearOfExperience,
-  };
-  let requiredBookingInfoFromReserve = allTripInfo;
-  allTripInfo.bookingDate = bookingDate;
+    }, 3000);
+    let bookingDate = new Date();
+    let currentBooking = JSON.parse(localStorage.getItem('selectedHouse'));
+    let requiredBookingInfo = {
+      bookingId: currentBooking.id,
+      bookingImage: currentBooking.imageTwo,
+      bookingName: currentBooking.name,
+      bookingHostIamge: currentBooking.hostImage,
+      bookingHostName: currentBooking.hostName,
+      bookingHostYOE: currentBooking.hostYearOfExperience,
+    };
+    let requiredBookingInfoFromReserve = allTripInfo;
+    allTripInfo.bookingDate = bookingDate;
 
-  let allRequiredBookingInfo = {
-    ...requiredBookingInfo,
-    ...requiredBookingInfoFromReserve,
-  };
+    let allRequiredBookingInfo = {
+      ...requiredBookingInfo,
+      ...requiredBookingInfoFromReserve,
+    };
 
-  let bookedHouses = JSON.parse(localStorage.getItem('BookedHouses'));
-  setTimeout(() => {
-    if (bookedHouses === null) {
-      let firstBooking = [];
-      firstBooking.push(allRequiredBookingInfo);
-      localStorage.setItem('BookedHouses', JSON.stringify(firstBooking));
-    } else {
-      let currentBookedHouses = JSON.parse(
-        localStorage.getItem('BookedHouses')
-      );
-      currentBookedHouses.unshift(allRequiredBookingInfo);
-      localStorage.setItem('BookedHouses', JSON.stringify(currentBookedHouses));
-    }
-  }, 3000);
-});
-function goToBookings() {
-  localStorage.setItem('AccountInfoLoad', JSON.stringify(2));
-}
-function goToGetHelp() {
-  localStorage.setItem('AccountInfoLoad', JSON.stringify(5));
-}
-function goToSettings() {
-  localStorage.setItem('AccountInfoLoad', JSON.stringify(6));
-}
-function goToWishlist() {
-  localStorage.setItem('AccountInfoLoad', JSON.stringify(3));
-}
-function closeReserseDialog(eventTarget) {
-  reserveDialogBox.style.transform = 'scale(0.0005)';
-}
-function closeAndDisableBooking() {
-  reserveDialogBox.style.transform = 'scale(0.0005)';
-  reserveButton.setAttribute('disabled', 'true');
-  reserveButton.style.backgroundColor = 'rgba(128, 128, 128, 0.4)';
-  reserveButton.style.color = 'red';
-  reserveButton.style.fontSize = 'small';
-  reserveButton.textContent = 'You Have Already Reserved This House';
-  checkInInput.setAttribute('disabled', 'true');
-  checkInInput.style.cursor = 'no-drop';
-  checkInInput.style.backgroundColor = 'rgba(128, 128, 128, 0.4)';
-  checkOutInput.setAttribute('disabled', 'true');
-  checkOutInput.style.cursor = 'no-drop';
-  checkOutInput.style.backgroundColor = 'rgba(128, 128, 128, 0.4)';
-  guestInput.style.backgroundColor = 'rgba(128, 128, 128, 0.4)';
+    let bookedHouses = JSON.parse(localStorage.getItem('BookedHouses'));
+    setTimeout(() => {
+      if (bookedHouses === null) {
+        let firstBooking = [];
+        firstBooking.push(allRequiredBookingInfo);
+        localStorage.setItem('BookedHouses', JSON.stringify(firstBooking));
+      } else {
+        let currentBookedHouses = JSON.parse(
+          localStorage.getItem('BookedHouses')
+        );
+        currentBookedHouses.unshift(allRequiredBookingInfo);
+        localStorage.setItem(
+          'BookedHouses',
+          JSON.stringify(currentBookedHouses)
+        );
+      }
+    }, 3000);
+  });
+  function goToBookings() {
+    localStorage.setItem('AccountInfoLoad', JSON.stringify(2));
+  }
+  function goToGetHelp() {
+    localStorage.setItem('AccountInfoLoad', JSON.stringify(5));
+  }
+  function goToSettings() {
+    localStorage.setItem('AccountInfoLoad', JSON.stringify(6));
+  }
+  function goToWishlist() {
+    localStorage.setItem('AccountInfoLoad', JSON.stringify(3));
+  }
+  function closeReserseDialog(eventTarget) {
+    reserveDialogBox.style.transform = 'scale(0.0005)';
+  }
+  function closeAndDisableBooking() {
+    reserveDialogBox.style.transform = 'scale(0.0005)';
+    reserveButton.setAttribute('disabled', 'true');
+    reserveButton.style.backgroundColor = 'rgba(128, 128, 128, 0.4)';
+    reserveButton.style.color = 'red';
+    reserveButton.style.fontSize = 'small';
+    reserveButton.textContent = 'You Have Already Reserved This House';
+    checkInInput.setAttribute('disabled', 'true');
+    checkInInput.style.cursor = 'no-drop';
+    checkInInput.style.backgroundColor = 'rgba(128, 128, 128, 0.4)';
+    checkOutInput.setAttribute('disabled', 'true');
+    checkOutInput.style.cursor = 'no-drop';
+    checkOutInput.style.backgroundColor = 'rgba(128, 128, 128, 0.4)';
+    guestInput.style.backgroundColor = 'rgba(128, 128, 128, 0.4)';
+  }
 }
 const reserveButton = document.querySelector('.reserve-actual-button');
 window.addEventListener('DOMContentLoaded', () => {
@@ -3336,9 +3342,6 @@ window.addEventListener('DOMContentLoaded', () => {
           let yearOfBooking = new Date(displayItem.checkOutDate).getFullYear();
           let monthOfBooking = new Date(displayItem.checkOutDate).getFullYear();
           let dayOfBooking = new Date(displayItem.checkOutDate).getFullYear();
-
-          let checkOutDisplayDate = new Date(checkInInput.value);
-          checkInInput.value = new Date(displayItem.checkOutDate);
         }
       });
     }

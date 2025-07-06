@@ -14,6 +14,7 @@ const nameInput = document.querySelector('.name-input');
 const emailInput = document.querySelector('.email-input');
 const passwordInput = document.querySelector('.password-input');
 const confirmPasswordInput = document.querySelector('.confirm-password-input');
+const passwordInputHeader = document.querySelector('.passwordInputHeader');
 
 if (window.location.pathname.endsWith('loginForm.html')) {
   loginBtn.addEventListener('click', (event) => {
@@ -32,26 +33,36 @@ if (window.location.pathname.endsWith('loginForm.html')) {
           emailInput.style.border = '0.1em solid green';
           let userFoundEmail;
           let userFoundPassword;
-          currentUsers.forEach((item) => {
-            if (item.email === emailInput.value) {
-              userFoundEmail = item.email;
-              userFoundPassword = item.password;
-            }
-          });
-          if (userFoundEmail === emailInput.value) {
-            if (userFoundPassword === passwordInput.value) {
-              alert('Welcome Back. Click ok to continue');
-              loginContainer.setAttribute('href', 'houselisting.html');
-              localStorage.setItem('UserStatus', JSON.stringify('Yes'));
-            } else {
-              alert('Password is wrong');
-              passwordInput.style.border = '0.1em solid red';
-            }
+          let CurrentLoggedInUserDetails;
+          if (currentUsers === null || currentUsers.length === 0) {
+            alert('Something went wrong');
           } else {
-            alert('User Not Found. Please Register');
+            currentUsers.forEach((item) => {
+              if (item.email === emailInput.value) {
+                userFoundEmail = item.email;
+                userFoundPassword = item.password;
+                CurrentLoggedInUserDetails = item;
+              }
+            });
+            if (userFoundEmail === emailInput.value) {
+              if (userFoundPassword === passwordInput.value) {
+                alert('Welcome Back. Click ok to continue');
+                loginContainer.setAttribute('href', 'index.html');
+                localStorage.setItem('UserStatus', JSON.stringify('Yes'));
+                localStorage.setItem(
+                  'CurrentLoggedInUser',
+                  JSON.stringify(CurrentLoggedInUserDetails)
+                );
+              } else {
+                alert('Password is wrong');
+                passwordInput.style.border = '0.1em solid red';
+              }
+            } else {
+              alert('User Not Found. Please Register');
+            }
           }
         } else {
-          if (!emailInput.value.includes('@gmail.com')) {
+          if (!emailInput.value.endsWith('@gmail.com')) {
             emailInput.style.border = '0.1em solid red';
           }
           if (passwordInput.value.length < 6) {
@@ -65,6 +76,7 @@ if (window.location.pathname.endsWith('loginForm.html')) {
     formHeader.innerHTML = 'Sign In';
     nameInputContainer.style.transform = 'scaleY(0.0005)';
     confirmPasswordContainer.style.transform = 'scaleY(0.0005)';
+    passwordInputHeader.textContent = 'Enter Password';
     setTimeout(() => {
       inputForm.style.height = '35%';
       emailInputContainer.style.height = '40%';
@@ -79,7 +91,7 @@ if (window.location.pathname.endsWith('loginForm.html')) {
       if (
         nameInput.value.length >= 4 &&
         emailInput.value.length >= 15 &&
-        emailInput.value.includes('@gmail.com') &&
+        emailInput.value.endsWith('@gmail.com') &&
         passwordInput.value.length >= 6 &&
         confirmPasswordInput.value.length >= 6 &&
         passwordInput.value === confirmPasswordInput.value
@@ -99,15 +111,15 @@ if (window.location.pathname.endsWith('loginForm.html')) {
               userFoundEmail = item.email;
             }
           });
-          console.log(userFoundEmail);
           if (userFoundEmail === user.email) {
             alert('User already exists. Please login');
           } else {
             currentUsers.push(user);
             localStorage.setItem('Userlogins', JSON.stringify(currentUsers));
-            signUpContainer.setAttribute('href', 'houselisting.html');
-            alert('Registration successfull. Click Ok to continue');
+            signUpContainer.setAttribute('href', 'index.html');
             localStorage.setItem('UserStatus', JSON.stringify('Yes'));
+            localStorage.setItem('CurrentLoggedInUser', JSON.stringify(user));
+            alert('Registration successfull. Click Ok to continue');
           }
         }
         nameInput.style.border = '0.1em solid green';
@@ -122,12 +134,12 @@ if (window.location.pathname.endsWith('loginForm.html')) {
         }
         if (
           emailInput.value.length < 15 ||
-          !emailInput.value.includes('@gmail.com')
+          !emailInput.value.endsWith('@gmail.com')
         ) {
           emailInput.style.border = '0.1em solid red';
         } else if (
           emailInput.value.length >= 15 &&
-          emailInput.value.includes('@gmail.com')
+          emailInput.value.endsWith('@gmail.com')
         ) {
           emailInput.style.border = '0.1em solid green';
         }
@@ -156,6 +168,7 @@ if (window.location.pathname.endsWith('loginForm.html')) {
     formHeader.innerHTML = 'Sign Up';
     nameInputContainer.style.transform = 'scaleY(1)';
     confirmPasswordContainer.style.transform = 'scaleY(1)';
+    passwordInputHeader.textContent = 'Create Password';
     setTimeout(() => {
       inputForm.style.height = '70%';
       emailInputContainer.style.height = '20%';
@@ -165,18 +178,3 @@ if (window.location.pathname.endsWith('loginForm.html')) {
     }, 200);
   });
 }
-const registrationButton = document.querySelector('.Registration-button');
-function checkAuthenticationStatus() {
-  if (
-    window.location.pathname.endsWith('houselisting.html') ||
-    window.location.pathname.endsWith('index.html')
-  ) {
-    let UserStatus = JSON.parse(localStorage.getItem('UserStatus'));
-    console.log(UserStatus);
-    if (UserStatus === 'Yes') {
-      registrationButton.style.display = 'none';
-    } else {
-    }
-  }
-}
-checkAuthenticationStatus();
