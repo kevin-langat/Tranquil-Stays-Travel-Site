@@ -10,6 +10,109 @@
 </head>
 
 <body>
+    <div class="heroForSmall">
+        <div class="navigationForSm">
+            <div class="icon-logo-small">
+                <img src="logo.png" alt="">
+            </div>
+            <div class="navigation-Buttons-small">
+                <svg onclick="openSearchBoxSm(event.target)" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-search">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
+                    <path d="M21 21l-6 -6" />
+                </svg>
+                <a class="userSvgA" href="">
+                    <svg style="width: 100%; height: 100%;" onclick="checkUserAuthSm(event.target)"
+                        xmlns=" http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="currentColor" class="icon icon-tabler icons-tabler-filled icon-tabler-user">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M12 2a5 5 0 1 1 -5 5l.005 -.217a5 5 0 0 1 4.995 -4.783z" />
+                        <path d="M14 14a5 5 0 0 1 5 5v1a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-1a5 5 0 0 1 5 -5h4z" />
+                    </svg>
+                </a>
+                <div class="hamburgerMenuContainer">
+                    <svg style="width: 100%; height: 100%;" class="hamburgerMenuSm" onclick="openMenuBar(event.target)"
+                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="icon icon-tabler icons-tabler-outline icon-tabler-menu-deep">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M4 6h16" />
+                        <path d="M7 12h13" />
+                        <path d="M10 18h10" />
+                    </svg>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="hero-left-column">
+            <div class="find-a-place-container">
+                <div class="upper-find-place-information">
+                    <div class="find-place-check-in">
+                        <h4>Check In</h4>
+                        <input type="date" placeholder="anyday" class="find-place-check-input">
+                    </div>
+                    <div class="find-place-check-in">
+                        <h4>Check Out</h4>
+                        <input type="date" placeholder="anyday" class="find-place-check-input">
+                    </div>
+                    <div class="find-place-check-in">
+                        <h4>Location</h4>
+                        <input type="text" placeholder="anywhere" class="find-place-check-input">
+                    </div>
+                    <div class="find-place-check-in">
+                        <h4>Guests</h4>
+                        <input type="number" max="10" min="1" placeholder="guests" class="find-place-check-input">
+                    </div>
+                </div>
+                <div class="search-place-button-container">
+                    <button>Search</button>
+                </div>
+            </div>
+        </div>
+        <div class="menu-infromation-sm">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li class="listing"><a href="#" class="listingLink">Listings</a></li>
+                <li><a href="#trend">Trending</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#footer">Contact</a></li>
+            </ul>
+        </div>
+        <div class="hero-content-sm">
+            <div class="left-hero-content-sm">
+                <div class="introduction-sm">
+                    <h2>Disconnect, Unwind And Explore With Us</h2>
+                    <p>From beatiful homes to a wonderful culture, discover the destination that has it all</p>
+                    <button>Discover Now</button>
+                </div>
+                <div class="our-achievements-sm">
+                    <div class="our-achievements-images-sm">
+                        <img src="icon/uifaces-human-image (18).jpg" alt="">
+                        <img style="margin-left: -10%;" src="icon/uifaces-human-image (21).jpg" alt="">
+                        <img style="margin-left: -15%;" src="icon/uifaces-human-image (30).jpg" alt="">
+                    </div>
+                    <p
+                        style="font-size: smaller; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: bold;">
+                        2500+ satisfied customers</p>
+
+                </div>
+
+
+            </div>
+            <div class="right-hero-content-sm">
+                <img src="img/paris.jpg" alt="">
+                <div class="other-images-sm">
+                    <img src="DetailImg/img57.jpeg" alt="">
+                    <img src="DetailImg/img104.jpeg" alt="">
+                </div>
+            </div>
+        </div>
+
+
+    </div>
     <div id="hero" class="hero">
         <div class="navigation-bar">
             <div class="icon-logo">
@@ -100,19 +203,18 @@
     <!-- second page  -->
 
     <div class="exclusive">
-
         <h2>Exclusive Places</h2>
         <div class="imgs">
             <div class="london">
                 <img style="height: 45vh;" src="img/london.jpg">
-                <span style="position: absolute; top: 75%; right: 70%;  ">
+                <span>
                     <h4 style="color: #fff;">London</h4>
                     <h5 style="color: #fff;">From £500 only</h5>
                 </span>
             </div>
             <div class="phuket">
-                <img style="height: 45vh;" src="img/phuket.jpg">
-                <span style="position: absolute; top: 75%; right: 70%; ">
+                <img style="height: 40.5vh;" src="img/phuket.jpg">
+                <span>
                     <h4 style="color: #fff;">Phuket</h4>
                     <h5 style="color: #fff;">From £500 only</h5>
 
@@ -120,36 +222,31 @@
             </div>
             <div class="paris">
                 <img style="height: 45vh;" src="img/paris.jpg">
-                <span style="position: absolute; top: 75%; right: 70%; ">
+                <span>
                     <h4 style="color: #fff;">Paris</h4>
                     <h5 style="color: #fff;">From £500 only</h5>
 
                 </span>
             </div>
 
-        </div>
-
-        <!-- 2 imgs -->
-
-        <div class="imgs">
             <div class="london">
                 <img style="height: 45vh;" src="img/dubai4.jpg">
-                <span style="position: absolute; top: 75%; right: 70%;  ">
+                <span>
                     <h4 style="color: #fff;">Dubai</h4>
                     <h5 style="color: #fff;">From £450 only</h5>
 
                 </span>
             </div>
             <div class="phuket">
-                <img style="height: 45vh;" src="img/nairobi.jpg">
-                <span style="position: absolute; top: 75%; right: 70%; ">
+                <img style="height: 40.5vh;" src="img/nairobi.jpg">
+                <span>
                     <h4 style="color: #fff;">Nairobi</h4>
                     <h5 style="color: #fff;">From £300 only</h5>
                 </span>
             </div>
             <div class="paris">
                 <img style="height: 45vh;" src="img/shanghai.jpg">
-                <span style="position: absolute; top: 75%; right: 70%; ">
+                <span>
                     <h4 style="color: #fff;">Shanghai</h4>
                     <h5 style="color: #fff;">From £700 only</h5>
                 </span>
@@ -162,18 +259,19 @@
 
     <!-- Div3 for Trending Places-->
     <div id="trend" class="trending">
-        <h1>Trending Places</h1>
+        <h1 style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Trending Places</h1>
         <div class="swiper">
             <div class="swiper-wrapper">
-                <div class="swiper-slide"><img style="width: 1400px;" src="img/nepal.jpg" alt=""></div>
-                <div class="swiper-slide"><img style="width: 1400px;" src="img/paris2.jpg" alt=""></div>
-                <div class="swiper-slide"><img style="width: 1400%;" src="img/phuket2.jpg" alt=""></div>
-                <div class="swiper-slide"><img style="width: 1400;" src="img/dubai2.jpg" alt=""></div>
-
-
+                <div class="swiper-slide"><img src="img/nepal.jpg" alt=""></div>
+                <div class="swiper-slide"><img src="img/paris2.jpg" alt=""></div>
+                <div class="swiper-slide"><img src="img/phuket2.jpg" alt=""></div>
+                <div class="swiper-slide"><img src="img/dubai2.jpg" alt=""></div>
+                <div class="swiper-slide"><img src="img/nepal.jpg" alt=""></div>
+                <div class="swiper-slide"><img src="img/paris2.jpg" alt=""></div>
+                <div class="swiper-slide"><img src="img/phuket2.jpg" alt=""></div>
+                <div class="swiper-slide"><img src="img/dubai2.jpg" alt=""></div>
             </div>
             <div class="swiper-pagination"></div>
-
         </div>
     </div>
 
@@ -193,7 +291,7 @@
 
     <div class="subscribe">
         <div id="about" class="subscribe-con">
-            <h2 style="font-size: 150%;">Don't Want To Miss Our Latest Updates? Subscribe!</h2>
+            <h2>Don't Want To Miss Our Latest Updates? Subscribe!</h2>
             <div class="email">
                 <input id="emailin" type="email" class="email-input" placeholder="Enter your email">
                 <button class="subscribe-btn">Subscribe</button>
@@ -233,27 +331,30 @@
     <!-- Review Section -->
 
     <div class="reviewSection">
-        <h2
-            style="margin-left: 2%; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+        <h2 style="margin-left: 2%;  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
             Let Our Travellers Speak For Us</h2>
         <div class="reviewContainer">
             <div class="firstReview">
                 <img src="icon/annah.PNG" alt="Diana">
                 <p
-                    style="font-size: 15px; font-weight: bold; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+                    style="font-size: 15px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: bold; ">
                     Diana Muthoni</p>
-                <p>Nairobi, Kenya</p>
-                <p style="color: #000;">Tranquil home services are top notch, i would highly reccommend them when you
+                <p style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Nairobi, Kenya
+                </p>
+                <p style="color: #000; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+                    Tranquil home services are top notch, i would highly reccommend them when you
                     want to travel. Lorem
                     ipsum dolor sit, amet consectetur adipisicing elit. Exercitationem culpa dolores</p>
             </div>
             <div class="secondReview">
                 <img src="icon/p2rev.PNG" alt="Charly">
                 <p
-                    style="font-size: 15px; font-weight: bold; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+                    style="font-size: 15px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: bold;">
                     Charly Cruz</p>
-                <p>Bucharest, Romania</p>
-                <p style="color: #000;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure, deleniti aliquid
+                <p style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Bucharest,
+                    Romania</p>
+                <p style="color: #000; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure, deleniti aliquid
                     nostrum laudantium
                     numquam aperiam?Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
 
@@ -261,10 +362,12 @@
             <div class="thirdReview">
                 <img src="icon/amandl.PNG" alt="Veronica">
                 <p
-                    style="font-size: 15px; font-weight: bold; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+                    style="font-size: 15px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: bold;">
                     Veronica Marquez</p>
-                <p>Bogota, Colombia</p>
-                <p style="color: #000;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. At culpa quo delectus,
+                <p style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Bogota,
+                    Colombia</p>
+                <p style="color: #000; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. At culpa quo delectus,
                     quas minus
                     doloribus. Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
             </div>
@@ -275,6 +378,22 @@
     <!-- FOOTER -->
     <div id="footer" class="footer">
         <div class="content-footer">
+            <div class="services-sm">
+                <h3>Tranquil Support</h3>
+                <p>Help Center</p>
+                <p>Anti-Discrimination</p>
+                <p>Disabilty Support</p>
+                <p>Cancellation Options</p>
+                <p>Neighborhood Support</p>
+                <p>Report A listing</p>
+                <h3>Hosting Services</h3>
+                <p>Become a Host</p>
+                <p>Host Support</p>
+                <p>Responsible Hosting</p>
+                <p>Find a Co-host</p>
+                <p>List Your Home</p>
+                <p>Community Center</p>
+            </div>
             <div class="support">
                 <h3>Tranquil Support</h3>
                 <p>Help Center</p>
@@ -283,6 +402,7 @@
                 <p>Cancellation Options</p>
                 <p>Neighborhood Support</p>
                 <p>Report A listing</p>
+
             </div>
             <div class="hostingService">
                 <h3>Hosting Services</h3>
@@ -310,6 +430,12 @@
                 <p>Twitter</p>
                 <p>Facebook</p>
                 <p>LinkedIn</p>
+                <div class="contact-us-sm">
+                    <h3>Tranquil-service</h3>
+                    <p>About Us</p>
+                    <p>Careers</p>
+                    <p>Investors</p>
+                </div>
             </div>
 
 
@@ -318,8 +444,8 @@
         <hr style="opacity: 0.3;">
         <div class="socials">
             <p style="width: 60%; display: flex; align-items: center;
-            justify-content: center;">&copy; 2025 Tranquil Homes. All Rights Reserved . Terms . Cookie Policy . Your
-                Privacy Choices <img src="check.png" style="transform: scale(0.5);" alt=""></p>
+            justify-content: center;">&copy; 2025 Tranquil Homes. All Rights Reserved . Terms . Cookie Policy <img
+                    src="check.png" style="transform: scale(0.5);" alt=""></p>
 
             <p style="width: 30%; display: flex; align-items: center;
             justify-content: center;"><img src=" globe.png" style="transform: scale(0.5);" alt="">English(USA) <img
@@ -331,6 +457,7 @@
     <!-- JAVASCRIPT -->
 
     <script src="index.js"></script>
+    <script src="indexMq.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
         const swiper = new Swiper('.swiper', {

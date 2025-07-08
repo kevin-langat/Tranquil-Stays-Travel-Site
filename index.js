@@ -3,14 +3,19 @@
 const subscribeEmailInput = document.querySelector('.email-input');
 const subscribeBtn = document.querySelector('.subscribe-btn');
 
-subscribeBtn.addEventListener('click', () => {
-  if (subscribeEmailInput.value.length === 0) {
-    subscribeEmailInput.setAttribute('placeholder', '*email required');
-    subscribeEmailInput.style.border = '1px solid red';
-  } else {
-    validateSubscribeEmail();
-  }
-});
+if (
+  window.location.pathname.endsWith('index.html') ||
+  window.location.pathname.endsWith('/')
+) {
+  subscribeBtn.addEventListener('click', () => {
+    if (subscribeEmailInput.value.length === 0) {
+      subscribeEmailInput.setAttribute('placeholder', '*email required');
+      subscribeEmailInput.style.border = '1px solid red';
+    } else {
+      validateSubscribeEmail();
+    }
+  });
+}
 
 function validateSubscribeEmail() {
   const emailValue = subscribeEmailInput.value;
@@ -35,7 +40,6 @@ window.addEventListener('DOMContentLoaded', () => {
     let authStatus = JSON.parse(localStorage.getItem('UserStatus'));
     if (authStatus === null || authStatus === 'No') {
       window.location.replace('loginForm.html');
-      console.log('correct');
       listingLink.setAttribute('href', 'loginForm.html');
       navBtnContainer.innerHTML =
         '<a href="loginForm.html"><button>Register</button></a>';
@@ -44,7 +48,10 @@ window.addEventListener('DOMContentLoaded', () => {
       navBtnContainer.innerHTML =
         '<a href="accountpage.html"><img src="user.png" alt=""></a>';
     }
-  } else if (window.location.pathname.endsWith('index.html')) {
+  } else if (
+    window.location.pathname.endsWith('index.html') ||
+    window.location.pathname.endsWith('/')
+  ) {
     let authStatus = JSON.parse(localStorage.getItem('UserStatus'));
     if (authStatus === null || authStatus === 'No') {
       listingLink.setAttribute('href', 'loginForm.html');

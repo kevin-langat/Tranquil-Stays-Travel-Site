@@ -24,7 +24,7 @@ if (window.location.pathname.endsWith('loginForm.html')) {
         passwordInput.style.border = '0.1em solid red';
       } else {
         if (
-          emailInput.value.includes('@gmail.com') &&
+          emailInput.value.endsWith('@gmail.com') &&
           passwordInput.value.length >= 6
         ) {
           emailInput.style.border = '0.1em solid green';
@@ -35,7 +35,7 @@ if (window.location.pathname.endsWith('loginForm.html')) {
           let userFoundPassword;
           let CurrentLoggedInUserDetails;
           if (currentUsers === null || currentUsers.length === 0) {
-            alert('Something went wrong');
+            alert('User Not Found. Please Register');
           } else {
             currentUsers.forEach((item) => {
               if (item.email === emailInput.value) {
@@ -104,6 +104,10 @@ if (window.location.pathname.endsWith('loginForm.html')) {
         const currentUsers = JSON.parse(localStorage.getItem('Userlogins'));
         if (currentUsers === null) {
           localStorage.setItem('Userlogins', JSON.stringify([user]));
+          alert('Registration successfull. Click Ok to continue');
+          localStorage.setItem('UserStatus', JSON.stringify('Yes'));
+          signUpContainer.setAttribute('href', 'index.html');
+          localStorage.setItem('CurrentLoggedInUser', JSON.stringify(user));
         } else {
           let userFoundEmail;
           currentUsers.forEach((item) => {
