@@ -30,35 +30,30 @@ function validateSubscribeEmail() {
   }
 }
 const listingLink = document.querySelector('.listingLink');
+const listingLinkSm = document.querySelector('.listingLinkSm');
 const navBtnContainer = document.querySelector('.nav-button-container');
+const lgDiscoverBtn = document.querySelector('.lg-discover-btn');
+const smDiscoverBtn = document.querySelector('.sm-discover-btn');
+
 window.addEventListener('DOMContentLoaded', () => {
   if (
-    window.location.pathname.endsWith('acountpage.html') ||
-    window.location.pathname.endsWith('house1.html') ||
-    window.location.pathname.endsWith('houselisting.html')
-  ) {
-    let authStatus = JSON.parse(localStorage.getItem('UserStatus'));
-    if (authStatus === null || authStatus === 'No') {
-      window.location.replace('loginForm.html');
-      listingLink.setAttribute('href', 'loginForm.html');
-      navBtnContainer.innerHTML =
-        '<a href="loginForm.html"><button>Register</button></a>';
-    } else if (authStatus === 'Yes') {
-      listingLink.setAttribute('href', 'houselisting.html');
-      navBtnContainer.innerHTML =
-        '<a href="accountpage.html"><img src="user.png" alt=""></a>';
-    }
-  } else if (
     window.location.pathname.endsWith('index.html') ||
     window.location.pathname.endsWith('/')
   ) {
     let authStatus = JSON.parse(localStorage.getItem('UserStatus'));
-    if (authStatus === null || authStatus === 'No') {
+    if (authStatus === null) {
       listingLink.setAttribute('href', 'loginForm.html');
+      listingLinkSm.setAttribute('href', 'loginForm.html');
+      lgDiscoverBtn.setAttribute('href', 'loginForm.html');
+      smDiscoverBtn.setAttribute('href', 'loginForm.html');
+
       navBtnContainer.innerHTML =
         '<a href="loginForm.html"><button>Register</button></a>';
     } else if (authStatus === 'Yes') {
       listingLink.setAttribute('href', 'houselisting.html');
+      listingLinkSm.setAttribute('href', 'houselisting.html');
+      lgDiscoverBtn.setAttribute('href', 'houselisting.html');
+      smDiscoverBtn.setAttribute('href', 'houselisting.html');
       navBtnContainer.innerHTML =
         '<a href="accountpage.html"><img src="user.png" alt=""></a>';
     }
