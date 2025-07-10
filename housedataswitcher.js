@@ -1,7 +1,7 @@
 const houseData = [
   {
     id: 0,
-    name: 'Beachside Bungalow with Hammock',
+    name: 'Bungalow with Hammock',
     mainImage: 'DetailImg/img1.jpeg',
     imageTwo: 'DetailImg/img2.jpeg',
     imageThree: 'DetailImg/img3.jpeg',
@@ -50,7 +50,7 @@ const houseData = [
   },
   {
     id: 1,
-    name: 'Oceanfront King Suite with Balcony',
+    name: 'Oceanfront King Suite',
     mainImage: 'DetailImg/img6.jpeg',
     imageTwo: 'DetailImg/img7.jpeg',
     imageThree: 'DetailImg/img8.jpeg',
@@ -99,7 +99,7 @@ const houseData = [
   },
   {
     id: 2,
-    name: 'Cozy Studio in Downtown Phuket',
+    name: 'Cozy Studio',
     mainImage: 'DetailImg/img11.jpeg',
     imageTwo: 'DetailImg/img12.jpeg',
     imageThree: 'DetailImg/img13.jpg',
@@ -148,7 +148,7 @@ const houseData = [
   },
   {
     id: 3,
-    name: 'Modern Loft with City Skyline View',
+    name: 'Modern Loft',
     mainImage: 'DetailImg/img16.jpeg',
     imageTwo: 'DetailImg/img17.jpeg',
     imageThree: 'DetailImg/img18.jpeg',
@@ -197,7 +197,7 @@ const houseData = [
   },
   {
     id: 4,
-    name: 'Luxury Villa with Private Poo',
+    name: 'Luxury Villa',
     mainImage: 'DetailImg/img21.jpeg',
     imageTwo: 'DetailImg/img22.jpeg',
     imageThree: 'DetailImg/img23.jpeg',
@@ -246,7 +246,7 @@ const houseData = [
   },
   {
     id: 5,
-    name: 'Rustic Cabin Near the Lake',
+    name: 'Rustic Cabin',
     mainImage: 'DetailImg/img26.jpeg',
     imageTwo: 'DetailImg/img27.jpeg',
     imageThree: 'DetailImg/img28.jpeg',
@@ -295,7 +295,7 @@ const houseData = [
   },
   {
     id: 6,
-    name: 'Charming Cottage with Flower Garden',
+    name: 'Charming Cottage',
     mainImage: 'DetailImg/img31.jpeg',
     imageTwo: 'DetailImg/img32.jpeg',
     imageThree: 'DetailImg/img33.jpeg',
@@ -344,7 +344,7 @@ const houseData = [
   },
   {
     id: 7,
-    name: 'Elegant Penthouse Overlooking Park',
+    name: 'Elegant Penthouse',
     mainImage: 'DetailImg/img36.jpeg',
     imageTwo: 'DetailImg/img37.jpeg',
     imageThree: 'DetailImg/img38.jpeg',
@@ -393,7 +393,7 @@ const houseData = [
   },
   {
     id: 8,
-    name: 'Villa in Downtown Phuket',
+    name: 'Villa Downtown Phuket',
     mainImage: 'DetailImg/img41.jpeg',
     imageTwo: 'DetailImg/img42.jpg',
     imageThree: 'DetailImg/img43.jpeg',
@@ -442,7 +442,7 @@ const houseData = [
   },
   {
     id: 9,
-    name: 'Modern Bungallow With City Skyline',
+    name: 'Modern Villa',
     mainImage: 'DetailImg/img46.jpeg',
     imageTwo: 'DetailImg/img47.jpg',
     imageThree: 'DetailImg/img48.jpeg',

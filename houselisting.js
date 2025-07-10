@@ -132,7 +132,6 @@ window.addEventListener('DOMContentLoaded', () => {
     );
     if (currentActiveTab === 1) {
       phuFunc();
-      console.log('london function');
     } else if (currentActiveTab === 2) {
       lonFunc();
     } else if (currentActiveTab === 3) {
@@ -164,16 +163,16 @@ function phuFunc() {
   houseimageEigth.src = 'img/img8.jpeg';
   houseimageNine.src = 'img/img9.jpeg';
   houseimageTen.src = 'img/img10.jpeg';
-  nameOne.innerHTML = 'Beachside Bungalow with Hammock';
-  nameTwo.innerHTML = 'Oceanfront King Suite with Balcony';
-  nameThree.innerHTML = 'Cozy Studio in Downtown Phuket';
-  nameFour.innerHTML = 'Modern Loft with City Skyline View';
-  nameFive.innerHTML = 'Luxury Villa with Private Poo';
-  nameSix.innerHTML = 'Rustic Cabin Near the Lake';
-  nameSeven.innerHTML = 'Charming Cottage with Flower Garden';
-  nameEigth.innerHTML = 'Elegant Penthouse Overlooking Central Park';
-  nameNine.innerHTML = 'Villa in Downtown Phuket';
-  nameTen.innerHTML = 'Modern Bungallow With City Skyline';
+  nameOne.innerHTML = 'Beachside Bungalow';
+  nameTwo.innerHTML = 'Oceanfront King Suite';
+  nameThree.innerHTML = 'Cozy Studio';
+  nameFour.innerHTML = 'Modern Loft';
+  nameFive.innerHTML = 'Luxury Villa';
+  nameSix.innerHTML = 'Rustic Cabin';
+  nameSeven.innerHTML = 'Charming Cottage';
+  nameEigth.innerHTML = 'Elegant Penthouse';
+  nameNine.innerHTML = 'Villa Downtown Phuket';
+  nameTen.innerHTML = 'Modern Villa';
   buttonOne.setAttribute('onclick', 'viewDetailsByIndex(0)');
   buttonTwo.setAttribute('onclick', 'viewDetailsByIndex(1)');
   buttonThree.setAttribute('onclick', 'viewDetailsByIndex(2)');
@@ -184,7 +183,7 @@ function phuFunc() {
   buttonEigth.setAttribute('onclick', 'viewDetailsByIndex(7)');
   buttonNine.setAttribute('onclick', 'viewDetailsByIndex(8)');
   buttonTen.setAttribute('onclick', 'viewDetailsByIndex(9)');
-  amenityOne.innerHTML = `${coffeeSvg} Coffee Maker`;
+  amenityOne.innerHTML = `${coffeeSvg} Coffee`;
   amenityTwo.innerHTML = `${furnitureSvg} Furniture`;
   amenityFive.innerHTML = `${wifiSvg} Wifi`;
   localStorage.setItem('HouseListingActiveTab', JSON.stringify(1));
@@ -231,7 +230,7 @@ function lonFunc() {
   amenityTwo.innerHTML = `${BooksSvg} Books`;
   amenityFive.innerHTML = `${gymnSvg} Gymn`;
   amenityFour.innerHTML = `${dishWasherSvg} Dish Washer`;
-  amenityThree.innerHTML = `${coffeeSvg} Coffee Maker`;
+  amenityThree.innerHTML = `${coffeeSvg} Coffee`;
   localStorage.setItem('HouseListingActiveTab', JSON.stringify(2));
 }
 
@@ -274,7 +273,7 @@ function parFunc() {
   buttonNine.setAttribute('onclick', 'viewDetailsByIndex(28)');
   buttonTen.setAttribute('onclick', 'viewDetailsByIndex(29)');
   amenityOne.innerHTML = `${BooksSvg} Books`;
-  amenityTwo.innerHTML = `${coffeeSvg} Coffee Maker`;
+  amenityTwo.innerHTML = `${coffeeSvg} Coffee`;
   amenityFive.innerHTML = `${furnitureSvg} Furniture`;
   amenityFour.innerHTML = `${elevatorSvg} Elevator`;
   amenityThree.innerHTML = `${gymnSvg} Gymn`;
@@ -320,7 +319,7 @@ function dubFunc() {
   buttonTen.setAttribute('onclick', 'viewDetailsByIndex(39)');
   amenityOne.innerHTML = `${BooksSvg} Books`;
   amenityTwo.innerHTML = `${elevatorSvg} Elevator`;
-  amenityThree.innerHTML = `${coffeeSvg} Coffee Maker`;
+  amenityThree.innerHTML = `${coffeeSvg} Coffee`;
   amenityFive.innerHTML = `${furnitureSvg} Furniture`;
   amenityFour.innerHTML = `${gymnSvg} Gymn`;
   localStorage.setItem('HouseListingActiveTab', JSON.stringify(4));
@@ -364,7 +363,7 @@ function naiFunc() {
   buttonNine.setAttribute('onclick', 'viewDetailsByIndex(48)');
   buttonTen.setAttribute('onclick', 'viewDetailsByIndex(49)');
   amenityOne.innerHTML = `${elevatorSvg} Elevator`;
-  amenityTwo.innerHTML = `${coffeeSvg} Coffee Maker`;
+  amenityTwo.innerHTML = `${coffeeSvg} Coffee`;
   amenityFive.innerHTML = `${gymnSvg} Gymn`;
   amenityFour.innerHTML = `${dishWasherSvg} Dish Washer`;
   amenityThree.innerHTML = `${BooksSvg} Books`;

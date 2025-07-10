@@ -1085,6 +1085,11 @@ h4 {
     display: none;
 }
 
+/* second web page */
+.navigation-listing-bar-small {
+    display: none;
+}
+
 /* ==================MEDIA QUERIES ============ */
 @media(max-width: 480px) {
     .hero {
@@ -1133,6 +1138,7 @@ h4 {
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
+        /* background-color: rgb(0, 255, 0); */
     }
 
     .navigation-Buttons-small a {
@@ -1630,4 +1636,321 @@ h4 {
 
     }
 
+    /* Second webpage media queries */
+    .navigation-listing-bar-small {
+        display: flex;
+        /* position: fixed; */
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        height: 7vh;
+        /* background-color: #da0b0b; */
+        background-color: #fff;
+        z-index: 10000;
+        box-shadow: 0 0 0.5em #000;
+
+    }
+
+    .listcont {
+        width: 100%;
+        height: 630vh;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+    }
+
+    .house {
+        width: 100%;
+        height: 630vh;
+        color: #000;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        /* background-color: rgb(0, 255, 34); */
+    }
+
+    .left-col {
+        width: 100%;
+        transition: 0.3s;
+        /* background-color: yellow; */
+    }
+
+    #othercities {
+        width: 100%;
+        height: 15vh;
+        align-items: center;
+        transition: 0.4s;
+        margin-top: 2vh;
+        /* background-color: green; */
+    }
+
+    #othercities h4 {
+        font-size: smaller;
+        font-weight: 600;
+    }
+
+    #othercities .btns {
+        width: 100%;
+        height: 7vh;
+        justify-content: space-around;
+        align-items: center;
+        display: flex;
+
+
+    }
+
+    .btns button {
+        width: 14%;
+        height: 90%;
+        border: none;
+        border-radius: 0.5em;
+        font-size: x-small;
+        font-weight: bold;
+        color: #202531;
+        background: #fff;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+    #headingTitle {
+        font-size: large;
+        font-weight: 600;
+    }
+
+    #optionsPTag {
+        font-size: smaller;
+        font-weight: 500;
+    }
+
+    .house-list1 {
+        width: 100%;
+        height: 55dvh;
+
+    }
+
+    .house-list1 img {
+        width: 60%;
+        height: 45dvh;
+        margin-top: 2%;
+        margin-left: 1%;
+        margin-right: 5%;
+        border-radius: 0.5em;
+    }
+
+    .imgam {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .description {
+        height: 40dvh;
+        width: 30%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5%;
+
+    }
+
+    .ptags {
+        height: 75%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .ptags p {
+        width: 100%;
+        height: 13%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        font-size: small;
+    }
+
+    .ptags a {
+        position: absolute;
+        padding-top: 5%;
+    }
+
+
+
+    .hovertext {
+        position: absolute;
+        background-color: rgba(47, 53, 83, 0.39);
+        width: 60%;
+        height: 45vh;
+        margin-top: 1vh;
+        margin-left: 3%;
+        display: flex;
+        flex-direction: column;
+        gap: 10%;
+        justify-content: center;
+        align-items: center;
+        color: orangered;
+        opacity: 0.0005;
+        transition: 0.5s;
+        border-radius: 0.5em;
+        font-size: x-small;
+    }
+
+    .hovertext:hover {
+        opacity: 1;
+    }
+
+    .hovertext button {
+        width: 50%;
+        height: 5vh;
+        cursor: pointer;
+        border: none;
+        background-color: #202531;
+        color: #fff;
+        font-size: large;
+        border-radius: 0.5em;
+    }
+
+    .name {
+        display: flex;
+        width: 100%;
+        height: 10%;
+        justify-content: space-between;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding-left: 2%;
+        padding-right: 1%;
+
+    }
+
+    .name h2 {
+        font-size: medium;
+
+    }
+
+    .name a {
+        width: 35%;
+        height: 100%;
+    }
+
+    .name button {
+        width: 100%;
+        height: 90%;
+        border: none;
+        background-color: #2d2851;
+        border-radius: 0.5em;
+        color: #fff;
+
+    }
+
+    .other-cities-container {
+        width: 100%;
+        height: 8vh;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+
+    }
+
+    .scroll-top-button {
+        width: 100%;
+        height: 80%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .right-col {
+        position: relative;
+        width: 40%;
+        height: 680vh;
+        overflow: hidden;
+        display: none;
+    }
+
+    .right-col-content {
+        position: fixed;
+        width: 23%;
+        height: 75%;
+        box-shadow: 0 0 15px rgb(131, 125, 125);
+        left: 75%;
+        top: 15%;
+        border-radius: 0.5em;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1%;
+        padding-left: 3%;
+        transition: 0.2s;
+    }
+
+    .amenities-labels {
+        width: 90%;
+        height: 50%;
+        display: flex;
+        flex-direction: row;
+        gap: 5%;
+    }
+
+    .amen-right {
+        width: 40%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 10%;
+
+    }
+
+    .amen-check {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 12.2%;
+    }
+
+    .amenities-labels-bottom {
+        width: 90%;
+        height: 50%;
+        display: flex;
+        flex-direction: row;
+        gap: 5%;
+    }
+
+    .amen-right-bottom {
+        width: 40%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 10%;
+
+    }
+
+    .amen-check-bottom {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 12%;
+    }
+
+    .heading {
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 }

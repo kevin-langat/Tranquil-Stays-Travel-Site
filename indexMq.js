@@ -17,7 +17,6 @@ function openSearchBoxSm(eventTarget) {
   }
 }
 searchBarContainerSm.addEventListener('click', (event) => {
-  console.log();
   if (event.target.attributes.class.value === 'hero-left-column') {
     searchBoxConSm.style.display = 'none';
     searchSvgImg.classList.remove('active');
@@ -49,10 +48,27 @@ function closeMenuBar(eventTarget) {
   menuInfromation.classList.remove('active');
 }
 const heroImage = document.querySelector('.hero-image-sm');
-heroImage.addEventListener('click', () => {
-  if (menuInfromation.attributes.class.value.includes('active')) {
-    hamburgerMenuContainer.innerHTML = `<svg onclick="openMenuBar(event.target)" style="width: 100%; height: 100%;" xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-x"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 6h16" /><path d="M7 12h13" /><path d="M10 18h10" /></svg>`;
-    menuInfromation.style.top = '-100%';
-    menuInfromation.classList.remove('active');
+if (window.location.pathname.endsWith('index.html')) {
+  heroImage.addEventListener('click', () => {
+    if (menuInfromation.attributes.class.value.includes('active')) {
+      hamburgerMenuContainer.innerHTML = `<svg onclick="openMenuBar(event.target)" style="width: 100%; height: 100%;" xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-x"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 6h16" /><path d="M7 12h13" /><path d="M10 18h10" /></svg>`;
+      menuInfromation.style.top = '-100%';
+      menuInfromation.classList.remove('active');
+    }
+  });
+}
+// SECOND WEB PAGE
+const userListingSvgA = document.querySelector('.userListingSvgA');
+window.addEventListener('DOMContentLoaded', () => {
+  if (
+    window.location.pathname.endsWith('houselisting.html') &&
+    window.innerWidth <= 480
+  ) {
+    let authStatus = JSON.parse(localStorage.getItem('UserStatus'));
+    if (authStatus === 'Yes') {
+      userListingSvgA.setAttribute('href', 'accountpage.html');
+    } else if (authStatus === null) {
+      userListingSvgA.setAttribute('href', 'loginForm.html');
+    }
   }
 });
