@@ -1053,10 +1053,33 @@ h4 {
 
 .contact-us {
     width: 23%;
+    /* height: 100%; */
     display: flex;
     flex-direction: column;
     gap: 0.5em;
     flex-wrap: wrap;
+}
+
+.contact-us a {
+    height: 10%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: #000;
+}
+
+.contact-us a p svg {
+    width: 50%;
+    height: 100%;
+}
+
+.contact-us a p {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
 }
 
 .socials {
@@ -1087,6 +1110,10 @@ h4 {
 
 /* second web page */
 .navigation-listing-bar-small {
+    display: none;
+}
+
+.filter-container-small {
     display: none;
 }
 
@@ -1577,6 +1604,7 @@ h4 {
 
     .footer {
         width: 100%;
+        height: 40vh;
         display: flex;
         flex-direction: column;
         cursor: pointer;
@@ -1600,7 +1628,7 @@ h4 {
     }
 
     .services-sm {
-        width: 45%;
+        width: 50%;
         height: 100%;
         display: flex;
         flex-direction: column;
@@ -1609,7 +1637,7 @@ h4 {
     }
 
     .contact-us {
-        width: 54%;
+        width: 50%;
         height: 100%;
         display: flex;
         flex-direction: column;
@@ -1633,6 +1661,34 @@ h4 {
         flex-direction: column;
         align-items: center;
         justify-content: center;
+
+
+    }
+
+    .contact-us a {
+        height: 12%;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        color: #000;
+    }
+
+    .contact-us a p svg {
+        width: 20%;
+        height: 70%;
+    }
+
+    .contact-us a p {
+        width: 70%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        font-size: medium;
+        font-weight: lighter;
 
     }
 

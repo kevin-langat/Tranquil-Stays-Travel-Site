@@ -72,3 +72,23 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   }
 });
+const filterBox = document.querySelector('.filter-container-small');
+let filterSvg;
+function openFilterBox(eventTarget) {
+  filterSvg = eventTarget;
+  if (eventTarget.attributes.class.value.includes('active')) {
+    filterBox.style.transform = 'scale(0.00005)';
+    eventTarget.classList.remove('active');
+  } else {
+    filterBox.style.transform = 'scale(1)';
+    eventTarget.classList.add('active');
+  }
+}
+if (window.location.pathname.endsWith('houselisting.html')) {
+  filterBox.addEventListener('click', (event) => {
+    if (event.target.attributes.class.value === 'filter-container-small') {
+      filterBox.style.transform = 'scale(0.00005)';
+      filterSvg.classList.remove('active');
+    }
+  });
+}
