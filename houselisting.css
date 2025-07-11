@@ -28,6 +28,7 @@
     backdrop-filter: blur(1em);
     transform: scale(0.00005);
     transition: 0.2s;
+    z-index: 3000;
   }
 
   .right-col-content-sm {

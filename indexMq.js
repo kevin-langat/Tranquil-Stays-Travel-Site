@@ -5,15 +5,26 @@ const hamburgerMenuContainer = document.querySelector(
   '.hamburgerMenuContainer'
 );
 const searchBarContainerSm = document.querySelector('.hero-left-column');
-let searchSvgImg;
+const filterBox = document.querySelector('.filter-container-small');
+const searchSvgImg = document.querySelector('.searchSvgImg');
+const filterSvg = document.querySelector('.filterSvg');
+
 function openSearchBoxSm(eventTarget) {
-  searchSvgImg = eventTarget;
   if (eventTarget.classList.contains('active')) {
     searchBoxConSm.style.display = 'none';
-    eventTarget.classList.remove('active');
+    searchSvgImg.classList.remove('active');
   } else {
     searchBoxConSm.style.display = 'flex';
-    eventTarget.classList.add('active');
+    searchSvgImg.classList.add('active');
+    if (filterSvg.attributes.class.value.includes('active')) {
+      filterBox.style.transform = 'scale(0.00005)';
+      filterSvg.classList.remove('active');
+    }
+    if (menuInfromation.classList.contains('active')) {
+      hamburgerMenuContainer.innerHTML = `<svg onclick="openMenuBar(event.target)" style="width: 100%; height: 100%;" xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-x"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 6h16" /><path d="M7 12h13" /><path d="M10 18h10" /></svg>`;
+      menuInfromation.style.top = '-100%';
+      menuInfromation.classList.remove('active');
+    }
   }
 }
 searchBarContainerSm.addEventListener('click', (event) => {
@@ -37,12 +48,20 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-function openMenuBar(eventTarget) {
+function openMenuBar() {
   hamburgerMenuContainer.innerHTML = `<svg onclick="closeMenuBar(event.target)" style="width: 100%; height: 100%;" xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-x"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M18 6l-12 12" /><path d="M6 6l12 12" /></svg>`;
   menuInfromation.style.top = '7%';
   menuInfromation.classList.add('active');
+  if (filterSvg.attributes.class.value.includes('active')) {
+    filterBox.style.transform = 'scale(0.00005)';
+    filterSvg.classList.remove('active');
+  }
+  if (searchSvgImg.classList.contains('active')) {
+    searchBoxConSm.style.display = 'none';
+    searchSvgImg.classList.remove('active');
+  }
 }
-function closeMenuBar(eventTarget) {
+function closeMenuBar() {
   hamburgerMenuContainer.innerHTML = `<svg onclick="openMenuBar(event.target)" style="width: 100%; height: 100%;" xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-x"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 6h16" /><path d="M7 12h13" /><path d="M10 18h10" /></svg>`;
   menuInfromation.style.top = '-100%';
   menuInfromation.classList.remove('active');
@@ -72,16 +91,23 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   }
 });
-const filterBox = document.querySelector('.filter-container-small');
-let filterSvg;
-function openFilterBox(eventTarget) {
-  filterSvg = eventTarget;
-  if (eventTarget.attributes.class.value.includes('active')) {
+
+function openFilterBox() {
+  if (filterSvg.classList.contains('active')) {
     filterBox.style.transform = 'scale(0.00005)';
-    eventTarget.classList.remove('active');
+    filterSvg.classList.remove('active');
   } else {
     filterBox.style.transform = 'scale(1)';
-    eventTarget.classList.add('active');
+    filterSvg.classList.add('active');
+    if (searchSvgImg.classList.contains('active')) {
+      searchBoxConSm.style.display = 'none';
+      searchSvgImg.classList.remove('active');
+    }
+    if (menuInfromation.classList.contains('active')) {
+      hamburgerMenuContainer.innerHTML = `<svg onclick="openMenuBar(event.target)" style="width: 100%; height: 100%;" xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-x"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 6h16" /><path d="M7 12h13" /><path d="M10 18h10" /></svg>`;
+      menuInfromation.style.top = '-100%';
+      menuInfromation.classList.remove('active');
+    }
   }
 }
 if (window.location.pathname.endsWith('houselisting.html')) {
