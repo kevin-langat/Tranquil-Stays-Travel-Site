@@ -2550,7 +2550,7 @@ const houseData = [
     id: 52,
     name: 'The Maple Moon Retreat',
     mainImage: 'DetailImg/img261.jpeg',
-    imageTwo: 'DetailImg/img262.jpeg',
+    imageTwo: 'DetailImg/img262.jpg',
     imageThree: 'DetailImg/img263.jpeg',
     imageFour: 'DetailImg/img264.jpeg',
     imageFive: 'DetailImg/img265.jpeg',
@@ -2571,7 +2571,7 @@ const houseData = [
     hostCharacter: 'Friendly, Funny,hospitable',
     hostYearOfExperience: '5+',
     amenitiesOne: 'Outdoor pool',
-    bedOneImage: 'Beds/img147.jpg',
+    bedOneImage: 'Beds/img47.jpg',
     bedTwoImage: 'Beds/img45.jpeg',
     personOneReview: {
       name: 'Eva Reeds',
