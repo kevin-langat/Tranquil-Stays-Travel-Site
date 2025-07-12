@@ -5,7 +5,7 @@
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-/* ------------------------WEB PAGE THREE COMPLETE HOUSE DEATILS=-------------- */
+/* ------------------------WEB PAGE THREE COMPLETE HOUSE DETAILS=-------------- */
 
 .navigationbar {
   /* position: fixed; */
@@ -141,9 +141,8 @@
   /* transform: scale(1.01); */
 }
 
-.userInfo p img {
-  width: 15%;
-  height: 60%;
+.imagehouse {
+  width: 100%;
 }
 
 .nameSave {
@@ -191,9 +190,6 @@
   transition: 0.3s;
 }
 
-.imagehouse {
-  width: 100%;
-}
 
 .imagehero {
   top: 20%;
@@ -1078,10 +1074,33 @@
 
 .contact-us {
   width: 23%;
+  /* height: 100%; */
   display: flex;
   flex-direction: column;
   gap: 0.5em;
   flex-wrap: wrap;
+}
+
+.contact-us a {
+  height: 10%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: #000;
+}
+
+.contact-us a p svg {
+  width: 50%;
+  height: 100%;
+}
+
+.contact-us a p {
+  width: 30%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
 }
 
 .socials {
@@ -1092,4 +1111,767 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+}
+
+.heroForSmall {
+  display: none;
+}
+
+.menu-infromation-sm {
+  display: none;
+}
+
+.services-sm {
+  display: none;
+}
+
+.contact-us-sm {
+  display: none;
+}
+
+
+.heroForSmall {
+  display: none;
+}
+
+.menu-infromation-sm {
+  display: none;
+}
+
+.services-sm {
+  display: none;
+}
+
+.contact-us-sm {
+  display: none;
+}
+
+@media(max-width:480px) {
+  .navigationbar {
+    /* position: fixed; */
+    width: 100%;
+    height: 8vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 0 0.2em #000;
+    background-color: #fff;
+    padding-left: 0%;
+    padding-right: 0%;
+  }
+
+  .logo-con {
+    width: 30%;
+    height: 7vh;
+  }
+
+  .logo-con img {
+    width: 100%;
+    height: 100%;
+  }
+
+
+
+  .searchbarDetails {
+    display: flex;
+    width: 45%;
+    height: 6vh;
+    border-radius: 2em;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0 0 0.2em #000;
+  }
+
+  .searchbarDetails input {
+    border: none;
+    width: 25%;
+    height: 70%;
+    background-color: #e0e4eb;
+    border-radius: 0.5em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .searchbarDetails input::placeholder {
+    font-size: x-small;
+
+  }
+
+  .dateConSmall {
+    font-size: xx-small;
+  }
+
+  .search-logo {
+    background-color: orangered;
+    height: 90%;
+    width: 20%;
+    border-radius: 60%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .search-logo img {
+    height: 90%;
+    width: 80%;
+
+  }
+
+  .listyourhome {
+    display: flex;
+    flex-direction: column;
+    width: 10%;
+    height: 5vh;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+
+  .listyourhome h4 {
+    display: none;
+  }
+
+  .listyourhome img {
+    width: 70%;
+    height: 90%;
+
+  }
+
+  .user {
+    width: 10%;
+    height: 6vh;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .user img {
+    border-radius: 50%;
+    width: 90%;
+    height: 80%;
+  }
+
+  .user:hover+.userInfo {
+    transform: scale(1);
+  }
+
+  .userInfo {
+    position: absolute;
+    display: flex;
+    left: 64%;
+    top: 8.5vh;
+    transform: scale(0.00005);
+    flex-direction: column;
+    background-color: #fff;
+    width: 35%;
+    align-items: center;
+    box-shadow: 0 0 5px #000;
+    border-radius: 5px;
+    transition: 0.3s;
+  }
+
+  .userInfo:hover {
+    transform: scale(1);
+  }
+
+  .userInfo p {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    height: 5vh;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 0.8em;
+    opacity: 0.6;
+    transform: scale(0.9);
+    cursor: pointer;
+
+  }
+
+  .nameSave {
+    display: flex;
+    width: 96%;
+    height: 5vh;
+    padding-top: 0%;
+    margin-top: 1%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    /* background-color: rgb(129, 150, 170); */
+    padding-left: 2%;
+    margin-bottom: 1vh;
+
+  }
+
+  .nameSave h2 {
+    font-size: medium;
+  }
+
+  .save-con {
+    width: 20%;
+    height: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color: #fff; */
+
+  }
+
+  .save-con img {
+    width: 40%;
+    height: 100%;
+    cursor: pointer;
+    /* background-color: yellow; */
+  }
+
+  .imagehero {
+    top: 20%;
+    width: 100%;
+    height: 55vh;
+    display: flex;
+    justify-content: space-around;
+    /* background-color: blue; */
+  }
+
+  .main-image {
+    width: 54%;
+    height: 100%;
+    transition: 5s;
+
+  }
+
+  .main-image img {
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 1em;
+    border-bottom-left-radius: 1em;
+
+  }
+
+  .other-images {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 45%;
+    height: 100%;
+    /* background-color: yellow; */
+  }
+
+  .other-images img svg {
+    width: 10%;
+    height: 10%;
+
+  }
+
+  .fourth-image {
+    display: none;
+  }
+
+  .fifth-image {
+    display: none;
+  }
+
+  .other-images img {
+    width: 95%;
+    height: 49.5%;
+    border-top-right-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
+
+  }
+
+  .importantamenities {
+    display: flex;
+    width: 80%;
+    margin-top: 1%;
+    justify-content: center;
+    font-size: medium;
+    gap: 1%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bolder;
+  }
+
+  .amount {
+    display: flex;
+    width: 35%;
+    margin-left: 0%;
+    justify-content: center;
+    /* background-color: green; */
+    align-items: center;
+  }
+
+  .amount p {
+    font-size: large;
+    color: orangered;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+  }
+
+  /* left info */
+
+
+  .reviewPayment {
+    width: 100%;
+    height: 210vh;
+    display: flex;
+    gap: 5%;
+    flex-direction: row;
+    padding: 1%;
+    background-color: #fff;
+  }
+
+  .leftinfo {
+    display: flex;
+    flex-direction: column;
+    gap: 1%;
+    background-color: #fff;
+    width: 100%;
+    padding: 1%;
+    align-items: center;
+  }
+
+  .ratings {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 2%;
+    border: 1px solid #969191c9;
+
+    border-radius: 0.5em;
+    padding: 0.5%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+
+  .ratings p {
+    font-weight: bolder;
+    font-size: small;
+
+
+  }
+
+  .starrates {
+    width: 40%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .starrates h3 {
+    font-size: medium;
+  }
+
+  .starrates img {
+    width: 15%;
+    height: 60%;
+  }
+
+  .reviewsamount {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .reviewsamount a {
+    font-size: small;
+  }
+
+  .reviewsamount p {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bold;
+  }
+
+  .host {
+    width: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5%;
+  }
+
+  .hostInfo {
+    width: 70%;
+    height: 10vh;
+    padding: 1%;
+    display: flex;
+    flex-direction: column;
+    gap: 2%;
+    font-size: smaller;
+  }
+
+  .hostInfo h3 {
+    width: 90%;
+    height: 40%;
+    display: flex;
+    flex-direction: row;
+    gap: 2%;
+  }
+
+  .host-details {
+    width: 100%;
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .host-card {
+    display: flex;
+    flex-direction: row;
+    gap: 5%;
+    width: 90%;
+    height: 90%;
+    padding: 1%;
+    box-shadow: 0 0 0.3em #000;
+    border-radius: 0.5em;
+    background-color: #fff;
+  }
+
+  .cardname {
+    display: flex;
+    flex-direction: column;
+    gap: 2%;
+    width: 50%;
+    height: 100%;
+    align-items: center;
+    font-size: small;
+
+  }
+
+  .cardname img {
+    width: 70%;
+    height: 70%;
+    border-radius: 50%;
+    border: 0.1em solid blue;
+  }
+
+  .card-stars {
+    display: flex;
+    width: 80%;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .card-stars img {
+    width: 10%;
+    height: 100%;
+    border: none;
+
+  }
+
+  .card-details {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10%;
+    align-items: center;
+    font-size: small;
+  }
+
+  .details {
+    width: 100%;
+    height: 35vh;
+    display: flex;
+    flex-direction: row;
+    padding: 1%;
+    gap: 5%;
+  }
+
+  .imgdetails {
+    display: flex;
+    flex-direction: column;
+    gap: 18%;
+    width: 20%;
+    align-items: center;
+  }
+
+  .imgdetails img {
+    width: 60%;
+    height: 15%;
+  }
+
+  .textinfo {
+    display: flex;
+    flex-direction: column;
+    gap: 5%;
+    font-size: smaller;
+    font-weight: lighter;
+  }
+
+  .offers {
+    width: 100%;
+    height: 60vh;
+  }
+
+  .all-amenities {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 0%;
+    width: 100%;
+    padding-top: 3%;
+    height: 95%;
+  }
+
+  .left-amenities {
+    display: flex;
+    flex-direction: column;
+    gap: 6%;
+    width: 50%;
+    height: 100%;
+    padding-left: 0%;
+    font-size: smaller;
+    font-weight: bold;
+  }
+
+  .left-amenities p {
+    display: flex;
+    flex-direction: row;
+    gap: 5%;
+    align-items: center;
+  }
+
+  .right-amenities {
+    display: flex;
+    flex-direction: column;
+    gap: 6.2%;
+    width: 50%;
+    height: 100%;
+    font-size: smaller;
+    padding-left: 0%;
+    font-weight: bold;
+  }
+
+  .right-amenities p {
+    display: flex;
+    flex-direction: row;
+    gap: 5%;
+    width: 100%;
+    height: 7%;
+    align-items: center;
+
+  }
+
+  .sleep-con {
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: small;
+
+  }
+
+  .bed-imgs {
+    display: flex;
+    flex-direction: row;
+    gap: 2%;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  .bed-imgsone {
+    width: 50%;
+    height: 100%;
+  }
+
+  .bed-imgsone img {
+    width: 97.5%;
+    height: 40vh;
+    border-radius: 0.5em;
+  }
+
+  .bed-imgstwo {
+    width: 50%;
+    height: 100%;
+  }
+
+  .bed-imgstwo img {
+    width: 97.5%;
+    height: 40vh;
+    border-radius: 0.5em;
+  }
+
+
+  /* END OF DIV 2 BEGIN OF DIV 3 -- MAP AND REVIEW SECTION */
+
+
+  .reviewsMap {
+    width: 100%;
+    height: 150dvh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .reviewSection {
+    width: 100%;
+    height: 70%;
+    color: rgb(40, 40, 95);
+    padding-left: 1%;
+  }
+
+  .reviewContainer {
+    width: 98%;
+    height: 90%;
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    flex-wrap: wrap;
+    gap: 1%;
+    overflow: auto;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1%;
+  }
+
+  .reviewContainer .firstReview {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 0.2em #000;
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: small;
+    font-weight: bold;
+  }
+
+  .firstReview img {
+    width: 25%;
+    height: 15vh;
+    border-radius: 50%;
+  }
+
+  .reviewContainer .secondReview {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 0.2em #000;
+    padding: 2%;
+    overflow: hidden;
+    font-size: small;
+    font-weight: bold;
+    text-overflow: ellipsis;
+
+  }
+
+  .secondReview img {
+    width: 25%;
+    height: 15vh;
+    border-radius: 50%;
+
+  }
+
+  .reviewContainer .thirdReview {
+    display: none;
+  }
+
+  .mapsection {
+    width: 100%;
+    height: 50%;
+    background-color: rgb(30, 255, 0);
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+
+  }
+
+  .map-container {
+    width: 95%;
+    height: 90%;
+    background-color: #fff;
+    border-radius: 0.5em;
+    box-shadow: 0 0 0.5em #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Footer Section */
+  .footer {
+    width: 100%;
+    height: 40vh;
+    background-color: #e0e4eb;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3em;
+    padding-top: 0.5em;
+    cursor: pointer;
+
+  }
+
+  .content-footer {
+    width: 95%;
+    height: 40vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-left: 2.5%;
+  }
+
+  .support {
+    display: none;
+  }
+
+  .hostingService {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 0.5em;
+    flex-wrap: wrap;
+  }
+
+  .Tranquil-service {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .contact-us {
+    display: none;
+  }
+
+  .socials {
+    display: none;
+  }
+
+
+  .confirmReservation {
+    display: none;
+
+  }
+
+  .rigth-column {
+    display: none;
+  }
+
 }
