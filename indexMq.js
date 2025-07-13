@@ -119,3 +119,11 @@ if (window.location.pathname.endsWith('houselisting.html')) {
     }
   });
 }
+window.addEventListener('DOMContentLoaded', () => {
+  if (
+    window.location.pathname.endsWith('houselisting.html') &&
+    window.innerWidth > 480
+  ) {
+    searchBoxConSm.style.display = 'none';
+  }
+});

@@ -2989,7 +2989,7 @@ const reviewThreeImage = document.querySelector('.review-Three-Image');
 const reviewThreeName = document.querySelector('.review-Three-Name');
 const reviewThreeLocation = document.querySelector('.review-Three-Location');
 const reviewThreeReview = document.querySelector('.review-Three-Review');
-
+const priceContainerSm = document.querySelector('.price-container-sm');
 if (house && window.location.pathname.endsWith('house1.html')) {
   setTimeout(() => {
     firstImage.src = `${house.mainImage}`;
@@ -3021,6 +3021,9 @@ if (house && window.location.pathname.endsWith('house1.html')) {
   setTimeout(() => {
     bathroomContainer.innerHTML = `${house.bathrooms}`;
   }, 1800);
+  setTimeout(() => {
+    priceContainerSm.innerHTML = `$ ${house.price}`;
+  }, 500);
   setTimeout(() => {
     priceContainer.innerHTML = `$ ${house.price}`;
   }, 1900);

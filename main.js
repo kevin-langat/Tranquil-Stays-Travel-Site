@@ -18,7 +18,10 @@ const rigthColumn = document.querySelector('.rigth-column');
 
 // WINDOWS SCROLL FOR RIGHT COLUMN
 window.onscroll = function () {
-  if (window.location.pathname.endsWith('house1.html')) {
+  if (
+    window.location.pathname.endsWith('house1.html') &&
+    window.innerWidth > 480
+  ) {
     handleScroll();
   }
 };
@@ -29,6 +32,7 @@ function handleScroll() {
     document.documentElement.scrollHeight -
     document.documentElement.clientHeight;
   const scrolledPercentage = (getScrollFromTop / heigth) * 100;
+  console.log(scrolledPercentage);
   if (scrolledPercentage <= 29) {
     rightinfo.style.position = '';
     rigthColumn.style.paddingTop = '1%';
@@ -629,3 +633,50 @@ function editPhoneNumber(eventTarget) {
     profilePhoneNumberInput.style.border = '0.1em solid red';
   }
 }
+
+// Open reseve dialog box in the small screens
+const reserveBtnSm = document.querySelector('.reserveBtnSm');
+const closeReserveSm = document.querySelector('.close-img-reserve-small');
+const wholeBody = document.querySelector('.wholebody');
+const openResevationDialogBox = document.querySelector(
+  '.open-resevation-dialog-box'
+);
+function openReserveDialogBoxSm() {
+  reserveBtnSm.setAttribute('disabled', 'true');
+  reserveBtnSm.style.backgroundColor = 'rgba(163, 161, 161, 0.32)';
+  reserveBtnSm.style.color = 'rgba(163, 161, 161, 0.32)';
+  rigthColumn.style.top = '10vh';
+  rigthColumn.style.height = '80vh';
+  wholeBody.style.overflow = 'hidden';
+}
+function closeReserseDialogSm() {
+  reserveBtnSm.removeAttribute('disabled', 'true');
+  reserveBtnSm.style.backgroundColor = 'orangered';
+  reserveBtnSm.style.color = '#000';
+  rigthColumn.style.top = '88vh';
+  rigthColumn.style.height = '10vh';
+  wholeBody.style.overflow = '';
+}
+// window.onscroll = function () {
+//   if (
+//     window.location.pathname.endsWith('house1.html') &&
+//     window.innerWidth < 480
+//   ) {
+//     autoRemoveDialogBox();
+//   }
+// };
+// function autoRemoveDialogBox() {
+//   let getScrollFromTop =
+//     document.body.scrollTop || document.documentElement.scrollTop;
+//   let heigth =
+//     document.documentElement.scrollHeight -
+//     document.documentElement.clientHeight;
+//   const scrolledPercentage = (getScrollFromTop / heigth) * 100;
+//   if (scrolledPercentage >= 92) {
+//     openResevationDialogBox.style.display = 'none';
+//     // rigthColumn.style.display = 'none';
+//   } else if (scrolledPercentage < 92) {
+//     openResevationDialogBox.style.display = 'flex';
+//     // rigthColumn.style.display = 'flex';
+//   }
+// }

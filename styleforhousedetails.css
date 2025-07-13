@@ -399,85 +399,50 @@
 }
 
 .details {
-  width: 100%;
+  width: 70%;
   height: 30vh;
-  display: flex;
-  flex-direction: row;
-  padding: 1%;
-  gap: 5%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
 }
 
-.imgdetails {
-  display: flex;
-  flex-direction: column;
-  gap: 14%;
+.textinnfo {
+  width: 180%;
+  height: 70%;
+  margin-left: -80%;
 }
 
-.imgdetails img {
-  width: 80%;
-  height: 20%;
-}
-
-.textinfo {
-  display: flex;
-  flex-direction: column;
-  gap: 15%;
-
+.details img {
+  width: 15%;
+  height: 55%;
 }
 
 .offers {
   width: 100%;
-  height: 55vh;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .all-amenities {
+  height: 90%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  place-items: center;
+  justify-content: space-between;
+  gap: 5%;
+}
+
+
+.all-amenities p {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
-  gap: 20%;
+  gap: 5%;
   width: 100%;
-  padding-top: 3%;
-  height: 100%;
 }
 
-.left-amenities {
-  display: flex;
-  flex-direction: column;
-  gap: 6%;
-  width: 45%;
-  height: 90%;
-  padding-left: 3%;
-  font-size: medium;
-  font-weight: bold;
-}
 
-.left-amenities p {
-  /* background-color: red; */
-  display: flex;
-  flex-direction: row;
-  gap: 5%;
-}
-
-.right-amenities {
-  display: flex;
-  flex-direction: column;
-  gap: 5.5%;
-  width: 45%;
-  height: 90%;
-  padding-left: 10%;
-  font-size: medium;
-  font-weight: bold;
-}
-
-.right-amenities p {
-  display: flex;
-  flex-direction: row;
-  gap: 5%;
-}
-
-.right-amenities p svg {
-  transform: scale(0.9);
-}
 
 .sleep-con {
   width: 100%;
@@ -1011,7 +976,7 @@
 .mapsection {
   width: 100%;
   height: 50%;
-  background-color: rgb(30, 255, 0);
+  /* background-color: rgb(30, 255, 0); */
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -1135,6 +1100,28 @@
 }
 
 .contact-us-sm {
+  display: none;
+}
+
+.floating-reserve-bar {
+  display: none;
+}
+
+.open-resevation-dialog-box {
+  display: none;
+}
+
+.close-reserve-box-con {
+  display: none;
+}
+
+.close-img-reserve-small {
+  display: none;
+}
+
+.open-resevation-dialog-box,
+.price-container-reserve-sm,
+.reserveBtnSm {
   display: none;
 }
 
@@ -1391,6 +1378,488 @@
     font-weight: bolder;
   }
 
+  .close-reserve-box-con {
+    width: 98%;
+    height: 10%;
+    /* background-color: red;/ */
+    border-radius: 0.5em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .close-reserve-box-con img {
+    width: 9%;
+    height: 80%;
+  }
+
+  .open-resevation-dialog-box {
+    width: 100%;
+    height: 12.3vh;
+    position: fixed;
+    top: 87.7vh;
+    background-color: #fff;
+    display: flex;
+    border-radius: 0.5em;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 8%;
+    z-index: 15000;
+    box-shadow: 0 0 0.5em #000;
+  }
+
+  .price-container-reserve-sm {
+    width: 40%;
+    height: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 5%;
+  }
+
+  .price-container-reserve-sm p {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bolder;
+    font-size: medium;
+    color: orangered;
+    text-decoration: underline;
+  }
+
+  .open-resevation-dialog-box button {
+    width: 40%;
+    height: 55%;
+    background-color: orangered;
+    border: none;
+    border-radius: 0.5em;
+    font-size: medium;
+    font-weight: bold;
+    display: block;
+  }
+
+  .rigth-column {
+    width: 98%;
+    top: 88vh;
+    height: 10vh;
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    align-items: center;
+    transition: 0.3s;
+  }
+
+
+  .rightinfo {
+    width: 100%;
+    height: 97%;
+    box-shadow: 0 0 1em #000;
+    border-radius: 0em;
+    border-top-left-radius: 0.5em;
+    border-top-right-radius: 0.5em;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+    z-index: 5400;
+    padding-top: 1%;
+  }
+
+  .close-img-reserve-small {
+    width: 97%;
+    height: 5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    /* background-color: red; */
+  }
+
+  .rightinfo h3 {
+    display: none;
+  }
+
+  .checkinInfo {
+    width: 90%;
+    height: 35%;
+    display: flex;
+    flex-direction: column;
+    gap: 2%;
+    border: 0.1em solid #0000006c;
+    border-radius: 1em;
+    justify-content: center;
+    padding: 0%;
+  }
+
+  .check-in-out-dates {
+    width: 100%;
+    height: 50%;
+    font-size: smaller;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1%;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 1em;
+  }
+
+  .check-in-con,
+  .check-out-con {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    overflow: hidden;
+    width: 80%;
+    height: 100%;
+    border-radius: 0.5em;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .check-in-con input,
+  .check-out-con input {
+    border: none;
+    padding-left: 5%;
+    cursor: text;
+    border-radius: 0.2em;
+    width: 80%;
+    height: 80%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: smaller;
+    font-weight: bold;
+    cursor: pointer;
+
+  }
+
+  .Guests-in-total {
+    width: 100%;
+    height: 40%;
+    /* background-color: aquamarine; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: smaller;
+    padding-bottom: 1%;
+
+
+  }
+
+  .Guests-in-total input {
+    width: 90%;
+    height: 70%;
+    padding: 3%;
+    border-radius: 0.5em;
+    border: none;
+
+  }
+
+  :disabled {
+    cursor: no-drop;
+
+  }
+
+  .charges {
+    width: 80%;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-size: medium;
+    font-weight: bolder;
+  }
+
+  .totalAmountsCon {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    justify-content: space-between;
+  }
+
+  .clean-Con {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    justify-content: space-between;
+  }
+
+  .clean-Con {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    justify-content: space-between;
+  }
+
+  .services-fee-con {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    justify-content: space-between;
+  }
+
+  .total-charges-container {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    justify-content: space-between;
+  }
+
+  .paymentOptions {
+    width: 90%;
+    height: 13%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    /* font-size: medium; */
+    font-weight: bolder;
+  }
+
+  .on-check-in-payment {
+    width: 100%;
+    height: 60%;
+    display: flex;
+    flex-direction: row;
+    gap: 2%;
+    align-items: center;
+    justify-content: center;
+    color: rgb(19, 160, 19);
+
+
+  }
+
+  .on-check-in-payment p {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: row;
+    gap: 2%;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+  .on-check-in-payment img {
+    width: 6%;
+    height: 100%;
+  }
+
+  .reservebtn {
+    width: 100%;
+    height: 25%;
+    display: flex;
+    flex-direction: column;
+    gap: 10%;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  .reserveBtnInfo {
+    width: 100%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    /* background-color: #bfc6d4; */
+  }
+
+  .reserveBtnInfo p {
+    font-size: smaller;
+  }
+
+  .reservebtn button {
+    width: 90%;
+    height: 40%;
+    border-radius: 0.4em;
+    border: none;
+    background-color: orangered;
+    font-size: larger;
+    color: #fff;
+  }
+
+  .confirmReservation {
+    position: fixed;
+    width: 98%;
+    height: 50vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    top: 10%;
+    left: 1%;
+    border-radius: 0.5em;
+    box-shadow: 0 0 0.5em #000;
+    z-index: 8500;
+    transform: scale(0.0005);
+    transition: 0.2s;
+  }
+
+  .acceptingandreviewContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color: #bfc6d4; */
+  }
+
+  .confirmReservationHeader {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: orangered;
+    padding-left: 20%;
+    font-size: small;
+
+  }
+
+  .confirmReservationHeader img {
+    width: 9%;
+    height: 90%;
+    /* background-color: red; */
+    border-radius: 50%;
+  }
+
+  .check-in-payment {
+    width: 100%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: smaller;
+  }
+
+  .payment-method-container {
+    width: 60%;
+    height: 20%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2%;
+  }
+
+  .payment-method-container img {
+    width: 10%;
+    height: 90%;
+  }
+
+  .reviewterms {
+    width: 100%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-size: small;
+  }
+
+  .accepting-terms {
+    width: 100%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .reviewterms button {
+    width: 80%;
+    background-color: green;
+    height: 30%;
+    font-size: small;
+    font-weight: bold;
+    border: none;
+    border-radius: 0.5em;
+    color: #fff;
+
+
+  }
+
+  .reserve-final-btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    font-size: small;
+  }
+
+  .reserve-final-btn img {
+    display: none;
+    transition: 1s;
+  }
+
+  .paymentSuccessful {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    transition: 1s;
+  }
+
+  .paymentSuccessful h2 {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 20%;
+    font-size: medium;
+  }
+
+  .paymentSuccessful h2 img {
+    width: 9%;
+    height: 80%;
+    border-radius: 50%;
+  }
+
+  .paymentsuccessfullbuttton a {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+
+  }
+
+  .paymentsuccessfullbuttton {
+    width: 80%;
+    height: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .paymentsuccessfullbuttton button {
+    width: 80%;
+    height: 60%;
+    background-color: orangered;
+    font-size: small;
+    font-weight: bold;
+    border: none;
+    border-radius: 0.5em;
+    color: #fff;
+
+  }
+
   .amount {
     display: flex;
     width: 35%;
@@ -1412,31 +1881,28 @@
 
   .reviewPayment {
     width: 100%;
-    height: 210vh;
+    height: 202vh;
     display: flex;
     gap: 5%;
     flex-direction: row;
     padding: 1%;
-    background-color: #fff;
   }
 
   .leftinfo {
     display: flex;
     flex-direction: column;
     gap: 1%;
-    background-color: #fff;
     width: 100%;
-    padding: 1%;
+    padding: 0%;
     align-items: center;
   }
 
   .ratings {
-    width: 100%;
+    width: 90%;
     display: flex;
     flex-direction: row;
     gap: 2%;
-    border: 1px solid #969191c9;
-
+    border: 0.1 solid #000;
     border-radius: 0.5em;
     padding: 0.5%;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -1488,11 +1954,11 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 0.5%;
+    justify-content: center;
   }
 
   .hostInfo {
-    width: 70%;
+    width: 80%;
     height: 10vh;
     padding: 1%;
     display: flex;
@@ -1542,7 +2008,7 @@
   }
 
   .cardname img {
-    width: 70%;
+    width: 85%;
     height: 70%;
     border-radius: 50%;
     border: 0.1em solid blue;
@@ -1575,86 +2041,58 @@
 
   .details {
     width: 100%;
-    height: 35vh;
-    display: flex;
-    flex-direction: row;
-    padding: 1%;
-    gap: 5%;
-  }
-
-  .imgdetails {
-    display: flex;
-    flex-direction: column;
-    gap: 18%;
-    width: 20%;
+    height: 30vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     align-items: center;
   }
 
-  .imgdetails img {
-    width: 60%;
-    height: 15%;
+  .textinnfo {
+    width: 170%;
+    height: 90%;
+    margin-left: -70%;
+    font-size: smaller;
+    font-weight: bolder;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   }
 
-  .textinfo {
-    display: flex;
-    flex-direction: column;
-    gap: 5%;
-    font-size: smaller;
-    font-weight: lighter;
+  .details img {
+    width: 15%;
+    height: 55%;
   }
 
   .offers {
     width: 100%;
-    height: 60vh;
+    height: 65vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
   .all-amenities {
-    display: flex;
-    flex-direction: row;
+    height: 90%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    place-items: center;
     justify-content: space-between;
     gap: 0%;
-    width: 100%;
-    padding-top: 3%;
-    height: 95%;
   }
 
-  .left-amenities {
-    display: flex;
-    flex-direction: column;
-    gap: 6%;
-    width: 50%;
-    height: 100%;
-    padding-left: 0%;
-    font-size: smaller;
-    font-weight: bold;
-  }
 
-  .left-amenities p {
+  .all-amenities p {
     display: flex;
     flex-direction: row;
-    gap: 5%;
     align-items: center;
-  }
-
-  .right-amenities {
-    display: flex;
-    flex-direction: column;
-    gap: 6.2%;
-    width: 50%;
-    height: 100%;
-    font-size: smaller;
-    padding-left: 0%;
-    font-weight: bold;
-  }
-
-  .right-amenities p {
-    display: flex;
-    flex-direction: row;
+    gap: 2%;
+    font-size: small;
     gap: 5%;
     width: 100%;
-    height: 7%;
-    align-items: center;
+  }
 
+  .all-amenities svg {
+    width: 12%;
+    height: 80%;
   }
 
   .sleep-con {
@@ -1711,13 +2149,18 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+    margin-top: 3%;
   }
 
   .reviewSection {
     width: 100%;
-    height: 70%;
+    height: 50%;
     color: rgb(40, 40, 95);
     padding-left: 1%;
+  }
+
+  .reviewSection h2 {
+    font-size: medium;
   }
 
   .reviewContainer {
@@ -1749,8 +2192,8 @@
   }
 
   .firstReview img {
-    width: 25%;
-    height: 15vh;
+    width: 23%;
+    height: 13vh;
     border-radius: 50%;
   }
 
@@ -1768,8 +2211,8 @@
   }
 
   .secondReview img {
-    width: 25%;
-    height: 15vh;
+    width: 23%;
+    height: 13vh;
     border-radius: 50%;
 
   }
@@ -1781,7 +2224,7 @@
   .mapsection {
     width: 100%;
     height: 50%;
-    background-color: rgb(30, 255, 0);
+    /* background-color: rgb(30, 255, 0); */
     align-items: center;
     display: flex;
     flex-direction: column;
@@ -1810,6 +2253,8 @@
     gap: 0.3em;
     padding-top: 0.5em;
     cursor: pointer;
+    font-size: smaller;
+
 
   }
 
@@ -1821,6 +2266,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     margin-left: 2.5%;
+    font-size: small;
   }
 
   .support {
@@ -1856,14 +2302,9 @@
     display: none;
   }
 
-
+  /* 
   .confirmReservation {
     display: none;
 
-  }
-
-  .rigth-column {
-    display: none;
-  }
-
+  } */
 }
