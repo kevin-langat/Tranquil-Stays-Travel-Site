@@ -1488,13 +1488,13 @@ const houseData = [
     ratingDescription:
       'One of the most loved home to many travellers here on <br> Tranquil, According to Guests',
     hostName: 'Ellie',
-    hostImage: 'iicon/uifaces-human-image (17).jpg',
+    hostImage: 'icon/uifaces-human-image (17).jpg',
     hostReviewNumber: '60+',
     hostCharacter: 'Friendly, Funny,hospitable',
     hostYearOfExperience: '8+',
     amenitiesOne: 'Outdoor pool',
     bedOneImage: 'Beds/img105.jpeg',
-    bedTwoImage: 'Beds/img21.jpeg',
+    bedTwoImage: 'Beds/img214.jpeg',
     personOneReview: {
       name: 'Aria Ferguson',
       image: 'icon/uifaces-human-image (16).jpg',
@@ -3105,7 +3105,6 @@ function authenticateValidDate(eventTarget) {
   const rawCheckOutValue = checkOutInput.value;
   guestsInput.setAttribute('disabled', 'true');
   if (checkInInputValue >= new Date()) {
-    console.log(checkInInputValue);
     if (
       rawCheckOutValue.length > 0 &&
       checkInInputValue.toString().length < 15 &&
@@ -3138,7 +3137,6 @@ function calculateDaysDifference() {
   const checkInInputValue = new Date(checkInInput.value);
   const checkOutInputValue = new Date(checkOutInput.value);
   const currentInput = Number(guestInput.value);
-  console.log(checkOutInputValue);
   if (
     checkInInputValue.toString().length > 15 &&
     checkInInputValue >= new Date() &&
@@ -3202,7 +3200,7 @@ const reserveSipnnerImage = document.querySelector(
   '.reserve-final-btn-spinner'
 );
 const lastReviewCon = document.querySelector('.acceptingandreviewContainer');
-
+let determineBookingStatus;
 function openConfirmBox(eventTarget) {
   if (reserveValidationInputs.validFormData === undefined) {
     checkInInput.style.border = '0.1em solid red';
@@ -3230,15 +3228,6 @@ if (window.location.pathname.endsWith('house1.html')) {
   reserveBtn.addEventListener('click', () => {
     reserveSipnnerImage.style.display = 'block';
     reserveBtn.setAttribute('disabled', 'true');
-    setTimeout(() => {
-      lastReviewCon.innerHTML = `<div class="paymentSuccessful">
-                <h2>Reservation Successfull <img src="close.png" onclick="closeAndDisableBooking()" onclick="closeReserseDialog(event.target)" class="close-Dialog" alt=""></h2>
-                <img src="succes.png" alt="">
-                <div class="paymentsuccessfullbuttton">
-                <a href="accountpage.html"><button onclick="goToBookings()">Go To My Bookings</button></a>
-                </div>
-            </div>`;
-    }, 3000);
     let bookingDate = new Date();
     let currentBooking = JSON.parse(localStorage.getItem('selectedHouse'));
     let requiredBookingInfo = {
@@ -3267,11 +3256,33 @@ if (window.location.pathname.endsWith('house1.html')) {
         let currentBookedHouses = JSON.parse(
           localStorage.getItem('BookedHouses')
         );
-        currentBookedHouses.unshift(allRequiredBookingInfo);
-        localStorage.setItem(
-          'BookedHouses',
-          JSON.stringify(currentBookedHouses)
-        );
+        if (currentBookedHouses.length < 5) {
+          currentBookedHouses.unshift(allRequiredBookingInfo);
+          localStorage.setItem(
+            'BookedHouses',
+            JSON.stringify(currentBookedHouses)
+          );
+          determineBookingStatus = 'success';
+          lastReviewCon.innerHTML = `<div class="paymentSuccessful">
+                <h2>Reservation Successfull <img src="close.png" onclick="closeAndDisableBooking()" onclick="closeReserseDialog(event.target)" class="close-Dialog" alt=""></h2>
+                <img src="succes.png" alt="">
+                <div class="paymentsuccessfullbuttton">
+                <a href="accountpage.html"><button onclick="goToBookings()">Go To My Bookings</button></a>
+                </div>
+            </div>`;
+        } else {
+          alert(
+            'Reservation Failed! You Cannot Book More Than 5 Houses Concurrently'
+          );
+          determineBookingStatus = 'fail';
+          lastReviewCon.innerHTML = `<div class="paymentSuccessful">
+                <h2>Your Reservation Failed! <img src="close.png" onclick="closeAndDisableBooking()" onclick="closeReserseDialog(event.target)" class="close-Dialog" alt=""></h2>
+                <img src="failed.png" alt="">
+                <div class="paymentsuccessfullbuttton">
+                <a href="accountpage.html"><button onclick="goToBookings()">Go To My Bookings Anyway</button></a>
+                </div>
+            </div>`;
+        }
       }
     }, 3000);
   });
@@ -3289,21 +3300,27 @@ if (window.location.pathname.endsWith('house1.html')) {
   }
   function closeReserseDialog(eventTarget) {
     reserveDialogBox.style.transform = 'scale(0.0005)';
+    window.location.reload();
   }
   function closeAndDisableBooking() {
-    reserveDialogBox.style.transform = 'scale(0.0005)';
-    reserveButton.setAttribute('disabled', 'true');
-    reserveButton.style.backgroundColor = 'rgba(128, 128, 128, 0.4)';
-    reserveButton.style.color = 'red';
-    reserveButton.style.fontSize = 'small';
-    reserveButton.textContent = 'You Have Already Reserved This House';
-    checkInInput.setAttribute('disabled', 'true');
-    checkInInput.style.cursor = 'no-drop';
-    checkInInput.style.backgroundColor = 'rgba(128, 128, 128, 0.4)';
-    checkOutInput.setAttribute('disabled', 'true');
-    checkOutInput.style.cursor = 'no-drop';
-    checkOutInput.style.backgroundColor = 'rgba(128, 128, 128, 0.4)';
-    guestInput.style.backgroundColor = 'rgba(128, 128, 128, 0.4)';
+    if (determineBookingStatus === 'success') {
+      reserveDialogBox.style.transform = 'scale(0.0005)';
+      reserveButton.setAttribute('disabled', 'true');
+      reserveButton.style.backgroundColor = 'rgba(128, 128, 128, 0.4)';
+      reserveButton.style.color = 'red';
+      reserveButton.style.fontSize = 'small';
+      reserveButton.textContent = 'You Have Already Reserved This House';
+      checkInInput.setAttribute('disabled', 'true');
+      checkInInput.style.cursor = 'no-drop';
+      checkInInput.style.backgroundColor = 'rgba(128, 128, 128, 0.4)';
+      checkOutInput.setAttribute('disabled', 'true');
+      checkOutInput.style.cursor = 'no-drop';
+      checkOutInput.style.backgroundColor = 'rgba(128, 128, 128, 0.4)';
+      guestInput.style.backgroundColor = 'rgba(128, 128, 128, 0.4)';
+    } else if (determineBookingStatus === 'fail') {
+      reserveDialogBox.style.transform = 'scale(0.0005)';
+      window.location.reload();
+    }
   }
 }
 const reserveButton = document.querySelector('.reserve-actual-button');
@@ -3315,9 +3332,12 @@ window.addEventListener('DOMContentLoaded', () => {
     );
 
     let idsOfCurrentBookedHouses = [];
-    currentBookedHouses.forEach((item) => {
-      idsOfCurrentBookedHouses.push(item.bookingId);
-    });
+    if (currentBookedHouses === null) {
+    } else {
+      currentBookedHouses.forEach((item) => {
+        idsOfCurrentBookedHouses.push(item.bookingId);
+      });
+    }
     if (idsOfCurrentBookedHouses.includes(selectedCurrentHouse.id)) {
       reserveButton.setAttribute('disabled', 'true');
       reserveButton.style.backgroundColor = 'rgba(128, 128, 128, 0.4)';
@@ -3350,3 +3370,33 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   }
 });
+
+const rigthColumnSm = document.querySelector('.rigth-column');
+const openReserveDialogBoxSmall = document.querySelector(
+  '.confirm-reservation-small'
+);
+
+if (
+  window.location.pathname.endsWith('house1.html') &&
+  window.innerWidth < 480
+) {
+  window.onscroll = function () {
+    autoRemoveDialogBox();
+  };
+}
+
+function autoRemoveDialogBox() {
+  let getScrollFromTop =
+    document.body.scrollTop || document.documentElement.scrollTop;
+  let heigth =
+    document.documentElement.scrollHeight -
+    document.documentElement.clientHeight;
+  const scrolledPercentage = (getScrollFromTop / heigth) * 100;
+  if (scrolledPercentage >= 92) {
+    openReserveDialogBoxSmall.style.display = 'none';
+    rigthColumn.style.display = 'none';
+  } else if (scrolledPercentage < 92) {
+    openReserveDialogBoxSmall.style.display = 'flex';
+    rigthColumn.style.display = 'flex';
+  }
+}

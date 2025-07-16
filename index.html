@@ -52,23 +52,24 @@
                 <div class="upper-find-place-information">
                     <div class="find-place-check-in">
                         <h4>Check In</h4>
-                        <input type="date" placeholder="anyday" class="find-place-check-input">
+                        <input type="date" placeholder="anyday" class="find-place-check-in-input-sm">
                     </div>
                     <div class="find-place-check-in">
                         <h4>Check Out</h4>
-                        <input type="date" placeholder="anyday" class="find-place-check-input">
+                        <input type="date" placeholder="anyday" class="find-place-check-out-input-sm">
                     </div>
                     <div class="find-place-check-in">
                         <h4>Location</h4>
-                        <input type="text" placeholder="anywhere" class="find-place-check-input">
+                        <input type="text" placeholder="anywhere" class="find-place-location-input-sm">
                     </div>
                     <div class="find-place-check-in">
                         <h4>Guests</h4>
-                        <input type="number" max="10" min="1" placeholder="guests" class="find-place-check-input">
+                        <input type="number" max="10" min="1" placeholder="guests" class="find-place-guests-input-sm">
                     </div>
                 </div>
-                <div class="search-place-button-container">
-                    <button>Search</button>
+                <div class="search-place-button-container-sm">
+                    <a href="#"><button onclick=" searchForListingsSm(event.target)">Search <img src="spinner.svg"
+                                class="spinnerForSearchSm" alt=""></button></a>
                 </div>
             </div>
         </div>
@@ -144,23 +145,25 @@
                     <div class="upper-find-place-information">
                         <div class="find-place-check-in">
                             <h4>Check In</h4>
-                            <input type="date" placeholder="anyday" class="find-place-check-input">
+                            <input type="date" value="" placeholder="anyday" class="find-place-checkIn-input">
                         </div>
                         <div class="find-place-check-in">
                             <h4>Check Out</h4>
-                            <input type="date" placeholder="anyday" class="find-place-check-input">
+                            <input type="date" value="" placeholder="anyday" class="find-place-checkOut-input">
                         </div>
                         <div class="find-place-check-in">
                             <h4>Location</h4>
-                            <input type="text" placeholder="anywhere" class="find-place-check-input">
+                            <input type="text" value="" placeholder="anywhere" class="find-place-location-input">
                         </div>
                         <div class="find-place-check-in">
                             <h4>Guests</h4>
-                            <input type="number" max="10" min="1" placeholder="guests" class="find-place-check-input">
+                            <input type="number" value="" max="10" min="1" placeholder="guests"
+                                class="find-place-guests-input">
                         </div>
                     </div>
                     <div class="search-place-button-container">
-                        <button>Search</button>
+                        <a href="#"><button class="searchHomeFeature" onclick="searchForListings(event.target)">Search
+                                <img src="spinner.svg" class="spinnerForSearch" alt=""></button></a>
                     </div>
                 </div>
 

@@ -12,7 +12,8 @@
     <div class="imagehouse">
         <div class="navigationbar">
             <div class="logo-con">
-                <img src="logo.png" alt="logo">
+                <a href="index.html"><img src="logo.png" alt="logo">
+                </a>
             </div>
             <!-- SEARCH BAR CONTAINER -->
             <div class="searchbarDetails">
@@ -524,7 +525,22 @@
         <div class="mapsection">
             <h2>Where you will be</h2>
             <div class="map-container">
-
+                <div style="text-decoration:none; overflow:hidden;max-width:100%;width:500px;height:500px;">
+                    <div id="display-google-map" style="height:100%; width:100%;max-width:100%;"><iframe
+                            style="height:100%;width:100%;border:0;" frameborder="0"
+                            src="https://www.google.com/maps/embed/v1/place?q=Mombasa+Diani&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe>
+                    </div><a class="our-googlemap-code" href="https://www.bootstrapskins.com/themes"
+                        id="make-map-data">premium bootstrap themes</a>
+                    <style>
+                        #display-google-map img {
+                            max-width: none !important;
+                            background: none !important;
+                            font-size: inherit;
+                            font-weight: inherit;
+                        }
+                    </style>
+                </div>
+                <!-- <iframe src="" frameborder="0"></iframe> -->
             </div>
 
         </div>

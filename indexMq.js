@@ -89,6 +89,7 @@ window.addEventListener('DOMContentLoaded', () => {
       userListingSvgA.setAttribute('href', 'accountpage.html');
     } else if (authStatus === null) {
       userListingSvgA.setAttribute('href', 'loginForm.html');
+      window.location.replace('loginForm.html');
     }
   }
 });
@@ -124,6 +125,99 @@ window.addEventListener('DOMContentLoaded', () => {
     window.location.pathname.endsWith('houselisting.html') &&
     window.innerWidth > 480
   ) {
+    let authStatus = JSON.parse(localStorage.getItem('UserStatus'));
+    if (authStatus === null || authStatus === 'No') {
+      window.location.replace('loginForm.html');
+    }
     searchBoxConSm.style.display = 'none';
   }
 });
+// Find places Container in Small screens
+const checkInDateSm = document.querySelector('.find-place-check-in-input-sm');
+const checkOutDateSm = document.querySelector('.find-place-check-out-input-sm');
+const propertyLocationSm = document.querySelector(
+  '.find-place-location-input-sm'
+);
+const guestsInputSm = document.querySelector('.find-place-guests-input-sm');
+
+let checkInDateValueGSm;
+let todaysm = new Date();
+let checkInDateValidSm;
+let checkInOutDateValidSm;
+
+checkInDateSm.addEventListener('change', () => {
+  const checkInDateValueSm = new Date(checkInDateSm.value);
+  checkInDateValueGSm = checkInDateValueSm;
+  if (checkInDateValueSm >= todaysm) {
+    checkInDateValidSm = true;
+    checkInDateSm.style.border = '0.1em solid green';
+  } else {
+    checkInDateValidSm = false;
+    checkInDateSm.style.border = '0.1em solid red';
+  }
+});
+
+checkOutDateSm.addEventListener('change', () => {
+  const checkOutDateValueSm = new Date(checkOutDateSm.value);
+  if (
+    checkOutDateValueSm > todaysm &&
+    checkOutDateValueSm > checkInDateValueGSm &&
+    checkInDateValidSm === true
+  ) {
+    checkInOutDateValidSm = true;
+    checkOutDateSm.style.border = '0.1em solid green';
+    checkInDateSm.style.border = '0.1em solid green';
+  } else {
+    checkInOutDateValidSm = false;
+    checkInDateSm.style.border = '0.1em solid red';
+    checkOutDateSm.style.border = '0.1em solid red';
+  }
+});
+let allValidityStatusSm;
+guestsInputSm.addEventListener('change', () => {
+  if (
+    propertyLocationSm.value.length > 4 &&
+    guestsInputSm.value.length > 0 &&
+    checkInOutDateValidSm === true
+  ) {
+    allValidityStatusSm = true;
+    guestsInputSm.style.border = '0.1em solid green';
+    checkOutDateSm.style.border = '0.1em solid green';
+    checkInDateSm.style.border = '0.1em solid green';
+    propertyLocationSm.style.border = '0.1em solid green';
+  } else {
+    allValidityStatusSm = false;
+    guestsInputSm.style.border = '0.1em solid red';
+    checkOutDateSm.style.border = '0.1em solid red';
+    checkInDateSm.style.border = '0.1em solid red';
+    propertyLocationSm.style.border = '0.1em solid red';
+  }
+});
+const spinnerForSearchSm = document.querySelector('.spinnerForSearchSm');
+function searchForListingsSm(eventTarget) {
+  let randomNumber = Math.ceil(Math.random() * 6);
+  let UserLogInStatus = JSON.parse(localStorage.getItem('UserStatus'));
+
+  if (allValidityStatusSm === true) {
+    if (UserLogInStatus === 'Yes') {
+      setTimeout(() => {
+        window.location.reload();
+        window.location.replace('houselisting.html');
+      }, 3000);
+      localStorage.setItem(
+        'HouseListingActiveTab',
+        JSON.stringify(randomNumber)
+      );
+    } else {
+      window.location.reload();
+      window.open('loginForm.html');
+    }
+    spinnerForSearchSm.style.display = 'block';
+    eventTarget.style.paddingLeft = '20%';
+  } else {
+    guestsInputSm.style.border = '0.1em solid red';
+    checkOutDateSm.style.border = '0.1em solid red';
+    checkInDateSm.style.border = '0.1em solid red';
+    propertyLocationSm.style.border = '0.1em solid red';
+  }
+}

@@ -47,7 +47,7 @@ if (window.location.pathname.endsWith('loginForm.html')) {
             if (userFoundEmail === emailInput.value) {
               if (userFoundPassword === passwordInput.value) {
                 alert('Welcome Back. Click ok to continue');
-                loginContainer.setAttribute('href', 'index.html');
+                window.location.replace('index.html');
                 localStorage.setItem('UserStatus', JSON.stringify('Yes'));
                 localStorage.setItem(
                   'CurrentLoggedInUser',
@@ -106,7 +106,7 @@ if (window.location.pathname.endsWith('loginForm.html')) {
           localStorage.setItem('Userlogins', JSON.stringify([user]));
           alert('Registration successfull. Click Ok to continue');
           localStorage.setItem('UserStatus', JSON.stringify('Yes'));
-          signUpContainer.setAttribute('href', 'index.html');
+          window.location.replace('index.html');
           localStorage.setItem('CurrentLoggedInUser', JSON.stringify(user));
         } else {
           let userFoundEmail;
@@ -120,7 +120,7 @@ if (window.location.pathname.endsWith('loginForm.html')) {
           } else {
             currentUsers.push(user);
             localStorage.setItem('Userlogins', JSON.stringify(currentUsers));
-            signUpContainer.setAttribute('href', 'index.html');
+            window.location.replace('index.html');
             localStorage.setItem('UserStatus', JSON.stringify('Yes'));
             localStorage.setItem('CurrentLoggedInUser', JSON.stringify(user));
             alert('Registration successfull. Click Ok to continue');

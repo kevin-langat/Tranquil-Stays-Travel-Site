@@ -58,9 +58,15 @@ a {
     backdrop-filter: blur(1em);
 }
 
-.navigation-bar-information img {
-    width: 4.5%;
+.navigation-bar-information a {
+    width: 5%;
     height: 65%;
+    padding: 0.3%;
+}
+
+.navigation-bar-information img {
+    width: 100%;
+    height: 100%;
     background-color: rgb(112, 110, 110);
     border-radius: 50%;
     padding: 0.3%;
@@ -231,20 +237,34 @@ a {
     width: 80%;
     height: 20%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
 }
 
-.search-place-button-container button {
+.search-place-button-container a {
     width: 90%;
     height: 80%;
+}
+
+.search-place-button-container button {
+    width: 100%;
+    height: 100%;
     background-color: orangered;
     border-radius: 0.5em;
     border: none;
     font-size: larger;
     color: #fff;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+}
 
+.search-place-button-container button img {
+    display: none;
+    transition: 0.3s;
 }
 
 .our-achievements-container {
@@ -1189,6 +1209,46 @@ h4 {
     .navigation-Buttons-small a svg {
         width: 100%;
         height: 100%;
+    }
+
+    .search-place-button-container-sm {
+        width: 100%;
+        height: 15%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    .search-place-button-container-sm a {
+        width: 100%;
+        /* background-color: yellow; */
+        height: 90%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .search-place-button-container-sm button {
+        width: 70%;
+        height: 95%;
+        border: none;
+        border-radius: 0.5em;
+        transition: 0.3s;
+        background-color: orangered;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        font-size: large;
+        font-weight: bold;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+
+    .search-place-button-container-sm button img {
+        display: none;
     }
 
     .hamburgerMenuContainer {

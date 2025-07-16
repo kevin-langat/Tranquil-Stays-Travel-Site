@@ -21,7 +21,7 @@ function validateSubscribeEmail() {
   const emailValue = subscribeEmailInput.value;
   if (!emailValue.match(/^[A-Za-z]\._\-[0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/)) {
     subscribeEmailInput.setAttribute('placeholder', '*invalid email');
-    subscribeEmailInput.style.border = '2px solid green';
+    subscribeEmailInput.style.border = '2px solid red';
     subscribeBtn.innerHTML = 'Subscribed';
     subscribeBtn.style.background = 'green';
   } else {
@@ -59,3 +59,93 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   }
 });
+const spinnerForSearch = document.querySelector('.spinnerForSearch');
+const checkInDate = document.querySelector('.find-place-checkIn-input');
+const checkOutDate = document.querySelector('.find-place-checkOut-input');
+const propertyLocation = document.querySelector('.find-place-location-input');
+const guests = document.querySelector('.find-place-guests-input');
+
+let allValidityStatus;
+let checkInDateValid;
+let checkInOutDateValid;
+const today = new Date();
+let checkInDateValueG;
+
+checkInDate.addEventListener('change', () => {
+  const checkInDateValue = new Date(checkInDate.value);
+  checkInDateValueG = checkInDateValue;
+  if (checkInDateValue >= today) {
+    checkInDateValid = true;
+    checkInDate.style.border = '0.1em solid green';
+  } else {
+    checkInDateValid = false;
+    checkInDate.style.border = '0.1em solid red';
+  }
+});
+
+checkOutDate.addEventListener('change', () => {
+  const checkOutDateValue = new Date(checkOutDate.value);
+  if (
+    checkOutDateValue > today &&
+    checkOutDateValue > checkInDateValueG &&
+    checkInDateValid === true
+  ) {
+    checkInOutDateValid = true;
+    checkOutDate.style.border = '0.1em solid green';
+    checkInDate.style.border = '0.1em solid green';
+  } else {
+    checkInOutDateValid = false;
+    checkInDate.style.border = '0.1em solid red';
+    checkOutDate.style.border = '0.1em solid red';
+  }
+});
+guests.addEventListener('change', () => {
+  if (
+    propertyLocation.value.length > 4 &&
+    guests.value.length > 0 &&
+    checkInOutDateValid === true
+  ) {
+    allValidityStatus = true;
+    guests.style.border = '0.1em solid green';
+    checkOutDate.style.border = '0.1em solid green';
+    checkInDate.style.border = '0.1em solid green';
+    checkInDate.style.border = '0.1em solid green';
+    propertyLocation.style.border = '0.1em solid green';
+  } else {
+    allValidityStatus = false;
+    guests.style.border = '0.1em solid red';
+    checkOutDate.style.border = '0.1em solid red';
+    checkInDate.style.border = '0.1em solid red';
+    checkInDate.style.border = '0.1em solid red';
+    propertyLocation.style.border = '0.1em solid red';
+  }
+});
+
+function searchForListings(eventTarget) {
+  let randomNumber = Math.ceil(Math.random() * 6);
+  let UserLogInStatus = JSON.parse(localStorage.getItem('UserStatus'));
+
+  if (allValidityStatus === true) {
+    if (UserLogInStatus === 'Yes') {
+      localStorage.setItem(
+        'HouseListingActiveTab',
+        JSON.stringify(randomNumber)
+      );
+      setTimeout(() => {
+        window.open('houselisting.html');
+      }, 4500);
+    } else {
+      setTimeout(() => {
+        window.open('houselisting.html');
+      }, 4500);
+    }
+    spinnerForSearch.style.display = 'block';
+    eventTarget.style.paddingLeft = '25%';
+  } else {
+    guests.style.border = '0.1em solid red';
+    checkOutDate.style.border = '0.1em solid red';
+    checkInDate.style.border = '0.1em solid red';
+    checkInDate.style.border = '0.1em solid red';
+    propertyLocation.style.border = '0.1em solid red';
+  }
+}

@@ -32,7 +32,6 @@ function handleScroll() {
     document.documentElement.scrollHeight -
     document.documentElement.clientHeight;
   const scrolledPercentage = (getScrollFromTop / heigth) * 100;
-  console.log(scrolledPercentage);
   if (scrolledPercentage <= 29) {
     rightinfo.style.position = '';
     rigthColumn.style.paddingTop = '1%';
@@ -77,6 +76,10 @@ function addToWishlist() {
 
 window.addEventListener('DOMContentLoaded', () => {
   if (window.location.pathname.endsWith('house1.html')) {
+    let authStatus = JSON.parse(localStorage.getItem('UserStatus'));
+    if (authStatus === null || authStatus === 'No') {
+      window.location.replace('loginForm.html');
+    }
     let selectedCurrentHouse = JSON.parse(
       localStorage.getItem('selectedHouse')
     );
@@ -127,6 +130,10 @@ function wislistToStorage() {
 }
 window.addEventListener('DOMContentLoaded', () => {
   if (window.location.pathname.endsWith('accountpage.html')) {
+    let authStatus = JSON.parse(localStorage.getItem('UserStatus'));
+    if (authStatus === null || authStatus === 'No') {
+      window.location.replace('loginForm.html');
+    }
     displayWishlistsNumber();
   }
 });
@@ -180,7 +187,7 @@ const hostHeaderCon = document.querySelector('.displayHostContainer');
 const helpHeaderCon = document.querySelector('.displayHelpContainer');
 const settingsHeaderCon = document.querySelector('.displaySettingsContainer');
 
-function displaySavedHouses(eventTarget) {
+function displaySavedHouses() {
   localStorage.setItem('AccountInfoLoad', JSON.stringify(3));
   headingName.innerHTML = '<img src="saved.png" alt="">My Wishlist';
   myProfileHeaderCon.style.border = 'none';
@@ -199,7 +206,11 @@ function displaySavedHouses(eventTarget) {
         </div>`;
   setTimeout(() => {
     mywishlistCon.style.display = 'grid';
-    mywishlistCon.style.gridTemplateColumns = 'repeat(3,1fr)';
+    if (window.innerWidth <= 480) {
+      mywishlistCon.style.gridTemplateColumns = 'repeat(2,1fr)';
+    } else if (window.innerWidth > 480) {
+      mywishlistCon.style.gridTemplateColumns = 'repeat(3,1fr)';
+    }
     mywishlistCon.innerHTML = wishlistedHouses
       .map(
         (item) => `<div class="each-saved-house">
@@ -250,7 +261,6 @@ function deleteWishlistItem(eventTarget, itemId) {
   const wishlistedHouses = JSON.parse(localStorage.getItem('wishlistedHouses'));
   wishlistedHouses.forEach((targetItem, index) => {
     if (targetItem.id === itemId) {
-      console.log(wishlistedHouses.indexOf(targetItem), targetItem.id);
       wishlistedHouses.splice(wishlistedHouses.indexOf(targetItem), 1);
       localStorage.setItem(
         'wishlistedHouses',
@@ -566,19 +576,17 @@ function editEmailInfo(eventTarget) {
           indexOfUserInStorage = allCurrentUsers.indexOf(item);
         }
       });
-      console.log(userInStorage);
       userInStorage.email = profileEmailInput.value;
       allCurrentUsers[indexOfUserInStorage] = userInStorage;
       localStorage.setItem('Userlogins', JSON.stringify(allCurrentUsers));
       profileNickNameInput.style.border = '0.1em solid green';
 
-      console.log(currentUserInfo.email);
       currentUserInfo.email = profileEmailInput.value;
       localStorage.setItem(
         'CurrentLoggedInUser',
         JSON.stringify(currentUserInfo)
       );
-      console.log(currentUserInfo.email);
+
       eventTarget.style.backgroundColor = 'green';
       eventTarget.textContent = 'Editted';
       setTimeout(() => {
@@ -657,26 +665,3 @@ function closeReserseDialogSm() {
   rigthColumn.style.height = '10vh';
   wholeBody.style.overflow = '';
 }
-// window.onscroll = function () {
-//   if (
-//     window.location.pathname.endsWith('house1.html') &&
-//     window.innerWidth < 480
-//   ) {
-//     autoRemoveDialogBox();
-//   }
-// };
-// function autoRemoveDialogBox() {
-//   let getScrollFromTop =
-//     document.body.scrollTop || document.documentElement.scrollTop;
-//   let heigth =
-//     document.documentElement.scrollHeight -
-//     document.documentElement.clientHeight;
-//   const scrolledPercentage = (getScrollFromTop / heigth) * 100;
-//   if (scrolledPercentage >= 92) {
-//     openResevationDialogBox.style.display = 'none';
-//     // rigthColumn.style.display = 'none';
-//   } else if (scrolledPercentage < 92) {
-//     openResevationDialogBox.style.display = 'flex';
-//     // rigthColumn.style.display = 'flex';
-//   }
-// }
